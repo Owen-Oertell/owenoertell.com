@@ -31,6 +31,12 @@
     <li>TA for CS 4820 (Introduction to Analysis of Algorithms). Fa23, Sp23</li>
   </ul>
 
+  <h4 class="font-medium mt-4 mb-1">Community Service:</h4>
+  <ul>
+    <li>ICLR 2025 Reviewer</li>
+    <li>RLC 2025 Reviewer</li>
+    <li>ACL ARR 2025 Reviewer</li>
+  </ul>
 </section>
 
 <section class="layout-md py-5">
@@ -71,7 +77,6 @@
     <li>Reinforcement learning</li>
   </Workplace>
 </section>
-
 
 <style lang="postcss">
   b {
