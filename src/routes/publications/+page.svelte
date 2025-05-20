@@ -17,7 +17,7 @@
   <h2 class="heading2">2025</h2>
   <PubList data={publications.papers2025} />
 
-  <h2 class="heading2">2024</h2>
+  <h2 class="heading2 mt-10">2024</h2>
   <PubList data={publications.papers2024} />
   
   <h2 class="heading2 mt-10">2023</h2>

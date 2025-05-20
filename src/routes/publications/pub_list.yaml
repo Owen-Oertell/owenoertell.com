@@ -1,6 +1,7 @@
 papers2025:
   - title: "Convergence Of Consistency Model With Multistep Sampling Under General Data Assumptions"
     date: 2025-05-06
+    link: "https://arxiv.org/pdf/2505.03194"
     authors: >
       Yiding Chen, Yiyi Zhang, Owen Oertell, Wen Sun.
     venue: ICML 2025
