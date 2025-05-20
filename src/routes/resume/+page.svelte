@@ -27,13 +27,14 @@
 
   <h4 class="font-medium mt-4 mb-1">Teaching:</h4>
   <ul>
-    <li>TA for CS 4789 (Introduction to Reinforcement Learning). Sp24, Sp25</li>
+    <li>TA for CS 4789 (Introduction to Reinforcement Learning). Sp24, Sp25 (Head TA)</li>
     <li>TA for CS 4820 (Introduction to Analysis of Algorithms). Fa23, Sp23</li>
   </ul>
 
   <h4 class="font-medium mt-4 mb-1">Community Service:</h4>
   <ul>
-    <li>ICLR 2025 Reviewer</li>
+    <li>ICLR 2025 Reviewer (Notable Reviewer)</li>
+    <li>NeurIPS 2025 Reviewer</li>
     <li>RLC 2025 Reviewer</li>
     <li>ACL ARR 2025 Reviewer</li>
   </ul>

@@ -1,3 +1,10 @@
+papers2025:
+  - title: "Convergence Of Consistency Model With Multistep Sampling Under General Data Assumptions"
+    date: 2025-05-06
+    authors: >
+      Yiding Chen, Yiyi Zhang, Owen Oertell, Wen Sun.
+    venue: ICML 2025
+
 papers2024:
   - title: "TurboHopp: Accelerated Molecule Scaffold Hopping with Consistency Models"
     date: 2024-10-28

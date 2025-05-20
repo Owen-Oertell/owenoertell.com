@@ -14,6 +14,9 @@
 </section>
 
 <section class="layout-md py-12">
+  <h2 class="heading2">2025</h2>
+  <PubList data={publications.papers2025} />
+
   <h2 class="heading2">2024</h2>
   <PubList data={publications.papers2024} />
   
