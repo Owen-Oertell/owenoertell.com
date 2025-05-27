@@ -1,4 +1,10 @@
 papers2025:
+  - title: "Efficient Controllable Diffusion via Optimal Classifier Guidance"
+    date: 2025-05-27
+    authors: >
+      Owen Oertell*, Shikun Sun*, Yiding Chen*, Jin Peng Zhou, Zhiyong Wang, Wen Sun
+    venue: Preprint
+  
   - title: "Convergence Of Consistency Model With Multistep Sampling Under General Data Assumptions"
     date: 2025-05-06
     link: "https://arxiv.org/pdf/2505.03194"

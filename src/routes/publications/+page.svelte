@@ -11,6 +11,8 @@
 
 <section class="layout-md">
   To view the most up-to-date list of my publications, please visit my <a href="https://scholar.google.com/citations?user=y0B6gawAAAAJ&hl=en" class="link">Google Scholar</a> page.
+  <br>
+  <i>* denotes equal contribution</i>
 </section>
 
 <section class="layout-md py-12">
