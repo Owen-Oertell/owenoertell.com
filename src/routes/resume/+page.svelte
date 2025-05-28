@@ -52,7 +52,7 @@
     location="Santa Clara, CA"
   >
     <li>
-      ML + Compilers
+      RL + Compilers
     </li>
   </Workplace>
 
