@@ -48,7 +48,7 @@
     title="Research Intern"
     company="NVIDIA"
     url="https://nvidia.com"
-    dates="August 2024 – December 2024"
+    dates="August 2024 – December 2024, June 2025 – August 2025"
     location="Santa Clara, CA"
   >
     <li>
