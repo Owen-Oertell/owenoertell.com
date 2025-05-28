@@ -36,6 +36,7 @@
     <li>ICLR 2025 Reviewer (Notable Reviewer)</li>
     <li>NeurIPS 2025 Reviewer</li>
     <li>RLC 2025 Reviewer</li>
+    <li>COLM 2025 Reviewer</li>
     <li>ACL ARR 2025 Reviewer</li>
   </ul>
 </section>
