@@ -1,6 +1,7 @@
 papers2025:
   - title: "Efficient Controllable Diffusion via Optimal Classifier Guidance"
     date: 2025-05-27
+    link: "https://arxiv.org/pdf/2505.21666"
     authors: >
       Owen Oertell*, Shikun Sun*, Yiding Chen*, Jin Peng Zhou, Zhiyong Wang, Wen Sun
     venue: Preprint
