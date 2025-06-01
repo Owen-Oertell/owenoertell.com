@@ -1,4 +1,11 @@
 papers2025:
+  - title: "Scaling Offline RL via Efficient and Expressive Shortcut Models"
+    date: 2025-05-28
+    link: "https://arxiv.org/pdf/2505.22866"
+    authors: >
+      Nicolas Espinosa-Dice, Yiyi Zhang, Yiding Chen, Bradley Guo, Owen Oertell, Gokul Swamy, Kiante Brantley, Wen Sun
+    venue: Preprint
+    
   - title: "Efficient Controllable Diffusion via Optimal Classifier Guidance"
     date: 2025-05-27
     link: "https://arxiv.org/pdf/2505.21666"
