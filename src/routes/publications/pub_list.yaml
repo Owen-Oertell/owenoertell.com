@@ -3,20 +3,20 @@ papers2025:
     date: 2025-05-28
     link: "https://arxiv.org/pdf/2505.22866"
     authors: >
-      Nicolas Espinosa-Dice, Yiyi Zhang, Yiding Chen, Bradley Guo, Owen Oertell, Gokul Swamy, Kiante Brantley, Wen Sun
+      Nicolas Espinosa-Dice, Yiyi Zhang, Yiding Chen, Bradley Guo, Owen Oertell, Gokul Swamy, Kiante Brantley, and Wen Sun.
     venue: Preprint
     
   - title: "Efficient Controllable Diffusion via Optimal Classifier Guidance"
     date: 2025-05-27
     link: "https://arxiv.org/pdf/2505.21666"
     authors: >
-      Owen Oertell*, Shikun Sun*, Yiding Chen*, Jin Peng Zhou, Zhiyong Wang, Wen Sun
+      Owen Oertell*, Shikun Sun*, Yiding Chen*, Jin Peng Zhou, Zhiyong Wang, and Wen Sun
     venue: Preprint
   
   - title: "Improved Bounds for Delay Dependent Bandits"
     date: 2025-05-27
     authors: >
-      Owen Oertell, Ahan Mishra, Parker Rho, Robert Kleinberg.
+      Owen Oertell, Ahan Mishra, Parker Rho, and Robert Kleinberg.
     venue: Preprint
   
 
