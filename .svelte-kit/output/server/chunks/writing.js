@@ -5,7 +5,7 @@ function formatTime(format, date) {
 }
 var data = [{
   title: "Two Sides of ML Research",
-  date: new Date(17505504e5),
+  date: new Date(17506368e5),
   slug: "two-sides-of-ml-research",
   tags: "research, life"
 }];
