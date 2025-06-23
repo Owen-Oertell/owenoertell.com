@@ -1,12 +1,7 @@
 import { c as create_ssr_component, d as each, f as add_attribute, e as escape, v as validate_component } from "../../../chunks/index2.js";
 import { S as Seo } from "../../../chunks/Seo.js";
-import strftime from "strftime";
+import { f as formatTime, d as data } from "../../../chunks/writing.js";
 import { A as Arrow_up_right } from "../../../chunks/arrow-up-right.js";
-import { d as data } from "../../../chunks/writing.js";
-const utc = strftime.utc();
-function formatTime(format, date) {
-  return utc(format, new Date(date));
-}
 const WritingList = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { data: data2 } = $$props;
   if ($$props.data === void 0 && $$bindings.data && data2 !== void 0)

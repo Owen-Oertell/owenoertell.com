@@ -1,9 +1,15 @@
+import strftime from "strftime";
+const utc = strftime.utc();
+function formatTime(format, date) {
+  return utc(format, new Date(date));
+}
 var data = [{
-  title: "What makes exciting research?",
-  date: new Date(17326656e5),
-  slug: "what-makes-exciting-research",
+  title: "Two Sides of ML Research",
+  date: new Date(17505504e5),
+  slug: "two-sides-of-ml-research",
   tags: "research, life"
 }];
 export {
-  data as d
+  data as d,
+  formatTime as f
 };

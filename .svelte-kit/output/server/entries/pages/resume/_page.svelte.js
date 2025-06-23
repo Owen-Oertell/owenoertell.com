@@ -50,10 +50,35 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     <p class="${"byline svelte-jhqa1u"}">B.S. in Computer Science; Minor in Mathematics</p></div>
 
   <h4 class="${"font-medium mt-4 mb-1"}">Teaching:</h4>
-  <ul class="${"svelte-jhqa1u"}"><li class="${"svelte-jhqa1u"}">TA for CS 4789 (Introduction to Reinforcement Learning). Sp24</li>
-    <li class="${"svelte-jhqa1u"}">TA for CS 4820 (Introduction to Analysis of Algorithms). Fa23, Sp23</li></ul></section>
+  <ul class="${"svelte-jhqa1u"}"><li class="${"svelte-jhqa1u"}">TA for CS 4789 (Introduction to Reinforcement Learning). Sp24, Sp25 (Head TA)</li>
+    <li class="${"svelte-jhqa1u"}">TA for CS 4820 (Introduction to Analysis of Algorithms). Fa23, Sp23</li></ul>
+
+  <h4 class="${"font-medium mt-4 mb-1"}">Community Service:</h4>
+  <ul class="${"svelte-jhqa1u"}"><li class="${"svelte-jhqa1u"}">ICLR 2025 Reviewer (Notable Reviewer)</li>
+    <li class="${"svelte-jhqa1u"}">NeurIPS 2025 Reviewer</li>
+    <li class="${"svelte-jhqa1u"}">RLC 2025 Reviewer</li>
+    <li class="${"svelte-jhqa1u"}">COLM 2025 Reviewer</li>
+    <li class="${"svelte-jhqa1u"}">ACL ARR 2025 Reviewer</li></ul></section>
 
 <section class="${"layout-md py-5"}"><h2 class="${"heading2"}">Professional Experience</h2>
+
+  ${validate_component(Workplace, "Workplace").$$render(
+    $$result,
+    {
+      title: "Research Intern",
+      company: "NVIDIA",
+      url: "https://nvidia.com",
+      dates: "June 2025 – August 2025",
+      location: "Santa Clara, CA"
+    },
+    {},
+    {
+      default: () => {
+        return `<li>RL + Compilers
+    </li>`;
+      }
+    }
+  )}
 
   ${validate_component(Workplace, "Workplace").$$render(
     $$result,

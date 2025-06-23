@@ -9,7 +9,7 @@ const config = {
     adapter: adapter(),
     prerender: {
       crawl: true,
-      entries: ["*", "/writing/what-makes-exciting-research"],
+      entries: ["*", "/writing/two-sides-of-ml-research"],
     }
   },
 };

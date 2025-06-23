@@ -24,6 +24,35 @@ const PubList = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   })}</div>`;
 });
 var data = {
+  papers2025: [
+    {
+      title: "Scaling Offline RL via Efficient and Expressive Shortcut Models",
+      date: new Date(17483904e5),
+      link: "https://arxiv.org/pdf/2505.22866",
+      authors: "Nicolas Espinosa-Dice, Yiyi Zhang, Yiding Chen, Bradley Guo, Owen Oertell, Gokul Swamy, Kiante Brantley, and Wen Sun.\n",
+      venue: "Preprint"
+    },
+    {
+      title: "Efficient Controllable Diffusion via Optimal Classifier Guidance",
+      date: new Date(1748304e6),
+      link: "https://arxiv.org/pdf/2505.21666",
+      authors: "Owen Oertell*, Shikun Sun*, Yiding Chen*, Jin Peng Zhou, Zhiyong Wang, and Wen Sun\n",
+      venue: "Preprint"
+    },
+    {
+      title: "Improved Bounds for Delay Dependent Bandits",
+      date: new Date(1748304e6),
+      authors: "Owen Oertell, Ahan Mishra, Parker Rho, and Robert Kleinberg.\n",
+      venue: "Preprint"
+    },
+    {
+      title: "Convergence Of Consistency Model With Multistep Sampling Under General Data Assumptions",
+      date: new Date(17464896e5),
+      link: "https://arxiv.org/pdf/2505.03194",
+      authors: "Yiding Chen, Yiyi Zhang, Owen Oertell, Wen Sun.\n",
+      venue: "ICML 2025"
+    }
+  ],
   papers2024: [
     {
       title: "TurboHopp: Accelerated Molecule Scaffold Hopping with Consistency Models",
@@ -57,7 +86,7 @@ var data = {
       title: "Dataset Reset Policy Optimization for RLHF",
       date: new Date(17067456e5),
       link: "https://arxiv.org/pdf/2404.08495",
-      authors: "Jonathan Daniel Chang, Wenhao Zhan, Owen Oertell, Kianté Brantley, Dipendra Misra, Jason D. Lee, and Wen Sun\n",
+      authors: "Jonathan Daniel Chang*, Wenhao Zhan*, Owen Oertell, Kianté Brantley, Dipendra Misra, Jason D. Lee, and Wen Sun\n",
       venue: "Preprint"
     }
   ],
@@ -90,9 +119,13 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   )}
 
 <section class="${"layout-md"}">To view the most up-to-date list of my publications, please visit my <a href="${"https://scholar.google.com/citations?user=y0B6gawAAAAJ&hl=en"}" class="${"link"}">Google Scholar</a> page.
-</section>
+  <br>
+  <i>* denotes equal contribution</i></section>
 
-<section class="${"layout-md py-12"}"><h2 class="${"heading2"}">2024</h2>
+<section class="${"layout-md py-12"}"><h2 class="${"heading2"}">2025</h2>
+  ${validate_component(PubList, "PubList").$$render($$result, { data: data.papers2025 }, {}, {})}
+
+  <h2 class="${"heading2 mt-10"}">2024</h2>
   ${validate_component(PubList, "PubList").$$render($$result, { data: data.papers2024 }, {}, {})}
   
   <h2 class="${"heading2 mt-10"}">2023</h2>

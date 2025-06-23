@@ -2,13 +2,13 @@ import { c as create_ssr_component, b as subscribe, v as validate_component, e a
 import { p as page } from "../../../../chunks/stores.js";
 import { S as Seo } from "../../../../chunks/Seo.js";
 import { e as error } from "../../../../chunks/index.js";
-import { d as data } from "../../../../chunks/writing.js";
+import { d as data, f as formatTime } from "../../../../chunks/writing.js";
 import MarkdownIt from "markdown-it";
 import markdownItKatex from "markdown-it-katex";
 const katex_min = "";
 const _page_svelte_svelte_type_style_lang = "";
 const css = {
-  code: ".content h1{font-size:2em;margin-top:0.67em;margin-bottom:0.67em;font-weight:bold}.content h2{font-size:1.5em;margin-top:0.83em;margin-bottom:0.83em;font-weight:bold}.content h3{font-size:1.17em;margin-top:1em;margin-bottom:1em;font-weight:bold}.content p{line-height:1.6;margin-bottom:1em}",
+  code: ".content h1{font-size:2em;margin-top:0.67em;margin-bottom:0.67em;font-weight:bold}.content h2{font-size:1.5em;margin-top:0.83em;margin-bottom:0.83em;font-weight:bold}.content h3{font-size:1.17em;margin-top:1em;margin-bottom:1em;font-weight:bold}.content p{line-height:1.6;margin-bottom:1em}.content img{max-width:100%;height:auto;margin:0 auto;display:block}.content img + em{display:block;text-align:center}.content blockquote{border-left:4px solid #ddd;padding:0 15px;margin:0}",
   map: null
 };
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -39,11 +39,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <section>
     <div class="${"layout-md flex justify-between text-neutral-500"}"><div>${escape(content.tags)}</div>
-        <div class="${"italic"}">${escape(new Date(content.date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric"
-  }))}</div></div>
+        <div class="${"italic"}">${escape(formatTime("%B %-d, %Y", content.date))}</div></div>
     
     <h1 class="${"layout-md text-2xl py-5 font-bold text-black mb-6"}">${escape(content.title)}</h1>
 
