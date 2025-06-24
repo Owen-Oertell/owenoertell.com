@@ -24,7 +24,7 @@
     >.
     </p>
     <p>
-      Last summer, I interned at <a class="link" href="https://www.drw.com/">DRW</a>.
+      Currently, I am a research intern at <a class="link" href="https://www.nvidia.com/">NVIDIA</a>. Last summer, I interned at <a class="link" href="https://www.drw.com/">DRW</a>.
     </p>
     <p>
       A picture of me can be found <a class="link" href="assets/images/owen_oertell.png">here</a>.

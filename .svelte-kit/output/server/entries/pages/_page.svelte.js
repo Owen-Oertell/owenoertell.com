@@ -16,7 +16,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     </p>
     <p>I am fortunate to work with professor <a class="${"link"}" href="${"https://wensun.github.io"}">Wen Sun</a> and professor <a class="${"link"}" href="${"https://www.cs.cornell.edu/~rdk/"}">Robert Kleinberg</a>.
     </p>
-    <p>Last summer, I interned at <a class="${"link"}" href="${"https://www.drw.com/"}">DRW</a>.
+    <p>Currently, I am a research intern at <a class="${"link"}" href="${"https://www.nvidia.com/"}">NVIDIA</a>. Last summer, I interned at <a class="${"link"}" href="${"https://www.drw.com/"}">DRW</a>.
     </p>
     <p>A picture of me can be found <a class="${"link"}" href="${"assets/images/owen_oertell.png"}">here</a>.
     </p>
