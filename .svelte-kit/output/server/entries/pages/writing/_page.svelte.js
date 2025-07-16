@@ -7,7 +7,7 @@ const WritingList = create_ssr_component(($$result, $$props, $$bindings, slots) 
   if ($$props.data === void 0 && $$bindings.data && data2 !== void 0)
     $$bindings.data(data2);
   return `<div class="${"grid gap-y-4"}">${each(data2, (item) => {
-    return `<a${add_attribute("href", "/writing/" + item.slug, 0)} class="${"block -mx-3 px-3 hover:bg-neutral-100 transition-colors"}" rel="${"noreferrer"}"><div class="${"flex flex-col sm:flex-row sm:items-end mb-1.5"}"><div class="${"text-black"}">${escape(item.title)}
+    return `<a${add_attribute("href", item.link || "/writing/" + item.slug, 0)} class="${"block -mx-3 px-3 hover:bg-neutral-100 transition-colors"}" rel="${"noreferrer"}"><div class="${"flex flex-col sm:flex-row sm:items-end mb-1.5"}"><div class="${"text-black"}">${escape(item.title)}
           ${validate_component(Arrow_up_right, "ArrowUpRight").$$render(
       $$result,
       {
