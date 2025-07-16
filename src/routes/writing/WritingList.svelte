@@ -6,6 +6,7 @@
     date: Date;
     slug: string;
     tags: string;
+    link?: string;
   };
 
   export let data: Writing[];
@@ -14,7 +15,7 @@
 <div class="grid gap-y-4">
   {#each data as item}
     <a
-      href={"/writing/" + item.slug}
+      href={item.link || "/writing/" + item.slug}
       class="block -mx-3 px-3  hover:bg-neutral-100 transition-colors"
       rel="noreferrer"
     >
