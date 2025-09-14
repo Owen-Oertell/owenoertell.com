@@ -45,6 +45,18 @@
   <h2 class="heading2">Professional Experience</h2>
 
   <Workplace
+    title="Research Scientist Intern"
+    company="Databricks"
+    url="https://databricks.com"
+    dates="August 2025 – Present"
+    location="New York, NY"
+  >
+    <li>
+      Deep Research Agents
+    </li>
+  </Workplace>
+
+  <Workplace
     title="Research Intern"
     company="NVIDIA"
     url="https://nvidia.com"

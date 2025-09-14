@@ -65,6 +65,24 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   ${validate_component(Workplace, "Workplace").$$render(
     $$result,
     {
+      title: "Research Scientist Intern",
+      company: "Databricks",
+      url: "https://databricks.com",
+      dates: "August 2025 – Present",
+      location: "New York, NY"
+    },
+    {},
+    {
+      default: () => {
+        return `<li>Deep Research Agents
+    </li>`;
+      }
+    }
+  )}
+
+  ${validate_component(Workplace, "Workplace").$$render(
+    $$result,
+    {
       title: "Research Intern",
       company: "NVIDIA",
       url: "https://nvidia.com",
