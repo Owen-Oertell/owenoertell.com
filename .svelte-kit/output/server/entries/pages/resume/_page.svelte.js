@@ -54,7 +54,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     <li class="${"svelte-jhqa1u"}">TA for CS 4820 (Introduction to Analysis of Algorithms). Fa23, Sp23</li></ul>
 
   <h4 class="${"font-medium mt-4 mb-1"}">Community Service:</h4>
-  <ul class="${"svelte-jhqa1u"}"><li class="${"svelte-jhqa1u"}">ICLR 2025 Reviewer (Notable Reviewer)</li>
+  <ul class="${"svelte-jhqa1u"}"><li class="${"svelte-jhqa1u"}">ICLR 2025, 2026 Reviewer (2025 Notable Reviewer)</li>
     <li class="${"svelte-jhqa1u"}">NeurIPS 2025 Reviewer</li>
     <li class="${"svelte-jhqa1u"}">RLC 2025 Reviewer</li>
     <li class="${"svelte-jhqa1u"}">COLM 2025 Reviewer</li>

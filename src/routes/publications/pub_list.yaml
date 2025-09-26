@@ -1,11 +1,4 @@
 papers2025:
-  - title: "Scaling Offline RL via Efficient and Expressive Shortcut Models"
-    date: 2025-05-28
-    link: "https://arxiv.org/pdf/2505.22866"
-    authors: >
-      Nicolas Espinosa-Dice, Yiyi Zhang, Yiding Chen, Bradley Guo, Owen Oertell, Gokul Swamy, Kiante Brantley, and Wen Sun.
-    venue: Preprint
-    
   - title: "Efficient Controllable Diffusion via Optimal Classifier Guidance"
     date: 2025-05-27
     link: "https://arxiv.org/pdf/2505.21666"
@@ -18,8 +11,14 @@ papers2025:
     authors: >
       Owen Oertell, Ahan Mishra, Parker Rho, and Robert Kleinberg.
     venue: Preprint
-  
 
+  - title: "Scaling Offline RL via Efficient and Expressive Shortcut Models"
+    date: 2025-05-28
+    link: "https://arxiv.org/pdf/2505.22866"
+    authors: >
+      Nicolas Espinosa-Dice, Yiyi Zhang, Yiding Chen, Bradley Guo, Owen Oertell, Gokul Swamy, Kiante Brantley, and Wen Sun.
+    venue: NeurIPS 2025
+    
   - title: "Convergence Of Consistency Model With Multistep Sampling Under General Data Assumptions"
     date: 2025-05-06
     link: "https://arxiv.org/pdf/2505.03194"

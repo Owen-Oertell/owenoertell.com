@@ -33,7 +33,7 @@
 
   <h4 class="font-medium mt-4 mb-1">Community Service:</h4>
   <ul>
-    <li>ICLR 2025 Reviewer (Notable Reviewer)</li>
+    <li>ICLR 2025, 2026 Reviewer (2025 Notable Reviewer)</li>
     <li>NeurIPS 2025 Reviewer</li>
     <li>RLC 2025 Reviewer</li>
     <li>COLM 2025 Reviewer</li>
