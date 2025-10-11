@@ -6,10 +6,12 @@ const config = {
   preprocess: [preprocess({ postcss: true })],
 
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      strict: false
+    }),
     prerender: {
       crawl: true,
-      entries: ["*", "/writing/two-sides-of-ml-research"],
+      entries: ["*"],
     }
   },
 };

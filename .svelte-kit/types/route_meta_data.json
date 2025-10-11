@@ -13,6 +13,7 @@
 		"src/routes/+layout.ts"
 	],
 	"/writing/[slug]": [
+		"src/routes/writing/[slug]/+page.ts",
 		"src/routes/+layout.ts"
 	]
 }
