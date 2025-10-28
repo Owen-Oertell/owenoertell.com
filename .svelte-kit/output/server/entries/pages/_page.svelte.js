@@ -10,25 +10,18 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {},
     {}
   )}
-<div class="${"layout-md text-lg space-y-14 my-10"}"><div class="${"space-y-5"}"><p>I study at Cornell University, where I am pursuing a B.S. in Computer
-      Science.
+<div class="${"layout-md text-lg space-y-14 my-10"}"><div class="${"space-y-5"}"><p>I study computer science at Cornell University. My research
+      interests are in decision-making (reinforcement learning, bandits) and
+      generative modeling (diffusion models, LLMs). I am fortunate to work with
+      professors <a class="${"link"}" href="${"https://wensun.github.io"}">Wen Sun</a>,
+      <a class="${"link"}" href="${"https://www.cs.cornell.edu/~rdk/"}">Robert Kleinberg</a>, and
+      <a class="${"link"}" href="${"https://xkianteb.github.io"}">Kianté Brantley</a>.
     </p>
-    <p>I am interested in reasoning, decision making (reinforcement learning,
-      bandits), and generative modeling (diffusion, LLMs).
+    <p>Currently, I am a research scientist intern at <a class="${"link"}" href="${"https://www.databricks.com/"}">Databricks</a>. Previously, I
+      was a research intern at <a class="${"link"}" href="${"https://www.nvidia.com/"}">NVIDIA</a> and a software engineering intern at <a class="${"link"}" href="${"https://www.drw.com/"}">DRW</a>.
     </p>
-    <p>I am fortunate to work with professor <a class="${"link"}" href="${"https://wensun.github.io"}">Wen Sun</a>
-      and professor
-      <a class="${"link"}" href="${"https://www.cs.cornell.edu/~rdk/"}">Robert Kleinberg</a>.
-    </p>
-    <p>Currently, I am a research scientist intern at <a class="${"link"}" href="${"https://www.databricks.com/"}">Databricks</a>.
-    </p>
-    <p>Previously, I was a research intern at <a class="${"link"}" href="${"https://www.nvidia.com/"}">NVIDIA</a>
-      and a software engineering intern at
-      <a class="${"link"}" href="${"https://www.drw.com/"}">DRW</a>.
-    </p>
-    <p>A picture of me can be found <a class="${"link"}" href="${"assets/images/owen_oertell.png"}">here</a>.
-    </p>
-    <p>Other interests: math, art, music, <a class="${"link"}" href="${"https://www.goodreads.com/user/show/117571286-owen"}">literature</a>, and drone photography.
+    <p>Outside of research, I enjoy mathematics, <a class="${"link"}" href="${"https://artsandculture.google.com/entity/edward-hopper/m0hc3t"}">art</a>, music, literature, and
+      drone photography. A picture of me can be found <a class="${"link"}" href="${"assets/images/owen_oertell.png"}">here</a>.
     </p></div></div>
 
 `;
