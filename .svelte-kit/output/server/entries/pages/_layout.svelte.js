@@ -50,13 +50,13 @@ const css = {
 };
 const Footer = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
-  return `<footer class="${"layout-md mt-20 text-lg flex flex-col"}"><div class="${"row svelte-x197ko"}">email
+  return `<footer class="${"layout-md mt-20 text-lg flex flex-col"}"><div class="${"row svelte-x197ko"}"><span class="${"svelte-x197ko"}">email</span>
     <hr class="${"svelte-x197ko"}">
     <a class="${"link svelte-x197ko"}" href="${"mailto:ojo2@cornell.edu"}">ojo2@cornell.edu</a></div>
-  <div class="${"row svelte-x197ko"}">github
+  <div class="${"row svelte-x197ko"}"><span class="${"svelte-x197ko"}">github</span>
     <hr class="${"svelte-x197ko"}">
     <a class="${"link svelte-x197ko"}" href="${"https://github.com/owen-oertell"}">@owen-oertell</a></div>
-  <div class="${"row svelte-x197ko"}">scholar
+  <div class="${"row svelte-x197ko"}"><span class="${"svelte-x197ko"}">scholar</span>
     <hr class="${"svelte-x197ko"}">
     <a class="${"link svelte-x197ko"}" href="${"https://scholar.google.com/citations?user=y0B6gawAAAAJ&hl=en"}">owen-oertell</a></div></footer>`;
 });

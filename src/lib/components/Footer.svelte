@@ -1,16 +1,16 @@
 <footer class="layout-md mt-20 text-lg flex flex-col">
   <div class="row">
-    email
+    <span>email</span>
     <hr />
     <a class="link" href="mailto:ojo2@cornell.edu">ojo2@cornell.edu</a>
   </div>
   <div class="row">
-    github
+    <span>github</span>
     <hr />
     <a class="link" href="https://github.com/owen-oertell">@owen-oertell</a>
   </div>
   <div class="row">
-    scholar
+    <span>scholar</span>
     <hr />
     <a class="link" href="https://scholar.google.com/citations?user=y0B6gawAAAAJ&hl=en">owen-oertell</a>
 </footer>
