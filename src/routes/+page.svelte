@@ -16,7 +16,7 @@
       <a class="link" href="https://xkianteb.github.io">Kianté Brantley</a>.
     </p>
     <p>
-      Currently, I am a research scientist intern at <a class="link" href="https://www.databricks.com/">Databricks</a>. Previously, I
+      Currently, I am a research scientist intern at <a class="link" href="https://www.databricks.com/">Databricks</a> working on deep research. Previously, I
       was a research intern at <a class="link" href="https://www.nvidia.com/">NVIDIA</a> and a software engineering intern at <a class="link" href="https://www.drw.com/">DRW</a>.
     </p>
     <p>
