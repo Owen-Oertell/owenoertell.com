@@ -49,8 +49,8 @@
 {:else}
   {#key data.pathname}
     <main
-      in:fly={{ x: -10, duration: 350, delay: 350 }}
-      out:fly={{ y: 5, duration: 350 }}
+      in:fly={{ x: -10, duration: 150, delay: 150 }}
+      out:fly={{ y: 5, duration: 150 }}
     >
       <slot />
     </main>
