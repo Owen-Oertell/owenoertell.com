@@ -28,16 +28,3 @@
     </p>
   </div>
 </div>
-
-<!--<style lang="postcss">
-  //.g {
-  //  @apply text-neutral-400;
-  //}
-
-  /* Correction for vertical navigation links on mobile. */
-  //@media (max-width: 420px) {
-  //  #owen-is {
-  //    @apply -mt-10;
-  //  }
-  //}
-</style>-->

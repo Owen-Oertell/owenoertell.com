@@ -22,9 +22,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     </p>
     <p>Outside of research, I enjoy mathematics, <a class="${"link"}" href="${"https://artsandculture.google.com/entity/edward-hopper/m0hc3t"}">art</a>, music, literature, and
       drone photography. A picture of me can be found <a class="${"link"}" href="${"assets/images/owen_oertell.png"}">here</a>.
-    </p></div></div>
-
-`;
+    </p></div></div>`;
 });
 export {
   Page as default
