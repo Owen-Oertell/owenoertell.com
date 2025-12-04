@@ -19,6 +19,10 @@
     @apply max-w-screen-md mx-auto px-4 sm:px-6;
   }
 
+  .layout-lg {
+    @apply max-w-screen-lg mx-auto px-4 sm:px-6;
+  }
+
   .heading2 {
     @apply text-black text-xl font-semibold mb-4;
   }

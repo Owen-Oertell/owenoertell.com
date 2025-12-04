@@ -1,113 +1,85 @@
-import { c as create_ssr_component, d as each, f as add_attribute, e as escape, v as validate_component } from "../../../chunks/index2.js";
+import { c as create_ssr_component, v as validate_component, f as add_attribute, d as each, e as escape } from "../../../chunks/index2.js";
 import { S as Seo } from "../../../chunks/Seo.js";
-import { A as Arrow_up_right } from "../../../chunks/arrow-up-right.js";
+import { I as Icon } from "../../../chunks/Icon.js";
+import { d as data } from "../../../chunks/pub_list.js";
+const Star = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  const iconNode = [
+    [
+      "polygon",
+      {
+        "points": "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+      }
+    ]
+  ];
+  return `${validate_component(Icon, "Icon").$$render($$result, Object.assign({ name: "star" }, $$props, { iconNode }), {}, {
+    default: () => {
+      return `${slots.default ? slots.default({}) : ``}`;
+    }
+  })}`;
+});
+const PubList_svelte_svelte_type_style_lang = "";
+const css = {
+  code: ".pub-table.svelte-prrrs8{display:flex;flex-direction:column;font-size:0.875rem;position:relative}.pub-header.svelte-prrrs8{display:grid;grid-template-columns:75px 12px 1fr auto;gap:8px;padding:6px 8px;color:rgb(115, 115, 115);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em}.header-spacer.svelte-prrrs8{width:12px}.highlight-bar.svelte-prrrs8{position:absolute;left:0;right:0;background-color:rgb(245, 245, 245);border-radius:4px;pointer-events:none;opacity:0;transition:top 0.06s ease-out, height 0.06s ease-out, opacity 0.1s ease-out;z-index:0}.highlight-bar.visible.svelte-prrrs8{opacity:1}.dark .highlight-bar.svelte-prrrs8{background-color:rgb(38, 38, 38)}.pub-row.svelte-prrrs8{display:grid;grid-template-columns:75px 12px 1fr auto;gap:8px;align-items:center;padding:6px 8px;text-decoration:none;color:inherit;position:relative;z-index:1}.pub-date.svelte-prrrs8{color:rgb(115, 115, 115);font-size:0.8rem;white-space:nowrap}.pub-indicator.svelte-prrrs8{display:flex;align-items:center;justify-content:center;width:12px}.first-author-dot.svelte-prrrs8{width:6px;height:6px;background-color:rgb(64, 64, 64);border-radius:50%}.dark .first-author-dot.svelte-prrrs8{background-color:rgb(180, 180, 180)}.pub-title-area.svelte-prrrs8{display:flex;align-items:center;min-width:0;overflow:hidden}.pub-title.svelte-prrrs8{color:rgb(23, 23, 23);font-weight:500;white-space:nowrap;flex-shrink:0}.dark .pub-title.svelte-prrrs8{color:rgb(245, 245, 245)}.pub-leader.svelte-prrrs8{flex:1;border-bottom:1px dotted rgb(200, 200, 200);margin:0 8px;min-width:20px}.dark .pub-leader.svelte-prrrs8{border-bottom-color:rgb(64, 64, 64)}.pub-subtitle.svelte-prrrs8{color:rgb(115, 115, 115);white-space:nowrap;flex-shrink:0;font-size:0.8rem}.pub-venue.svelte-prrrs8{display:flex;align-items:center;white-space:nowrap}.venue-tag.svelte-prrrs8{background-color:rgb(243, 244, 246);color:rgb(75, 85, 99);padding:2px 8px;border-radius:4px;font-size:0.75rem}.dark .venue-tag.svelte-prrrs8{background-color:rgb(55, 55, 55);color:rgb(180, 180, 180)}@media(max-width: 768px){.pub-header.svelte-prrrs8{display:none}.highlight-bar.svelte-prrrs8{display:none}.pub-row.svelte-prrrs8{grid-template-columns:1fr;gap:2px;padding:8px;border-radius:4px}.pub-row.svelte-prrrs8:active{background-color:rgb(245, 245, 245)}.dark .pub-row.svelte-prrrs8:active{background-color:rgb(38, 38, 38)}.pub-date.svelte-prrrs8{order:1}.pub-indicator.svelte-prrrs8{display:none}.pub-title-area.svelte-prrrs8{order:2;flex-direction:column;align-items:flex-start}.pub-leader.svelte-prrrs8{display:none}.pub-subtitle.svelte-prrrs8{margin-top:2px}.pub-venue.svelte-prrrs8{order:3;text-align:left}}",
+  map: null
+};
+function formatDate(date) {
+  const d = new Date(date);
+  const months = [
+    "Jan.",
+    "Feb.",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "Aug.",
+    "Sept.",
+    "Oct.",
+    "Nov.",
+    "Dec."
+  ];
+  return `${months[d.getMonth()]} ${d.getFullYear()}`;
+}
 const PubList = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { data: data2 } = $$props;
+  let tableEl;
+  let highlightStyle = "";
   if ($$props.data === void 0 && $$bindings.data && data2 !== void 0)
     $$bindings.data(data2);
-  return `<div class="${"grid gap-y-4"}">${each(data2, (item) => {
-    return `<a${add_attribute("href", item.link, 0)} class="${"block -mx-3 px-3 hover:bg-neutral-100 transition-colors"}" target="${"_blank"}" rel="${"noreferrer"}"><div class="${"flex flex-col sm:flex-row sm:items-end mb-1.5"}"><div class="${"text-black"}">${escape(item.title)}
-          ${validate_component(Arrow_up_right, "ArrowUpRight").$$render(
+  $$result.css.add(css);
+  return `<div class="${"pub-table svelte-prrrs8"}" role="${"list"}"${add_attribute("this", tableEl, 0)}><div class="${"pub-header svelte-prrrs8"}"><div class="${"header-date"}">Date</div>
+    <div class="${"header-spacer svelte-prrrs8"}"></div>
+    <div class="${"header-title"}">Title</div>
+    <div class="${"header-venue"}">Venue</div></div>
+  <div class="${["highlight-bar svelte-prrrs8", ""].join(" ").trim()}"${add_attribute("style", highlightStyle, 0)}></div>
+  ${each(data2, (item) => {
+    return `<a${add_attribute("href", `/publications/${item.slug}`, 0)} class="${"pub-row svelte-prrrs8"}"><div class="${"pub-date svelte-prrrs8"}">${escape(formatDate(item.date))}</div>
+      <div class="${"pub-indicator svelte-prrrs8"}">${item.firstAuthor ? `<span class="${"first-author-dot svelte-prrrs8"}"></span>` : ``}</div>
+      <div class="${"pub-title-area svelte-prrrs8"}"><span class="${"pub-title svelte-prrrs8"}">${escape(item.title)}</span>
+        <span class="${"pub-leader svelte-prrrs8"}"></span>
+        ${item.subtitle ? `<span class="${"pub-subtitle svelte-prrrs8"}">${escape(item.subtitle)}</span>` : ``}</div>
+      <div class="${"pub-venue svelte-prrrs8"}">${item.highlight ? `${validate_component(Star, "Star").$$render(
       $$result,
       {
-        size: 18,
-        class: "inline text-neutral-400"
+        size: 12,
+        class: "inline-block text-yellow-500 mr-1",
+        fill: "currentColor"
       },
       {},
       {}
-    )}</div>
-        </div>
-      <div><span class="${"leading-snug italic"}">${escape(item.authors)}
-      </span></div>
-      <div><span class="${"text-neutral-500"}">${escape(item.venue)}</span></div>
+    )}` : ``}
+        <span class="${"venue-tag svelte-prrrs8"}">${escape(item.venue)}</span></div>
     </a>`;
-  })}</div>`;
+  })}
+</div>`;
 });
-var data = {
-  papers2025: [
-    {
-      title: "Efficient Controllable Diffusion via Optimal Classifier Guidance",
-      date: new Date(1748304e6),
-      link: "https://arxiv.org/pdf/2505.21666",
-      authors: "Owen Oertell*, Shikun Sun*, Yiding Chen*, Jin Peng Zhou, Zhiyong Wang, and Wen Sun\n",
-      venue: "Preprint"
-    },
-    {
-      title: "Improved Bounds for Delay Dependent Bandits",
-      date: new Date(1748304e6),
-      authors: "Owen Oertell, Ahan Mishra, Parker Rho, and Robert Kleinberg.\n",
-      venue: "Preprint"
-    },
-    {
-      title: "Scaling Offline RL via Efficient and Expressive Shortcut Models",
-      date: new Date(17483904e5),
-      link: "https://arxiv.org/pdf/2505.22866",
-      authors: "Nicolas Espinosa-Dice, Yiyi Zhang, Yiding Chen, Bradley Guo, Owen Oertell, Gokul Swamy, Kiante Brantley, and Wen Sun.\n",
-      venue: "NeurIPS 2025"
-    },
-    {
-      title: "Convergence Of Consistency Model With Multistep Sampling Under General Data Assumptions",
-      date: new Date(17464896e5),
-      link: "https://arxiv.org/pdf/2505.03194",
-      authors: "Yiding Chen, Yiyi Zhang, Owen Oertell, Wen Sun.\n",
-      venue: "ICML 2025"
-    }
-  ],
-  papers2024: [
-    {
-      title: "TurboHopp: Accelerated Molecule Scaffold Hopping with Consistency Models",
-      date: new Date(17300736e5),
-      link: "https://arxiv.org/pdf/2410.20660",
-      authors: "Kiwoong Yoo, Owen Oertell, Junhyun Lee, Sanghoon Lee, Jaewoo Kang.\n",
-      venue: "NeurIPS 2024"
-    },
-    {
-      title: "REBEL: Reinforcement Learning via Regressing Relative Rewards",
-      date: new Date(17140032e5),
-      link: "https://arxiv.org/pdf/2404.16767",
-      authors: "Zhaolin Gao, Jonathan D. Chang, Wenhao Zhan, Owen Oertell, Gokul Swamy, Kianté Brantley, Thorsten Joachims, J. Andrew Bagnell, Jason D. Lee, Wen Sun.\n",
-      venue: "NeurIPS 2024"
-    },
-    {
-      title: "RL for Consistency Models: Reward Guided Text-to-Image Generation with Fast Inference",
-      date: new Date(1709856e6),
-      link: "https://arxiv.org/pdf/2404.03673",
-      authors: "Owen Oertell, Jonathan Daniel Chang, Yiyi Zhang, Kianté Brantley, and Wen Sun.\n",
-      venue: "RLC 2024"
-    },
-    {
-      title: "More Benefits of Being Distributional: Second-Order Bounds for Reinforcement Learning",
-      date: new Date(17067456e5),
-      authors: "Kaiwen Wang, Owen Oertell, Alekh Agarwal, Nathan Kallus, and Wen Sun.\n",
-      venue: "ICML 2024",
-      link: "https://arxiv.org/pdf/2402.07198"
-    },
-    {
-      title: "Dataset Reset Policy Optimization for RLHF",
-      date: new Date(17067456e5),
-      link: "https://arxiv.org/pdf/2404.08495",
-      authors: "Jonathan Daniel Chang*, Wenhao Zhan*, Owen Oertell, Kianté Brantley, Dipendra Misra, Jason D. Lee, and Wen Sun\n",
-      venue: "Preprint"
-    }
-  ],
-  papers2023: [
-    {
-      title: "A Kernel Method Approach to Orbital Debris Blast Point Determination",
-      date: new Date(17022528e5),
-      link: "https://arc.aiaa.org/doi/10.2514/6.2024-1864",
-      authors: "Jackson Kulik, Owen Oertell, and Dmitry Savransky.\n",
-      venue: "AIAA 2024."
-    },
-    {
-      title: "Overdetermined Eigenvector Approach to Passive Angles-Only Relative Orbit Determination",
-      date: new Date(16847136e5),
-      link: "https://arc.aiaa.org/doi/10.2514/1.G007744",
-      authors: "Jackson Kulik, Owen Oertell, and Dmitry Savransky.\n",
-      venue: "Journal of Guidance, Control, and Dynamics 2023."
-    }
-  ]
-};
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let allPapers;
+  allPapers = [
+    ...data.papers2025,
+    ...data.papers2024,
+    ...data.papers2023
+  ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   return `${validate_component(Seo, "Seo").$$render(
     $$result,
     {
@@ -120,16 +92,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <section class="${"layout-md"}">To view the most up-to-date list of my publications, please visit my <a href="${"https://scholar.google.com/citations?user=y0B6gawAAAAJ&hl=en"}" class="${"link"}">Google Scholar</a> page.
   <br>
-  <i>* denotes equal contribution</i></section>
+  <i><span class="${"inline-block w-1.5 h-1.5 bg-neutral-700 dark:bg-neutral-300 rounded-full align-middle mr-1"}"></span> denotes first/co-first author</i></section>
 
-<section class="${"layout-md py-12"}"><h2 class="${"heading2"}">2025</h2>
-  ${validate_component(PubList, "PubList").$$render($$result, { data: data.papers2025 }, {}, {})}
-
-  <h2 class="${"heading2 mt-10"}">2024</h2>
-  ${validate_component(PubList, "PubList").$$render($$result, { data: data.papers2024 }, {}, {})}
-  
-  <h2 class="${"heading2 mt-10"}">2023</h2>
-  ${validate_component(PubList, "PubList").$$render($$result, { data: data.papers2023 }, {}, {})}</section>`;
+<section class="${"layout-lg py-12"}">${validate_component(PubList, "PubList").$$render($$result, { data: allPapers }, {}, {})}</section>`;
 });
 export {
   Page as default

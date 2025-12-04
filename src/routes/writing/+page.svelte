@@ -10,10 +10,6 @@
 />
 
 <section class="layout-md">
-  Some of my writings about machine learning and research.
-</section>
-
-<section class="layout-md py-12">
-  <WritingList data={writing} />
+  Some of my writings about machine learning and research. Currently, it's empty. But check out my <a href="/publications" class="link">publications</a> page for more information.
 </section>
 

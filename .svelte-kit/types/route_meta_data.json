@@ -6,6 +6,10 @@
 	"/publications": [
 		"src/routes/+layout.ts"
 	],
+	"/publications/[slug]": [
+		"src/routes/publications/[slug]/+page.ts",
+		"src/routes/+layout.ts"
+	],
 	"/resume": [
 		"src/routes/+layout.ts"
 	],
