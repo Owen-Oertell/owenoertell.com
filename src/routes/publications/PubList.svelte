@@ -73,10 +73,15 @@
       href={`/publications/${item.slug}`}
       class="pub-row"
     >
-      <div class="pub-date">{formatDate(item.date)}</div>
+      <div class="pub-date-wrapper">
+        <span class="pub-date">{formatDate(item.date)}</span>
+        {#if item.firstAuthor}
+          <span class="first-author-dot mobile-dot"></span>
+        {/if}
+      </div>
       <div class="pub-indicator">
         {#if item.firstAuthor}
-          <span class="first-author-dot"></span>
+          <span class="first-author-dot desktop-dot"></span>
         {/if}
       </div>
       <div class="pub-title-area">
@@ -151,6 +156,12 @@
     z-index: 1;
   }
 
+  .pub-date-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
   .pub-date {
     color: rgb(115, 115, 115);
     font-size: 0.8rem;
@@ -169,6 +180,11 @@
     height: 6px;
     background-color: rgb(64, 64, 64);
     border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .mobile-dot {
+    display: none;
   }
 
   :global(.dark) .first-author-dot {
@@ -254,12 +270,16 @@
       background-color: rgb(38, 38, 38);
     }
 
-    .pub-date {
+    .pub-date-wrapper {
       order: 1;
     }
 
     .pub-indicator {
       display: none;
+    }
+
+    .mobile-dot {
+      display: block;
     }
 
     .pub-title-area {

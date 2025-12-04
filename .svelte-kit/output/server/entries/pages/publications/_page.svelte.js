@@ -19,7 +19,7 @@ const Star = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 });
 const PubList_svelte_svelte_type_style_lang = "";
 const css = {
-  code: ".pub-table.svelte-prrrs8{display:flex;flex-direction:column;font-size:0.875rem;position:relative}.pub-header.svelte-prrrs8{display:grid;grid-template-columns:75px 12px 1fr auto;gap:8px;padding:6px 8px;color:rgb(115, 115, 115);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em}.header-spacer.svelte-prrrs8{width:12px}.highlight-bar.svelte-prrrs8{position:absolute;left:0;right:0;background-color:rgb(245, 245, 245);border-radius:4px;pointer-events:none;opacity:0;transition:top 0.06s ease-out, height 0.06s ease-out, opacity 0.1s ease-out;z-index:0}.highlight-bar.visible.svelte-prrrs8{opacity:1}.dark .highlight-bar.svelte-prrrs8{background-color:rgb(38, 38, 38)}.pub-row.svelte-prrrs8{display:grid;grid-template-columns:75px 12px 1fr auto;gap:8px;align-items:center;padding:6px 8px;text-decoration:none;color:inherit;position:relative;z-index:1}.pub-date.svelte-prrrs8{color:rgb(115, 115, 115);font-size:0.8rem;white-space:nowrap}.pub-indicator.svelte-prrrs8{display:flex;align-items:center;justify-content:center;width:12px}.first-author-dot.svelte-prrrs8{width:6px;height:6px;background-color:rgb(64, 64, 64);border-radius:50%}.dark .first-author-dot.svelte-prrrs8{background-color:rgb(180, 180, 180)}.pub-title-area.svelte-prrrs8{display:flex;align-items:center;min-width:0;overflow:hidden}.pub-title.svelte-prrrs8{color:rgb(23, 23, 23);font-weight:500;white-space:nowrap;flex-shrink:0}.dark .pub-title.svelte-prrrs8{color:rgb(245, 245, 245)}.pub-leader.svelte-prrrs8{flex:1;border-bottom:1px dotted rgb(200, 200, 200);margin:0 8px;min-width:20px}.dark .pub-leader.svelte-prrrs8{border-bottom-color:rgb(64, 64, 64)}.pub-subtitle.svelte-prrrs8{color:rgb(115, 115, 115);white-space:nowrap;flex-shrink:0;font-size:0.8rem}.pub-venue.svelte-prrrs8{display:flex;align-items:center;white-space:nowrap}.venue-tag.svelte-prrrs8{background-color:rgb(243, 244, 246);color:rgb(75, 85, 99);padding:2px 8px;border-radius:4px;font-size:0.75rem}.dark .venue-tag.svelte-prrrs8{background-color:rgb(55, 55, 55);color:rgb(180, 180, 180)}@media(max-width: 768px){.pub-header.svelte-prrrs8{display:none}.highlight-bar.svelte-prrrs8{display:none}.pub-row.svelte-prrrs8{grid-template-columns:1fr;gap:2px;padding:8px;border-radius:4px}.pub-row.svelte-prrrs8:active{background-color:rgb(245, 245, 245)}.dark .pub-row.svelte-prrrs8:active{background-color:rgb(38, 38, 38)}.pub-date.svelte-prrrs8{order:1}.pub-indicator.svelte-prrrs8{display:none}.pub-title-area.svelte-prrrs8{order:2;flex-direction:column;align-items:flex-start}.pub-leader.svelte-prrrs8{display:none}.pub-subtitle.svelte-prrrs8{margin-top:2px}.pub-venue.svelte-prrrs8{order:3;text-align:left}}",
+  code: ".pub-table.svelte-11m71hg{display:flex;flex-direction:column;font-size:0.875rem;position:relative}.pub-header.svelte-11m71hg{display:grid;grid-template-columns:75px 12px 1fr auto;gap:8px;padding:6px 8px;color:rgb(115, 115, 115);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em}.header-spacer.svelte-11m71hg{width:12px}.highlight-bar.svelte-11m71hg{position:absolute;left:0;right:0;background-color:rgb(245, 245, 245);border-radius:4px;pointer-events:none;opacity:0;transition:top 0.06s ease-out, height 0.06s ease-out, opacity 0.1s ease-out;z-index:0}.highlight-bar.visible.svelte-11m71hg{opacity:1}.dark .highlight-bar.svelte-11m71hg{background-color:rgb(38, 38, 38)}.pub-row.svelte-11m71hg{display:grid;grid-template-columns:75px 12px 1fr auto;gap:8px;align-items:center;padding:6px 8px;text-decoration:none;color:inherit;position:relative;z-index:1}.pub-date-wrapper.svelte-11m71hg{display:flex;align-items:center;gap:6px}.pub-date.svelte-11m71hg{color:rgb(115, 115, 115);font-size:0.8rem;white-space:nowrap}.pub-indicator.svelte-11m71hg{display:flex;align-items:center;justify-content:center;width:12px}.first-author-dot.svelte-11m71hg{width:6px;height:6px;background-color:rgb(64, 64, 64);border-radius:50%;flex-shrink:0}.mobile-dot.svelte-11m71hg{display:none}.dark .first-author-dot.svelte-11m71hg{background-color:rgb(180, 180, 180)}.pub-title-area.svelte-11m71hg{display:flex;align-items:center;min-width:0;overflow:hidden}.pub-title.svelte-11m71hg{color:rgb(23, 23, 23);font-weight:500;white-space:nowrap;flex-shrink:0}.dark .pub-title.svelte-11m71hg{color:rgb(245, 245, 245)}.pub-leader.svelte-11m71hg{flex:1;border-bottom:1px dotted rgb(200, 200, 200);margin:0 8px;min-width:20px}.dark .pub-leader.svelte-11m71hg{border-bottom-color:rgb(64, 64, 64)}.pub-subtitle.svelte-11m71hg{color:rgb(115, 115, 115);white-space:nowrap;flex-shrink:0;font-size:0.8rem}.pub-venue.svelte-11m71hg{display:flex;align-items:center;white-space:nowrap}.venue-tag.svelte-11m71hg{background-color:rgb(243, 244, 246);color:rgb(75, 85, 99);padding:2px 8px;border-radius:4px;font-size:0.75rem}.dark .venue-tag.svelte-11m71hg{background-color:rgb(55, 55, 55);color:rgb(180, 180, 180)}@media(max-width: 768px){.pub-header.svelte-11m71hg{display:none}.highlight-bar.svelte-11m71hg{display:none}.pub-row.svelte-11m71hg{grid-template-columns:1fr;gap:2px;padding:8px;border-radius:4px}.pub-row.svelte-11m71hg:active{background-color:rgb(245, 245, 245)}.dark .pub-row.svelte-11m71hg:active{background-color:rgb(38, 38, 38)}.pub-date-wrapper.svelte-11m71hg{order:1}.pub-indicator.svelte-11m71hg{display:none}.mobile-dot.svelte-11m71hg{display:block}.pub-title-area.svelte-11m71hg{order:2;flex-direction:column;align-items:flex-start}.pub-leader.svelte-11m71hg{display:none}.pub-subtitle.svelte-11m71hg{margin-top:2px}.pub-venue.svelte-11m71hg{order:3;text-align:left}}",
   map: null
 };
 function formatDate(date) {
@@ -47,18 +47,19 @@ const PubList = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   if ($$props.data === void 0 && $$bindings.data && data2 !== void 0)
     $$bindings.data(data2);
   $$result.css.add(css);
-  return `<div class="${"pub-table svelte-prrrs8"}" role="${"list"}"${add_attribute("this", tableEl, 0)}><div class="${"pub-header svelte-prrrs8"}"><div class="${"header-date"}">Date</div>
-    <div class="${"header-spacer svelte-prrrs8"}"></div>
+  return `<div class="${"pub-table svelte-11m71hg"}" role="${"list"}"${add_attribute("this", tableEl, 0)}><div class="${"pub-header svelte-11m71hg"}"><div class="${"header-date"}">Date</div>
+    <div class="${"header-spacer svelte-11m71hg"}"></div>
     <div class="${"header-title"}">Title</div>
     <div class="${"header-venue"}">Venue</div></div>
-  <div class="${["highlight-bar svelte-prrrs8", ""].join(" ").trim()}"${add_attribute("style", highlightStyle, 0)}></div>
+  <div class="${["highlight-bar svelte-11m71hg", ""].join(" ").trim()}"${add_attribute("style", highlightStyle, 0)}></div>
   ${each(data2, (item) => {
-    return `<a${add_attribute("href", `/publications/${item.slug}`, 0)} class="${"pub-row svelte-prrrs8"}"><div class="${"pub-date svelte-prrrs8"}">${escape(formatDate(item.date))}</div>
-      <div class="${"pub-indicator svelte-prrrs8"}">${item.firstAuthor ? `<span class="${"first-author-dot svelte-prrrs8"}"></span>` : ``}</div>
-      <div class="${"pub-title-area svelte-prrrs8"}"><span class="${"pub-title svelte-prrrs8"}">${escape(item.title)}</span>
-        <span class="${"pub-leader svelte-prrrs8"}"></span>
-        ${item.subtitle ? `<span class="${"pub-subtitle svelte-prrrs8"}">${escape(item.subtitle)}</span>` : ``}</div>
-      <div class="${"pub-venue svelte-prrrs8"}">${item.highlight ? `${validate_component(Star, "Star").$$render(
+    return `<a${add_attribute("href", `/publications/${item.slug}`, 0)} class="${"pub-row svelte-11m71hg"}"><div class="${"pub-date-wrapper svelte-11m71hg"}"><span class="${"pub-date svelte-11m71hg"}">${escape(formatDate(item.date))}</span>
+        ${item.firstAuthor ? `<span class="${"first-author-dot mobile-dot svelte-11m71hg"}"></span>` : ``}</div>
+      <div class="${"pub-indicator svelte-11m71hg"}">${item.firstAuthor ? `<span class="${"first-author-dot desktop-dot svelte-11m71hg"}"></span>` : ``}</div>
+      <div class="${"pub-title-area svelte-11m71hg"}"><span class="${"pub-title svelte-11m71hg"}">${escape(item.title)}</span>
+        <span class="${"pub-leader svelte-11m71hg"}"></span>
+        ${item.subtitle ? `<span class="${"pub-subtitle svelte-11m71hg"}">${escape(item.subtitle)}</span>` : ``}</div>
+      <div class="${"pub-venue svelte-11m71hg"}">${item.highlight ? `${validate_component(Star, "Star").$$render(
       $$result,
       {
         size: 12,
@@ -68,7 +69,7 @@ const PubList = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       {},
       {}
     )}` : ``}
-        <span class="${"venue-tag svelte-prrrs8"}">${escape(item.venue)}</span></div>
+        <span class="${"venue-tag svelte-11m71hg"}">${escape(item.venue)}</span></div>
     </a>`;
   })}
 </div>`;
