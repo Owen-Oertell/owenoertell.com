@@ -37,7 +37,7 @@
       <a
         href={link.href}
         class="hover:text-black transition-colors"
-        class:text-black={$page.url.pathname === link.href}
+        class:text-black={$page.url.pathname.startsWith(link.href)}
       >
         {link.name}
       </a>

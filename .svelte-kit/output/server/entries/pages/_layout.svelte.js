@@ -37,7 +37,7 @@ const Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   <nav class="${"svelte-bgdsr9"}">${each(links, (link) => {
     return `<a${add_attribute("href", link.href, 0)} class="${[
       "hover:text-black transition-colors svelte-bgdsr9",
-      $page.url.pathname === link.href ? "text-black" : ""
+      $page.url.pathname.startsWith(link.href) ? "text-black" : ""
     ].join(" ").trim()}">${escape(link.name)}
       </a>`;
   })}</nav>

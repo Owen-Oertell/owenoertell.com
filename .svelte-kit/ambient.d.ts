@@ -26,8 +26,8 @@
  * ```
  */
 declare module '$env/static/private' {
-	export const AUTOJUMP_ERROR_PATH: string;
 	export const CAML_LD_LIBRARY_PATH: string;
+	export const AUTOJUMP_ERROR_PATH: string;
 	export const TERM_PROGRAM: string;
 	export const NODE: string;
 	export const INIT_CWD: string;
@@ -38,12 +38,7 @@ declare module '$env/static/private' {
 	export const TMPDIR: string;
 	export const npm_config_global_prefix: string;
 	export const CONDA_SHLVL: string;
-	export const CURSOR_CLI: string;
 	export const TERM_PROGRAM_VERSION: string;
-	export const ZDOTDIR: string;
-	export const CURSOR_TRACE_ID: string;
-	export const ORIGINAL_XDG_CURRENT_DESKTOP: string;
-	export const MallocNanoZone: string;
 	export const COLOR: string;
 	export const OPAM_SWITCH_PREFIX: string;
 	export const TERM_SESSION_ID: string;
@@ -57,7 +52,6 @@ declare module '$env/static/private' {
 	export const COMMAND_MODE: string;
 	export const npm_config_globalconfig: string;
 	export const SSH_AUTH_SOCK: string;
-	export const VSCODE_PROFILE_INITIALIZED: string;
 	export const __CF_USER_TEXT_ENCODING: string;
 	export const npm_execpath: string;
 	export const TERM_FEATURES: string;
@@ -70,7 +64,6 @@ declare module '$env/static/private' {
 	export const _: string;
 	export const npm_config_userconfig: string;
 	export const npm_config_init_module: string;
-	export const USER_ZDOTDIR: string;
 	export const __CFBundleIdentifier: string;
 	export const npm_command: string;
 	export const PWD: string;
@@ -79,18 +72,14 @@ declare module '$env/static/private' {
 	export const EDITOR: string;
 	export const npm_package_name: string;
 	export const LANG: string;
-	export const CURSOR_CLI_MODE: string;
 	export const ITERM_PROFILE: string;
 	export const npm_config_npm_version: string;
-	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 	export const XPC_FLAGS: string;
 	export const npm_config_node_gyp: string;
 	export const XPC_SERVICE_NAME: string;
-	export const VSCODE_INJECTION: string;
-	export const COLORFGBG: string;
 	export const SHLVL: string;
 	export const HOME: string;
-	export const VSCODE_GIT_ASKPASS_MAIN: string;
+	export const COLORFGBG: string;
 	export const LC_TERMINAL_VERSION: string;
 	export const HOMEBREW_PREFIX: string;
 	export const ITERM_SESSION_ID: string;
@@ -98,12 +87,9 @@ declare module '$env/static/private' {
 	export const LESS: string;
 	export const LOGNAME: string;
 	export const npm_lifecycle_script: string;
-	export const VSCODE_GIT_IPC_HANDLE: string;
 	export const npm_config_user_agent: string;
-	export const VSCODE_GIT_ASKPASS_NODE: string;
-	export const GIT_ASKPASS: string;
-	export const HOMEBREW_CELLAR: string;
 	export const INFOPATH: string;
+	export const HOMEBREW_CELLAR: string;
 	export const LC_TERMINAL: string;
 	export const OSLogRateLimit: string;
 	export const npm_node_execpath: string;
@@ -139,8 +125,8 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
-		AUTOJUMP_ERROR_PATH: string;
 		CAML_LD_LIBRARY_PATH: string;
+		AUTOJUMP_ERROR_PATH: string;
 		TERM_PROGRAM: string;
 		NODE: string;
 		INIT_CWD: string;
@@ -151,12 +137,7 @@ declare module '$env/dynamic/private' {
 		TMPDIR: string;
 		npm_config_global_prefix: string;
 		CONDA_SHLVL: string;
-		CURSOR_CLI: string;
 		TERM_PROGRAM_VERSION: string;
-		ZDOTDIR: string;
-		CURSOR_TRACE_ID: string;
-		ORIGINAL_XDG_CURRENT_DESKTOP: string;
-		MallocNanoZone: string;
 		COLOR: string;
 		OPAM_SWITCH_PREFIX: string;
 		TERM_SESSION_ID: string;
@@ -170,7 +151,6 @@ declare module '$env/dynamic/private' {
 		COMMAND_MODE: string;
 		npm_config_globalconfig: string;
 		SSH_AUTH_SOCK: string;
-		VSCODE_PROFILE_INITIALIZED: string;
 		__CF_USER_TEXT_ENCODING: string;
 		npm_execpath: string;
 		TERM_FEATURES: string;
@@ -183,7 +163,6 @@ declare module '$env/dynamic/private' {
 		_: string;
 		npm_config_userconfig: string;
 		npm_config_init_module: string;
-		USER_ZDOTDIR: string;
 		__CFBundleIdentifier: string;
 		npm_command: string;
 		PWD: string;
@@ -192,18 +171,14 @@ declare module '$env/dynamic/private' {
 		EDITOR: string;
 		npm_package_name: string;
 		LANG: string;
-		CURSOR_CLI_MODE: string;
 		ITERM_PROFILE: string;
 		npm_config_npm_version: string;
-		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 		XPC_FLAGS: string;
 		npm_config_node_gyp: string;
 		XPC_SERVICE_NAME: string;
-		VSCODE_INJECTION: string;
-		COLORFGBG: string;
 		SHLVL: string;
 		HOME: string;
-		VSCODE_GIT_ASKPASS_MAIN: string;
+		COLORFGBG: string;
 		LC_TERMINAL_VERSION: string;
 		HOMEBREW_PREFIX: string;
 		ITERM_SESSION_ID: string;
@@ -211,12 +186,9 @@ declare module '$env/dynamic/private' {
 		LESS: string;
 		LOGNAME: string;
 		npm_lifecycle_script: string;
-		VSCODE_GIT_IPC_HANDLE: string;
 		npm_config_user_agent: string;
-		VSCODE_GIT_ASKPASS_NODE: string;
-		GIT_ASKPASS: string;
-		HOMEBREW_CELLAR: string;
 		INFOPATH: string;
+		HOMEBREW_CELLAR: string;
 		LC_TERMINAL: string;
 		OSLogRateLimit: string;
 		npm_node_execpath: string;

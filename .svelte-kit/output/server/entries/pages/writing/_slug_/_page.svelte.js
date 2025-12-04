@@ -2,9 +2,16 @@ import { c as create_ssr_component, b as subscribe, v as validate_component, e a
 import { p as page } from "../../../../chunks/stores.js";
 import { S as Seo } from "../../../../chunks/Seo.js";
 import { e as error } from "../../../../chunks/index.js";
-import { d as data, f as formatTime } from "../../../../chunks/writing.js";
 import MarkdownIt from "markdown-it";
 import markdownItKatex from "markdown-it-katex";
+import { f as formatTime } from "../../../../chunks/utils.js";
+var data = [{
+  title: "Heuristics Considered Harmful: RL With Random Rewards Should Not Make LLMs Reason",
+  date: new Date(17525376e5),
+  slug: "heuristics-considered-harmful",
+  tags: "research, rl, llm",
+  link: "https://fuchsia-arch-d8e.notion.site/Heuristics-Considered-Harmful-RL-With-Random-Rewards-Should-Not-Make-LLMs-Reason-21ba29497c4180ca86ffce303f01923d"
+}];
 const katex_min = "";
 const _page_svelte_svelte_type_style_lang = "";
 const css = {
