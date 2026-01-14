@@ -1,4 +1,4 @@
-import { b as base, a as assets, r as reset, p as public_env, o as options, g as get_hooks, s as set_public_env } from "./chunks/internal.js";
+import { b as base, r as reset, p as public_env, a as assets, o as options, g as get_hooks, s as set_public_env } from "./chunks/internal.js";
 import { H as HttpError, j as json, t as text, R as Redirect, e as error, A as ActionFailure } from "./chunks/index.js";
 import * as devalue from "devalue";
 import { n as noop, s as safe_not_equal } from "./chunks/index2.js";
@@ -1071,7 +1071,6 @@ function create_async_iterator() {
     }
   };
 }
-const SVELTE_KIT_ASSETS = "/_svelte_kit_assets";
 const updated = {
   ...readable(false),
   check: () => false
@@ -1106,22 +1105,8 @@ async function render_response({
   const inline_styles = /* @__PURE__ */ new Map();
   let rendered;
   const form_value = action_result?.type === "success" || action_result?.type === "failure" ? action_result.data ?? null : null;
-  let base$1 = base;
   let assets$1 = assets;
   let base_expression = s(base);
-  if (!state.prerendering?.fallback) {
-    const segments = event.url.pathname.slice(base.length).split("/");
-    if (segments.length === 1 && base !== "") {
-      base$1 = `./${base.split("/").at(-1)}`;
-      base_expression = `new URL(${s(base$1)}, location).pathname`;
-    } else {
-      base$1 = segments.slice(2).map(() => "..").join("/") || ".";
-      base_expression = `new URL(${s(base$1)}, location).pathname.slice(0, -1)`;
-    }
-    if (!assets || assets[0] === "/" && assets !== SVELTE_KIT_ASSETS) {
-      assets$1 = base$1;
-    }
-  }
   if (page_config.ssr) {
     const props = {
       stores: {

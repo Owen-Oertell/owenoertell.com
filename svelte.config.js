@@ -12,6 +12,9 @@ const config = {
     prerender: {
       crawl: true,
       entries: ["*"],
+    },
+    paths: {
+      relative: false
     }
   },
 };
