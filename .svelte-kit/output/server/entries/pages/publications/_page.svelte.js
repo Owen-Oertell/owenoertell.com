@@ -1,102 +1,131 @@
-import { c as create_ssr_component, v as validate_component, f as add_attribute, d as each, e as escape } from "../../../chunks/index2.js";
+import "clsx";
 import { S as Seo } from "../../../chunks/Seo.js";
+import { ab as sanitize_props, ac as spread_props, a9 as slot, a6 as attr_class, ad as attr_style, a4 as ensure_array_like, a5 as attr, a3 as escape_html, aa as bind_props } from "../../../chunks/index.js";
 import { I as Icon } from "../../../chunks/Icon.js";
 import { d as data } from "../../../chunks/pub_list.js";
-const Star = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+function Star($$renderer, $$props) {
+  const $$sanitized_props = sanitize_props($$props);
+  /**
+   * @license lucide-svelte v0.469.0 - ISC
+   *
+   * This source code is licensed under the ISC license.
+   * See the LICENSE file in the root directory of this source tree.
+   */
   const iconNode = [
     [
-      "polygon",
+      "path",
       {
-        "points": "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+        "d": "M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"
       }
     ]
   ];
-  return `${validate_component(Icon, "Icon").$$render($$result, Object.assign({ name: "star" }, $$props, { iconNode }), {}, {
-    default: () => {
-      return `${slots.default ? slots.default({}) : ``}`;
-    }
-  })}`;
-});
-const PubList_svelte_svelte_type_style_lang = "";
-const css = {
-  code: ".pub-table.svelte-11m71hg{display:flex;flex-direction:column;font-size:0.875rem;position:relative}.pub-header.svelte-11m71hg{display:grid;grid-template-columns:75px 12px 1fr auto;gap:8px;padding:6px 8px;color:rgb(115, 115, 115);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em}.header-spacer.svelte-11m71hg{width:12px}.highlight-bar.svelte-11m71hg{position:absolute;left:0;right:0;background-color:rgb(245, 245, 245);border-radius:4px;pointer-events:none;opacity:0;transition:top 0.06s ease-out, height 0.06s ease-out, opacity 0.1s ease-out;z-index:0}.highlight-bar.visible.svelte-11m71hg{opacity:1}.dark .highlight-bar.svelte-11m71hg{background-color:rgb(38, 38, 38)}.pub-row.svelte-11m71hg{display:grid;grid-template-columns:75px 12px 1fr auto;gap:8px;align-items:center;padding:6px 8px;text-decoration:none;color:inherit;position:relative;z-index:1}.pub-date-wrapper.svelte-11m71hg{display:flex;align-items:center;gap:6px}.pub-date.svelte-11m71hg{color:rgb(115, 115, 115);font-size:0.8rem;white-space:nowrap}.pub-indicator.svelte-11m71hg{display:flex;align-items:center;justify-content:center;width:12px}.first-author-dot.svelte-11m71hg{width:6px;height:6px;background-color:rgb(64, 64, 64);border-radius:50%;flex-shrink:0}.mobile-dot.svelte-11m71hg{display:none}.dark .first-author-dot.svelte-11m71hg{background-color:rgb(180, 180, 180)}.pub-title-area.svelte-11m71hg{display:flex;align-items:center;min-width:0;overflow:hidden}.pub-title.svelte-11m71hg{color:rgb(23, 23, 23);font-weight:500;white-space:nowrap;flex-shrink:0}.dark .pub-title.svelte-11m71hg{color:rgb(245, 245, 245)}.pub-leader.svelte-11m71hg{flex:1;border-bottom:1px dotted rgb(200, 200, 200);margin:0 8px;min-width:20px}.dark .pub-leader.svelte-11m71hg{border-bottom-color:rgb(64, 64, 64)}.pub-subtitle.svelte-11m71hg{color:rgb(115, 115, 115);white-space:nowrap;flex-shrink:0;font-size:0.8rem}.pub-venue.svelte-11m71hg{display:flex;align-items:center;white-space:nowrap}.venue-tag.svelte-11m71hg{background-color:rgb(243, 244, 246);color:rgb(75, 85, 99);padding:2px 8px;border-radius:4px;font-size:0.75rem}.dark .venue-tag.svelte-11m71hg{background-color:rgb(55, 55, 55);color:rgb(180, 180, 180)}@media(max-width: 768px){.pub-header.svelte-11m71hg{display:none}.highlight-bar.svelte-11m71hg{display:none}.pub-row.svelte-11m71hg{grid-template-columns:1fr;gap:2px;padding:8px;border-radius:4px}.pub-row.svelte-11m71hg:active{background-color:rgb(245, 245, 245)}.dark .pub-row.svelte-11m71hg:active{background-color:rgb(38, 38, 38)}.pub-date-wrapper.svelte-11m71hg{order:1}.pub-indicator.svelte-11m71hg{display:none}.mobile-dot.svelte-11m71hg{display:block}.pub-title-area.svelte-11m71hg{order:2;flex-direction:column;align-items:flex-start}.pub-leader.svelte-11m71hg{display:none}.pub-subtitle.svelte-11m71hg{margin-top:2px}.pub-venue.svelte-11m71hg{order:3;text-align:left}}",
-  map: null
-};
-function formatDate(date) {
-  const d = new Date(date);
-  const months = [
-    "Jan.",
-    "Feb.",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "Aug.",
-    "Sept.",
-    "Oct.",
-    "Nov.",
-    "Dec."
-  ];
-  return `${months[d.getMonth()]} ${d.getFullYear()}`;
-}
-const PubList = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let { data: data2 } = $$props;
-  let tableEl;
-  let highlightStyle = "";
-  if ($$props.data === void 0 && $$bindings.data && data2 !== void 0)
-    $$bindings.data(data2);
-  $$result.css.add(css);
-  return `<div class="${"pub-table svelte-11m71hg"}" role="${"list"}"${add_attribute("this", tableEl, 0)}><div class="${"pub-header svelte-11m71hg"}"><div class="${"header-date"}">Date</div>
-    <div class="${"header-spacer svelte-11m71hg"}"></div>
-    <div class="${"header-title"}">Title</div>
-    <div class="${"header-venue"}">Venue</div></div>
-  <div class="${["highlight-bar svelte-11m71hg", ""].join(" ").trim()}"${add_attribute("style", highlightStyle, 0)}></div>
-  ${each(data2, (item) => {
-    return `<a${add_attribute("href", `/publications/${item.slug}`, 0)} class="${"pub-row svelte-11m71hg"}"><div class="${"pub-date-wrapper svelte-11m71hg"}"><span class="${"pub-date svelte-11m71hg"}">${escape(formatDate(item.date))}</span>
-        ${item.firstAuthor ? `<span class="${"first-author-dot mobile-dot svelte-11m71hg"}"></span>` : ``}</div>
-      <div class="${"pub-indicator svelte-11m71hg"}">${item.firstAuthor ? `<span class="${"first-author-dot desktop-dot svelte-11m71hg"}"></span>` : ``}</div>
-      <div class="${"pub-title-area svelte-11m71hg"}"><span class="${"pub-title svelte-11m71hg"}">${escape(item.title)}</span>
-        <span class="${"pub-leader svelte-11m71hg"}"></span>
-        ${item.subtitle ? `<span class="${"pub-subtitle svelte-11m71hg"}">${escape(item.subtitle)}</span>` : ``}</div>
-      <div class="${"pub-venue svelte-11m71hg"}">${item.highlight ? `${validate_component(Star, "Star").$$render(
-      $$result,
-      {
-        size: 12,
-        class: "inline-block text-yellow-500 mr-1",
-        fill: "currentColor"
-      },
-      {},
-      {}
-    )}` : ``}
-        <span class="${"venue-tag svelte-11m71hg"}">${escape(item.venue)}</span></div>
-    </a>`;
-  })}
-</div>`;
-});
-const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let allPapers;
-  allPapers = [
-    ...data.papers2025,
-    ...data.papers2024,
-    ...data.papers2023
-  ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  return `${validate_component(Seo, "Seo").$$render(
-    $$result,
+  Icon($$renderer, spread_props([
+    { name: "star" },
+    $$sanitized_props,
     {
+      /**
+       * @component @name Star
+       * @description Lucide SVG icon component, renders SVG Element with children.
+       *
+       * @preview ![img](data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogIHdpZHRoPSIyNCIKICBoZWlnaHQ9IjI0IgogIHZpZXdCb3g9IjAgMCAyNCAyNCIKICBmaWxsPSJub25lIgogIHN0cm9rZT0iIzAwMCIgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6ICNmZmY7IGJvcmRlci1yYWRpdXM6IDJweCIKICBzdHJva2Utd2lkdGg9IjIiCiAgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogIHN0cm9rZS1saW5lam9pbj0icm91bmQiCj4KICA8cGF0aCBkPSJNMTEuNTI1IDIuMjk1YS41My41MyAwIDAgMSAuOTUgMGwyLjMxIDQuNjc5YTIuMTIzIDIuMTIzIDAgMCAwIDEuNTk1IDEuMTZsNS4xNjYuNzU2YS41My41MyAwIDAgMSAuMjk0LjkwNGwtMy43MzYgMy42MzhhMi4xMjMgMi4xMjMgMCAwIDAtLjYxMSAxLjg3OGwuODgyIDUuMTRhLjUzLjUzIDAgMCAxLS43NzEuNTZsLTQuNjE4LTIuNDI4YTIuMTIyIDIuMTIyIDAgMCAwLTEuOTczIDBMNi4zOTYgMjEuMDFhLjUzLjUzIDAgMCAxLS43Ny0uNTZsLjg4MS01LjEzOWEyLjEyMiAyLjEyMiAwIDAgMC0uNjExLTEuODc5TDIuMTYgOS43OTVhLjUzLjUzIDAgMCAxIC4yOTQtLjkwNmw1LjE2NS0uNzU1YTIuMTIyIDIuMTIyIDAgMCAwIDEuNTk3LTEuMTZ6IiAvPgo8L3N2Zz4K) - https://lucide.dev/icons/star
+       * @see https://lucide.dev/guide/packages/lucide-svelte - Documentation
+       *
+       * @param {Object} props - Lucide icons props and any valid SVG attribute
+       * @returns {FunctionalComponent} Svelte component
+       *
+       */
+      iconNode,
+      children: ($$renderer2) => {
+        $$renderer2.push(`<!--[-->`);
+        slot($$renderer2, $$props, "default", {});
+        $$renderer2.push(`<!--]-->`);
+      },
+      $$slots: { default: true }
+    }
+  ]));
+}
+function PubList($$renderer, $$props) {
+  $$renderer.component(($$renderer2) => {
+    let data2 = $$props["data"];
+    let highlightStyle = "";
+    let isHovering = false;
+    function formatDate(date) {
+      const d = new Date(date);
+      const months = [
+        "Jan.",
+        "Feb.",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "Aug.",
+        "Sept.",
+        "Oct.",
+        "Nov.",
+        "Dec."
+      ];
+      return `${months[d.getMonth()]} ${d.getFullYear()}`;
+    }
+    $$renderer2.push(`<div class="pub-table svelte-1rd2lwb" role="list"><div class="pub-header svelte-1rd2lwb"><div class="header-date">Date</div> <div class="header-spacer svelte-1rd2lwb"></div> <div class="header-title">Title</div> <div class="header-venue">Venue</div></div> <div${attr_class("highlight-bar svelte-1rd2lwb", void 0, { "visible": isHovering })}${attr_style(highlightStyle)}></div> <!--[-->`);
+    const each_array = ensure_array_like(data2);
+    for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
+      let item = each_array[$$index];
+      $$renderer2.push(`<a${attr("href", `/publications/${item.slug}`)} class="pub-row svelte-1rd2lwb"><div class="pub-date-wrapper svelte-1rd2lwb"><span class="pub-date svelte-1rd2lwb">${escape_html(formatDate(item.date))}</span> `);
+      if (item.firstAuthor) {
+        $$renderer2.push("<!--[-->");
+        $$renderer2.push(`<span class="first-author-dot mobile-dot svelte-1rd2lwb"></span>`);
+      } else {
+        $$renderer2.push("<!--[!-->");
+      }
+      $$renderer2.push(`<!--]--></div> <div class="pub-indicator svelte-1rd2lwb">`);
+      if (item.firstAuthor) {
+        $$renderer2.push("<!--[-->");
+        $$renderer2.push(`<span class="first-author-dot desktop-dot svelte-1rd2lwb"></span>`);
+      } else {
+        $$renderer2.push("<!--[!-->");
+      }
+      $$renderer2.push(`<!--]--></div> <div class="pub-title-area svelte-1rd2lwb"><span class="pub-title svelte-1rd2lwb">${escape_html(item.title)}</span> <span class="pub-leader svelte-1rd2lwb"></span> `);
+      if (item.subtitle) {
+        $$renderer2.push("<!--[-->");
+        $$renderer2.push(`<span class="pub-subtitle svelte-1rd2lwb">${escape_html(item.subtitle)}</span>`);
+      } else {
+        $$renderer2.push("<!--[!-->");
+      }
+      $$renderer2.push(`<!--]--></div> <div class="pub-venue svelte-1rd2lwb">`);
+      if (item.highlight) {
+        $$renderer2.push("<!--[-->");
+        Star($$renderer2, {
+          size: 12,
+          class: "inline-block text-yellow-500 mr-1",
+          fill: "currentColor"
+        });
+      } else {
+        $$renderer2.push("<!--[!-->");
+      }
+      $$renderer2.push(`<!--]--> <span class="venue-tag svelte-1rd2lwb">${escape_html(item.venue)}</span></div></a>`);
+    }
+    $$renderer2.push(`<!--]--></div>`);
+    bind_props($$props, { data: data2 });
+  });
+}
+function _page($$renderer, $$props) {
+  $$renderer.component(($$renderer2) => {
+    let allPapers;
+    allPapers = [
+      ...data.papers2025,
+      ...data.papers2024,
+      ...data.papers2023
+    ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    Seo($$renderer2, {
       title: "Owen Oertell – Publications",
       description: "publications"
-    },
-    {},
-    {}
-  )}
-
-<section class="${"layout-md"}">To view the most up-to-date list of my publications, please visit my <a href="${"https://scholar.google.com/citations?user=y0B6gawAAAAJ&hl=en"}" class="${"link"}">Google Scholar</a> page.
-  <br>
-  <i><span class="${"inline-block w-1.5 h-1.5 bg-neutral-700 dark:bg-neutral-300 rounded-full align-middle mr-1"}"></span> denotes first/co-first author</i></section>
-
-<section class="${"layout-lg py-12"}">${validate_component(PubList, "PubList").$$render($$result, { data: allPapers }, {}, {})}</section>`;
-});
+    });
+    $$renderer2.push(`<!----> <section class="layout-md">To view the most up-to-date list of my publications, please visit my <a href="https://scholar.google.com/citations?user=y0B6gawAAAAJ&amp;hl=en" class="link">Google Scholar</a> page. <br/> <i><span class="inline-block w-1.5 h-1.5 bg-neutral-700 dark:bg-neutral-300 rounded-full align-middle mr-1"></span> denotes first/co-first author</i></section> <section class="layout-lg py-12">`);
+    PubList($$renderer2, { data: allPapers });
+    $$renderer2.push(`<!----></section>`);
+  });
+}
 export {
-  Page as default
+  _page as default
 };

@@ -1,16 +1,16 @@
-import { c as create_ssr_component, e as escape, f as add_attribute } from "./index2.js";
-const Seo = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let { title } = $$props;
-  let { ogTitle = null } = $$props;
-  let { description } = $$props;
-  if ($$props.title === void 0 && $$bindings.title && title !== void 0)
-    $$bindings.title(title);
-  if ($$props.ogTitle === void 0 && $$bindings.ogTitle && ogTitle !== void 0)
-    $$bindings.ogTitle(ogTitle);
-  if ($$props.description === void 0 && $$bindings.description && description !== void 0)
-    $$bindings.description(description);
-  return `${$$result.head += `<!-- HEAD_svelte-1u3d40h_START -->${$$result.title = `<title>${escape(title)}</title>`, ""}<meta name="${"description"}"${add_attribute("content", description, 0)}><meta property="${"og:title"}"${add_attribute("content", ogTitle ?? title, 0)}><meta property="${"og:description"}"${add_attribute("content", description, 0)}><meta property="${"og:image"}" content="${"https://www.owenoertell.com/assets/images/image_round_1.png"}"><meta name="${"twitter:card"}" content="${"summary_large_image"}"><!-- HEAD_svelte-1u3d40h_END -->`, ""}`;
-});
+import { ag as fallback, a8 as head, aa as bind_props, a3 as escape_html, a5 as attr } from "./index.js";
+function Seo($$renderer, $$props) {
+  let title = $$props["title"];
+  let ogTitle = fallback($$props["ogTitle"], null);
+  let description = $$props["description"];
+  head("gsrl61", $$renderer, ($$renderer2) => {
+    $$renderer2.title(($$renderer3) => {
+      $$renderer3.push(`<title>${escape_html(title)}</title>`);
+    });
+    $$renderer2.push(`<meta name="description"${attr("content", description)}/> <meta property="og:title"${attr("content", ogTitle ?? title)}/> <meta property="og:description"${attr("content", description)}/> <meta property="og:image" content="https://www.owenoertell.com/assets/images/image_round_1.png"/> <meta name="twitter:card" content="summary_large_image"/>`);
+  });
+  bind_props($$props, { title, ogTitle, description });
+}
 export {
   Seo as S
 };

@@ -1,4 +1,10 @@
-import { c as create_ssr_component, h as compute_rest_props, i as spread, j as escape_object, k as escape_attribute_value, d as each, l as is_void } from "./index2.js";
+import { ab as sanitize_props, af as rest_props, ag as fallback, ah as attributes, ai as clsx, a4 as ensure_array_like, aj as element, a9 as slot, aa as bind_props } from "./index.js";
+/**
+ * @license lucide-svelte v0.469.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
 const defaultAttributes = {
   xmlns: "http://www.w3.org/2000/svg",
   width: 24,
@@ -10,44 +16,61 @@ const defaultAttributes = {
   "stroke-linecap": "round",
   "stroke-linejoin": "round"
 };
-const Icon = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let $$restProps = compute_rest_props($$props, ["name", "color", "size", "strokeWidth", "iconNode"]);
-  let { name } = $$props;
-  let { color = "currentColor" } = $$props;
-  let { size = 24 } = $$props;
-  let { strokeWidth = 2 } = $$props;
-  let { iconNode } = $$props;
-  if ($$props.name === void 0 && $$bindings.name && name !== void 0)
-    $$bindings.name(name);
-  if ($$props.color === void 0 && $$bindings.color && color !== void 0)
-    $$bindings.color(color);
-  if ($$props.size === void 0 && $$bindings.size && size !== void 0)
-    $$bindings.size(size);
-  if ($$props.strokeWidth === void 0 && $$bindings.strokeWidth && strokeWidth !== void 0)
-    $$bindings.strokeWidth(strokeWidth);
-  if ($$props.iconNode === void 0 && $$bindings.iconNode && iconNode !== void 0)
-    $$bindings.iconNode(iconNode);
-  return `<svg${spread(
-    [
-      escape_object(defaultAttributes),
-      escape_object($$restProps),
-      { width: escape_attribute_value(size) },
-      { height: escape_attribute_value(size) },
-      { stroke: escape_attribute_value(color) },
+function Icon($$renderer, $$props) {
+  const $$sanitized_props = sanitize_props($$props);
+  const $$restProps = rest_props($$sanitized_props, [
+    "name",
+    "color",
+    "size",
+    "strokeWidth",
+    "absoluteStrokeWidth",
+    "iconNode"
+  ]);
+  $$renderer.component(($$renderer2) => {
+    let name = fallback($$props["name"], void 0);
+    let color = fallback($$props["color"], "currentColor");
+    let size = fallback($$props["size"], 24);
+    let strokeWidth = fallback($$props["strokeWidth"], 2);
+    let absoluteStrokeWidth = fallback($$props["absoluteStrokeWidth"], false);
+    let iconNode = fallback($$props["iconNode"], () => [], true);
+    const mergeClasses = (...classes) => classes.filter((className, index, array) => {
+      return Boolean(className) && array.indexOf(className) === index;
+    }).join(" ");
+    $$renderer2.push(`<svg${attributes(
       {
-        "stroke-width": escape_attribute_value(strokeWidth)
+        ...defaultAttributes,
+        ...$$restProps,
+        width: size,
+        height: size,
+        stroke: color,
+        "stroke-width": absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size) : strokeWidth,
+        class: clsx(mergeClasses("lucide-icon", "lucide", name ? `lucide-${name}` : "", $$sanitized_props.class))
       },
-      {
-        class: escape_attribute_value(`lucide-icon lucide lucide-${name} ${$$props.class ?? ""}`)
-      }
-    ],
-    {}
-  )}>${each(iconNode, ([tag, attrs]) => {
-    return `${((tag$1) => {
-      return tag$1 ? `<${tag}${spread([escape_object(attrs)], {})}>${is_void(tag$1) ? "" : ``}${is_void(tag$1) ? "" : `</${tag$1}>`}` : "";
-    })(tag)}`;
-  })}${slots.default ? slots.default({}) : ``}</svg>`;
-});
+      void 0,
+      void 0,
+      void 0,
+      3
+    )}><!--[-->`);
+    const each_array = ensure_array_like(iconNode);
+    for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
+      let [tag, attrs] = each_array[$$index];
+      element($$renderer2, tag, () => {
+        $$renderer2.push(`${attributes({ ...attrs }, void 0, void 0, void 0, 3)}`);
+      });
+    }
+    $$renderer2.push(`<!--]--><!--[-->`);
+    slot($$renderer2, $$props, "default", {});
+    $$renderer2.push(`<!--]--></svg>`);
+    bind_props($$props, {
+      name,
+      color,
+      size,
+      strokeWidth,
+      absoluteStrokeWidth,
+      iconNode
+    });
+  });
+}
 export {
   Icon as I
 };

@@ -3,7 +3,7 @@ var data = {
     {
       title: "Heuristics Considered Harmful: RL With Random Rewards Should Not Make LLMs Reason",
       slug: "heuristics-considered-harmful",
-      date: new Date(17553888e5),
+      date: /* @__PURE__ */ new Date(17553888e5),
       link: "https://fuchsia-arch-d8e.notion.site/Heuristics-Considered-Harmful-RL-With-Random-Rewards-Should-Not-Make-LLMs-Reason-21ba29497c4180ca86ffce303f01923d",
       authors: "Owen Oertell*, Wenhao Zhan*, Gokul Swamy, Zhiwei Steven Wu, Kiante Brantley, Jason Lee, Wen Sun\n",
       venue: "NYRL 2024",
@@ -15,7 +15,7 @@ var data = {
     {
       title: "Efficient Controllable Diffusion via Optimal Classifier Guidance",
       slug: "slcd",
-      date: new Date(1748304e6),
+      date: /* @__PURE__ */ new Date(1748304e6),
       link: "https://arxiv.org/pdf/2505.21666",
       authors: "Owen Oertell*, Shikun Sun*, Yiding Chen*, Jin Peng Zhou, Zhiyong Wang, and Wen Sun\n",
       venue: "ArXiv",
@@ -27,7 +27,7 @@ var data = {
     {
       title: "Improved Bounds for Delay Dependent Bandits",
       slug: "delay-dependent-bandits",
-      date: new Date(1748304e6),
+      date: /* @__PURE__ */ new Date(1748304e6),
       authors: "Owen Oertell*, Ahan Mishra*, Parker Rho, and Robert Kleinberg\n",
       venue: "Preprint",
       firstAuthor: true,
@@ -37,7 +37,7 @@ var data = {
     {
       title: "Scaling Offline RL via Efficient and Expressive Shortcut Models",
       slug: "sorl",
-      date: new Date(17483904e5),
+      date: /* @__PURE__ */ new Date(17483904e5),
       link: "https://arxiv.org/pdf/2505.22866",
       authors: "Nicolas Espinosa-Dice, Yiyi Zhang, Yiding Chen, Bradley Guo, Owen Oertell, Gokul Swamy, Kiante Brantley, and Wen Sun\n",
       venue: "NeurIPS 2025",
@@ -48,7 +48,7 @@ var data = {
     {
       title: "Convergence Of Consistency Model With Multistep Sampling Under General Data Assumptions",
       slug: "consistency-model-convergence",
-      date: new Date(17464896e5),
+      date: /* @__PURE__ */ new Date(17464896e5),
       link: "https://arxiv.org/pdf/2505.03194",
       authors: "Yiding Chen, Yiyi Zhang, Owen Oertell, Wen Sun\n",
       venue: "ICML 2025",
@@ -61,7 +61,7 @@ var data = {
     {
       title: "TurboHopp: Accelerated Molecule Scaffold Hopping with Consistency Models",
       slug: "turbohopp",
-      date: new Date(17300736e5),
+      date: /* @__PURE__ */ new Date(17300736e5),
       link: "https://arxiv.org/pdf/2410.20660",
       authors: "Kiwoong Yoo, Owen Oertell, Junhyun Lee, Sanghoon Lee, Jaewoo Kang\n",
       venue: "NeurIPS 2024",
@@ -72,7 +72,7 @@ var data = {
     {
       title: "REBEL: Reinforcement Learning via Regressing Relative Rewards",
       slug: "rebel",
-      date: new Date(17140032e5),
+      date: /* @__PURE__ */ new Date(17140032e5),
       link: "https://arxiv.org/pdf/2404.16767",
       authors: "Zhaolin Gao, Jonathan D. Chang, Wenhao Zhan, Owen Oertell, Gokul Swamy, Kianté Brantley, Thorsten Joachims, J. Andrew Bagnell, Jason D. Lee, Wen Sun\n",
       venue: "NeurIPS 2024",
@@ -83,7 +83,7 @@ var data = {
     {
       title: "RL for Consistency Models: Reward Guided Text-to-Image Generation with Fast Inference",
       slug: "rlcm",
-      date: new Date(1709856e6),
+      date: /* @__PURE__ */ new Date(1709856e6),
       link: "https://arxiv.org/pdf/2404.03673",
       authors: "Owen Oertell, Jonathan Daniel Chang, Yiyi Zhang, Kianté Brantley, and Wen Sun\n",
       venue: "RLC 2024",
@@ -95,7 +95,7 @@ var data = {
     {
       title: "More Benefits of Being Distributional: Second-Order Bounds for Reinforcement Learning",
       slug: "distrl",
-      date: new Date(17067456e5),
+      date: /* @__PURE__ */ new Date(17067456e5),
       authors: "Kaiwen Wang, Owen Oertell, Alekh Agarwal, Nathan Kallus, and Wen Sun\n",
       venue: "ICML 2024",
       link: "https://arxiv.org/pdf/2402.07198",
@@ -106,7 +106,7 @@ var data = {
     {
       title: "Dataset Reset Policy Optimization for RLHF",
       slug: "drpo",
-      date: new Date(17067456e5),
+      date: /* @__PURE__ */ new Date(17067456e5),
       link: "https://arxiv.org/pdf/2404.08495",
       authors: "Jonathan Daniel Chang*, Wenhao Zhan*, Owen Oertell, Kianté Brantley, Dipendra Misra, Jason D. Lee, and Wen Sun\n",
       venue: "ArXiv",
@@ -119,7 +119,7 @@ var data = {
     {
       title: "A Kernel Method Approach to Orbital Debris Blast Point Determination",
       slug: "kernel-orbital-debris",
-      date: new Date(17022528e5),
+      date: /* @__PURE__ */ new Date(17022528e5),
       link: "https://arc.aiaa.org/doi/10.2514/6.2024-1864",
       authors: "Jackson Kulik, Owen Oertell, and Dmitry Savransky\n",
       venue: "AIAA 2024",
@@ -130,7 +130,7 @@ var data = {
     {
       title: "Overdetermined Eigenvector Approach to Passive Angles-Only Relative Orbit Determination",
       slug: "eigenvector-orbit-determination",
-      date: new Date(16847136e5),
+      date: /* @__PURE__ */ new Date(16847136e5),
       link: "https://arc.aiaa.org/doi/10.2514/1.G007744",
       authors: "Jackson Kulik, Owen Oertell, and Dmitry Savransky\n",
       venue: "JGCD 2023",

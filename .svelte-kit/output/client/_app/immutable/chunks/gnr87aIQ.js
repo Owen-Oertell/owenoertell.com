@@ -1,0 +1,1 @@
+import{c as u,b as g,a1 as o,h as t,g as _,C as m,L as l,l as i,s as d,m as p}from"./Dz53FERK.js";function E(n,r){let s=null,f=t;var a;if(t){s=p;for(var e=_(document.head);e!==null&&(e.nodeType!==m||e.data!==n);)e=l(e);if(e===null)i(!1);else{var y=l(e);e.remove(),d(y)}}t||(a=document.head.appendChild(u()));try{g(()=>r(a),o)}finally{f&&(i(!0),d(s))}}export{E as h};

@@ -8,6 +8,7 @@
 	],
 	"/publications/[slug]": [
 		"src/routes/publications/[slug]/+page.ts",
+		"src/routes/publications/[slug]/+page.server.ts",
 		"src/routes/+layout.ts"
 	],
 	"/resume": [
@@ -18,6 +19,7 @@
 	],
 	"/writing/[slug]": [
 		"src/routes/writing/[slug]/+page.ts",
+		"src/routes/writing/[slug]/+page.server.ts",
 		"src/routes/+layout.ts"
 	]
 }

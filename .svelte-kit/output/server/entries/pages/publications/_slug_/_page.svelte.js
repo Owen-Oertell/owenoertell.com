@@ -1,38 +1,64 @@
-import { c as create_ssr_component, v as validate_component, b as subscribe, e as escape, f as add_attribute } from "../../../../chunks/index2.js";
+import { ab as sanitize_props, ac as spread_props, a9 as slot, a2 as store_get, ae as stringify, a3 as escape_html, a5 as attr, a7 as unsubscribe_stores } from "../../../../chunks/index.js";
 import { p as page } from "../../../../chunks/stores.js";
 import { S as Seo } from "../../../../chunks/Seo.js";
-import { e as error } from "../../../../chunks/index.js";
+import { error } from "@sveltejs/kit";
 import { d as data } from "../../../../chunks/pub_list.js";
-import { I as Icon } from "../../../../chunks/Icon.js";
 import MarkdownIt from "markdown-it";
-const Arrow_up_right = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+import { I as Icon } from "../../../../chunks/Icon.js";
+import { h as html } from "../../../../chunks/html.js";
+function Arrow_up_right($$renderer, $$props) {
+  const $$sanitized_props = sanitize_props($$props);
+  /**
+   * @license lucide-svelte v0.469.0 - ISC
+   *
+   * This source code is licensed under the ISC license.
+   * See the LICENSE file in the root directory of this source tree.
+   */
   const iconNode = [
-    [
-      "line",
-      {
-        "x1": "7",
-        "y1": "17",
-        "x2": "17",
-        "y2": "7"
-      }
-    ],
-    ["polyline", { "points": "7 7 17 7 17 17" }]
+    ["path", { "d": "M7 7h10v10" }],
+    ["path", { "d": "M7 17 17 7" }]
   ];
-  return `${validate_component(Icon, "Icon").$$render($$result, Object.assign({ name: "arrow-up-right" }, $$props, { iconNode }), {}, {
-    default: () => {
-      return `${slots.default ? slots.default({}) : ``}`;
+  Icon($$renderer, spread_props([
+    { name: "arrow-up-right" },
+    $$sanitized_props,
+    {
+      /**
+       * @component @name ArrowUpRight
+       * @description Lucide SVG icon component, renders SVG Element with children.
+       *
+       * @preview ![img](data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogIHdpZHRoPSIyNCIKICBoZWlnaHQ9IjI0IgogIHZpZXdCb3g9IjAgMCAyNCAyNCIKICBmaWxsPSJub25lIgogIHN0cm9rZT0iIzAwMCIgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6ICNmZmY7IGJvcmRlci1yYWRpdXM6IDJweCIKICBzdHJva2Utd2lkdGg9IjIiCiAgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogIHN0cm9rZS1saW5lam9pbj0icm91bmQiCj4KICA8cGF0aCBkPSJNNyA3aDEwdjEwIiAvPgogIDxwYXRoIGQ9Ik03IDE3IDE3IDciIC8+Cjwvc3ZnPgo=) - https://lucide.dev/icons/arrow-up-right
+       * @see https://lucide.dev/guide/packages/lucide-svelte - Documentation
+       *
+       * @param {Object} props - Lucide icons props and any valid SVG attribute
+       * @returns {FunctionalComponent} Svelte component
+       *
+       */
+      iconNode,
+      children: ($$renderer2) => {
+        $$renderer2.push(`<!--[-->`);
+        slot($$renderer2, $$props, "default", {});
+        $$renderer2.push(`<!--]-->`);
+      },
+      $$slots: { default: true }
     }
-  })}`;
-});
-const Copy = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  ]));
+}
+function Copy($$renderer, $$props) {
+  const $$sanitized_props = sanitize_props($$props);
+  /**
+   * @license lucide-svelte v0.469.0 - ISC
+   *
+   * This source code is licensed under the ISC license.
+   * See the LICENSE file in the root directory of this source tree.
+   */
   const iconNode = [
     [
       "rect",
       {
-        "x": "9",
-        "y": "9",
-        "width": "13",
-        "height": "13",
+        "width": "14",
+        "height": "14",
+        "x": "8",
+        "y": "8",
         "rx": "2",
         "ry": "2"
       }
@@ -40,69 +66,89 @@ const Copy = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     [
       "path",
       {
-        "d": "M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+        "d": "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"
       }
     ]
   ];
-  return `${validate_component(Icon, "Icon").$$render($$result, Object.assign({ name: "copy" }, $$props, { iconNode }), {}, {
-    default: () => {
-      return `${slots.default ? slots.default({}) : ``}`;
-    }
-  })}`;
-});
-const _page_svelte_svelte_type_style_lang = "";
-const css = {
-  code: ".venue-tag.svelte-diw56w.svelte-diw56w{background-color:rgb(243, 244, 246);color:rgb(75, 85, 99);padding:4px 12px;border-radius:4px;font-size:0.875rem}.dark .venue-tag.svelte-diw56w.svelte-diw56w{background-color:rgb(55, 55, 55);color:rgb(180, 180, 180)}.action-btn.svelte-diw56w.svelte-diw56w{display:flex;align-items:center;gap:4px;font-size:0.875rem;color:rgb(107, 114, 128);transition:color 0.15s}.action-btn.svelte-diw56w.svelte-diw56w:hover{color:rgb(55, 65, 81)}.dark .action-btn.svelte-diw56w.svelte-diw56w:hover{color:rgb(200, 200, 200)}.copy-btn.svelte-diw56w .icon-wrapper.svelte-diw56w{position:relative;width:14px;height:14px;display:flex;align-items:center;justify-content:center}.copy-btn.svelte-diw56w .icon.svelte-diw56w{position:absolute;display:flex;align-items:center;justify-content:center}.abstract-content.svelte-diw56w p{margin-bottom:1em}.abstract-content.svelte-diw56w p:last-child{margin-bottom:0}.abstract-content.svelte-diw56w a{text-decoration:underline;text-underline-offset:3px}.abstract-content.svelte-diw56w a:hover{color:black}.dark .abstract-content.svelte-diw56w a:hover{color:white}",
-  map: null
-};
-const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let abstractHtml;
-  let $page, $$unsubscribe_page;
-  $$unsubscribe_page = subscribe(page, (value) => $page = value);
-  let slug = $page.params.slug;
-  const allPapers = [
-    ...data.papers2025,
-    ...data.papers2024,
-    ...data.papers2023
-  ];
-  let publication = allPapers.find((p) => p.slug === slug);
-  if (!publication) {
-    throw error(404, "Publication not found");
-  }
-  const md = new MarkdownIt({
-    html: true,
-    linkify: true,
-    typographer: true
-  });
-  $$result.css.add(css);
-  abstractHtml = publication.abstract ? md.render(publication.abstract) : "";
-  $$unsubscribe_page();
-  return `${validate_component(Seo, "Seo").$$render(
-    $$result,
+  Icon($$renderer, spread_props([
+    { name: "copy" },
+    $$sanitized_props,
     {
-      title: "Owen Oertell – " + (publication.shortName || publication.title),
+      /**
+       * @component @name Copy
+       * @description Lucide SVG icon component, renders SVG Element with children.
+       *
+       * @preview ![img](data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogIHdpZHRoPSIyNCIKICBoZWlnaHQ9IjI0IgogIHZpZXdCb3g9IjAgMCAyNCAyNCIKICBmaWxsPSJub25lIgogIHN0cm9rZT0iIzAwMCIgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6ICNmZmY7IGJvcmRlci1yYWRpdXM6IDJweCIKICBzdHJva2Utd2lkdGg9IjIiCiAgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogIHN0cm9rZS1saW5lam9pbj0icm91bmQiCj4KICA8cmVjdCB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHg9IjgiIHk9IjgiIHJ4PSIyIiByeT0iMiIgLz4KICA8cGF0aCBkPSJNNCAxNmMtMS4xIDAtMi0uOS0yLTJWNGMwLTEuMS45LTIgMi0yaDEwYzEuMSAwIDIgLjkgMiAyIiAvPgo8L3N2Zz4K) - https://lucide.dev/icons/copy
+       * @see https://lucide.dev/guide/packages/lucide-svelte - Documentation
+       *
+       * @param {Object} props - Lucide icons props and any valid SVG attribute
+       * @returns {FunctionalComponent} Svelte component
+       *
+       */
+      iconNode,
+      children: ($$renderer2) => {
+        $$renderer2.push(`<!--[-->`);
+        slot($$renderer2, $$props, "default", {});
+        $$renderer2.push(`<!--]-->`);
+      },
+      $$slots: { default: true }
+    }
+  ]));
+}
+function _page($$renderer, $$props) {
+  $$renderer.component(($$renderer2) => {
+    var $$store_subs;
+    let abstractHtml;
+    let slug = store_get($$store_subs ??= {}, "$page", page).params.slug;
+    const allPapers = [
+      ...data.papers2025,
+      ...data.papers2024,
+      ...data.papers2023
+    ];
+    let publication = allPapers.find((p) => p.slug === slug);
+    if (!publication) {
+      throw error(404, "Publication not found");
+    }
+    const md = new MarkdownIt({ html: true, linkify: true, typographer: true });
+    abstractHtml = publication.abstract ? md.render(publication.abstract) : "";
+    Seo($$renderer2, {
+      title: `Owen Oertell – ${stringify(publication.shortName || publication.title)}`,
       description: publication.title
-    },
-    {},
-    {}
-  )}
-
-<section class="${"layout-md"}"><a href="${"/publications"}" class="${"text-neutral-500 hover:text-neutral-700 text-sm mb-4 inline-block"}">← back to publications
-  </a>
-
-  <h1 class="${"text-2xl font-bold text-black dark:text-white mb-2"}">${escape(publication.title)}</h1>
-
-  <p class="${"text-neutral-600 dark:text-neutral-400 mb-4"}">${escape(publication.authors)}</p>
-
-  <div class="${"flex flex-wrap gap-3 items-center mb-8"}"><span class="${"venue-tag svelte-diw56w"}">${escape(publication.venue)}</span>
-    ${publication.link ? `<a${add_attribute("href", publication.link, 0)} target="${"_blank"}" rel="${"noreferrer"}" class="${"action-btn svelte-diw56w"}">Paper ${validate_component(Arrow_up_right, "ArrowUpRight").$$render($$result, { size: 14 }, {}, {})}</a>` : ``}
-    ${publication.bibtex ? `<button class="${"action-btn copy-btn svelte-diw56w"}"><span class="${"icon-wrapper svelte-diw56w"}">${`<span class="${"icon svelte-diw56w"}">${validate_component(Copy, "Copy").$$render($$result, { size: 14 }, {}, {})}</span>`}</span>
-        <span>Copy BibTeX</span></button>` : ``}</div>
-
-  ${publication.abstract ? `<div class="${"mb-8"}"><h2 class="${"text-sm uppercase text-neutral-500 mb-2"}">Abstract</h2>
-      <div class="${"abstract-content text-neutral-700 dark:text-neutral-300 leading-relaxed svelte-diw56w"}"><!-- HTML_TAG_START -->${abstractHtml}<!-- HTML_TAG_END --></div></div>` : ``}
-</section>`;
-});
+    });
+    $$renderer2.push(`<!----> <section class="layout-md"><a href="/publications" class="text-neutral-500 hover:text-neutral-700 text-sm mb-4 inline-block">← back to publications</a> <h1 class="text-2xl font-bold text-black dark:text-white mb-2">${escape_html(publication.title)}</h1> <p class="text-neutral-600 dark:text-neutral-400 mb-4">${escape_html(publication.authors)}</p> <div class="flex flex-wrap gap-3 items-center mb-8"><span class="venue-tag svelte-13q5ovy">${escape_html(publication.venue)}</span> `);
+    if (publication.link) {
+      $$renderer2.push("<!--[-->");
+      $$renderer2.push(`<a${attr("href", publication.link)} target="_blank" rel="noreferrer" class="action-btn svelte-13q5ovy">Paper `);
+      Arrow_up_right($$renderer2, { size: 14 });
+      $$renderer2.push(`<!----></a>`);
+    } else {
+      $$renderer2.push("<!--[!-->");
+    }
+    $$renderer2.push(`<!--]--> `);
+    if (publication.bibtex) {
+      $$renderer2.push("<!--[-->");
+      $$renderer2.push(`<button class="action-btn copy-btn svelte-13q5ovy"><span class="icon-wrapper svelte-13q5ovy">`);
+      {
+        $$renderer2.push("<!--[!-->");
+        $$renderer2.push(`<span class="icon svelte-13q5ovy">`);
+        Copy($$renderer2, { size: 14 });
+        $$renderer2.push(`<!----></span>`);
+      }
+      $$renderer2.push(`<!--]--></span> <span>Copy BibTeX</span></button>`);
+    } else {
+      $$renderer2.push("<!--[!-->");
+    }
+    $$renderer2.push(`<!--]--></div> `);
+    if (publication.abstract) {
+      $$renderer2.push("<!--[-->");
+      $$renderer2.push(`<div class="mb-8"><h2 class="text-sm uppercase text-neutral-500 mb-2">Abstract</h2> <div class="abstract-content text-neutral-700 dark:text-neutral-300 leading-relaxed svelte-13q5ovy">${html(abstractHtml)}</div></div>`);
+    } else {
+      $$renderer2.push("<!--[!-->");
+    }
+    $$renderer2.push(`<!--]--></section>`);
+    if ($$store_subs) unsubscribe_stores($$store_subs);
+  });
+}
 export {
-  Page as default
+  _page as default
 };
