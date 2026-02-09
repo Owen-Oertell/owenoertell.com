@@ -2785,10 +2785,6 @@ function attr_class(value, hash, directives) {
   var result = to_class(value, hash, directives);
   return result ? ` class="${escape_html(result, true)}"` : "";
 }
-function attr_style(value, directives) {
-  var result = to_style(value, directives);
-  return result ? ` style="${escape_html(result, true)}"` : "";
-}
 function store_get(store_values, store_name, store) {
   if (store_name in store_values && store_values[store_name][0] === store) {
     return store_values[store_name][2];
@@ -2879,24 +2875,23 @@ export {
   render as a0,
   setContext as a1,
   store_get as a2,
-  escape_html as a3,
-  ensure_array_like as a4,
-  attr as a5,
-  attr_class as a6,
+  ensure_array_like as a3,
+  attr as a4,
+  attr_class as a5,
+  escape_html as a6,
   unsubscribe_stores as a7,
   head as a8,
   slot as a9,
   bind_props as aa,
   sanitize_props as ab,
   spread_props as ac,
-  attr_style as ad,
-  stringify as ae,
-  rest_props as af,
-  fallback as ag,
-  attributes as ah,
-  clsx as ai,
-  element as aj,
-  getContext as ak,
+  stringify as ad,
+  rest_props as ae,
+  fallback as af,
+  attributes as ag,
+  clsx as ah,
+  element as ai,
+  getContext as aj,
   HYDRATION_START as b,
   HYDRATION_START_ELSE as c,
   get as d,

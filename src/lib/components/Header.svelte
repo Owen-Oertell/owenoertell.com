@@ -2,20 +2,11 @@
   import { page } from "$app/stores";
 
   const links = [
-    { name: "writings", href: "/writing" },
-    { name: "publications", href: "/publications" },
     { name: "resume", href: "/resume" },
+    { name: "contact", href: "mailto:ojo2@cornell.edu" },
   ];
 
-  let pageTitle: string | null = null;
-  $: {
-    const link = links.find(({ href }) => $page.url.pathname.includes(href));
-    if (link) {
-      pageTitle = link.name.charAt(0).toUpperCase() + link.name.slice(1);
-    } else {
-      pageTitle = null;
-    }
-  }
+  $: isResumePage = $page.url.pathname === "/resume";
 </script>
 
 <header
@@ -25,10 +16,10 @@
 >
   <h1 class="font-bold text-black text-2xl mb-6">
     <a href="/">Owen Oertell</a>
-    {#if pageTitle}
+    {#if isResumePage}
       <span class="page-title">
         <span class="text-neutral-400">—</span>
-        {pageTitle}
+        Resume
       </span>
     {/if}
   </h1>
@@ -37,7 +28,7 @@
       <a
         href={link.href}
         class="hover:text-black transition-colors"
-        class:text-black={$page.url.pathname.startsWith(link.href)}
+        class:text-black={isResumePage && link.href === "/resume"}
       >
         {link.name}
       </a>

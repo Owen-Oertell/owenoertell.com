@@ -1,4 +1,4 @@
-import { ag as fallback, a8 as head, aa as bind_props, a3 as escape_html, a5 as attr } from "./index.js";
+import { af as fallback, a8 as head, aa as bind_props, a6 as escape_html, a4 as attr } from "./index.js";
 function Seo($$renderer, $$props) {
   let title = $$props["title"];
   let ogTitle = fallback($$props["ogTitle"], null);

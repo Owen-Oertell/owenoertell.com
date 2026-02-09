@@ -28,8 +28,6 @@
 declare module '$env/static/private' {
 	export const CAML_LD_LIBRARY_PATH: string;
 	export const AUTOJUMP_ERROR_PATH: string;
-	export const NoDefaultCurrentDirectoryInExePath: string;
-	export const CLAUDE_CODE_ENTRYPOINT: string;
 	export const TERM_PROGRAM: string;
 	export const NODE: string;
 	export const INIT_CWD: string;
@@ -48,7 +46,6 @@ declare module '$env/static/private' {
 	export const npm_config_local_prefix: string;
 	export const PNPM_HOME: string;
 	export const ZSH: string;
-	export const GIT_EDITOR: string;
 	export const OCAML_TOPLEVEL_PATH: string;
 	export const USER: string;
 	export const LS_COLORS: string;
@@ -73,9 +70,9 @@ declare module '$env/static/private' {
 	export const MAMBA_ROOT_PREFIX: string;
 	export const npm_lifecycle_event: string;
 	export const EDITOR: string;
-	export const OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE: string;
 	export const npm_package_name: string;
 	export const LANG: string;
+	export const SASL_PATH: string;
 	export const ITERM_PROFILE: string;
 	export const npm_config_npm_version: string;
 	export const XPC_FLAGS: string;
@@ -91,13 +88,11 @@ declare module '$env/static/private' {
 	export const LESS: string;
 	export const LOGNAME: string;
 	export const npm_lifecycle_script: string;
-	export const COREPACK_ENABLE_AUTO_PIN: string;
 	export const npm_config_user_agent: string;
 	export const INFOPATH: string;
 	export const HOMEBREW_CELLAR: string;
 	export const LC_TERMINAL: string;
 	export const OSLogRateLimit: string;
-	export const CLAUDECODE: string;
 	export const npm_node_execpath: string;
 	export const npm_config_prefix: string;
 	export const COLORTERM: string;
@@ -133,8 +128,6 @@ declare module '$env/dynamic/private' {
 	export const env: {
 		CAML_LD_LIBRARY_PATH: string;
 		AUTOJUMP_ERROR_PATH: string;
-		NoDefaultCurrentDirectoryInExePath: string;
-		CLAUDE_CODE_ENTRYPOINT: string;
 		TERM_PROGRAM: string;
 		NODE: string;
 		INIT_CWD: string;
@@ -153,7 +146,6 @@ declare module '$env/dynamic/private' {
 		npm_config_local_prefix: string;
 		PNPM_HOME: string;
 		ZSH: string;
-		GIT_EDITOR: string;
 		OCAML_TOPLEVEL_PATH: string;
 		USER: string;
 		LS_COLORS: string;
@@ -178,9 +170,9 @@ declare module '$env/dynamic/private' {
 		MAMBA_ROOT_PREFIX: string;
 		npm_lifecycle_event: string;
 		EDITOR: string;
-		OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE: string;
 		npm_package_name: string;
 		LANG: string;
+		SASL_PATH: string;
 		ITERM_PROFILE: string;
 		npm_config_npm_version: string;
 		XPC_FLAGS: string;
@@ -196,13 +188,11 @@ declare module '$env/dynamic/private' {
 		LESS: string;
 		LOGNAME: string;
 		npm_lifecycle_script: string;
-		COREPACK_ENABLE_AUTO_PIN: string;
 		npm_config_user_agent: string;
 		INFOPATH: string;
 		HOMEBREW_CELLAR: string;
 		LC_TERMINAL: string;
 		OSLogRateLimit: string;
-		CLAUDECODE: string;
 		npm_node_execpath: string;
 		npm_config_prefix: string;
 		COLORTERM: string;

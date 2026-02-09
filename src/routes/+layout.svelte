@@ -7,7 +7,6 @@
   import { fly } from "svelte/transition";
 
   import Header from "$lib/components/Header.svelte";
-  import Footer from "$lib/components/Footer.svelte";
   import type { LayoutData } from "./$types";
 
   export let data: LayoutData;
@@ -39,10 +38,6 @@
 <Header />
 
 {#if isMobile || reducedMotion}
-  <!--
-    Disable page transitions on mobile due to a browser engine bug.
-    Also disable them for reduced-motion users.
-  -->
   <main>
     <slot />
   </main>
@@ -56,5 +51,3 @@
     </main>
   {/key}
 {/if}
-
-<Footer />
