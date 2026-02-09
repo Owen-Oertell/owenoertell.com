@@ -48,8 +48,8 @@
 <Seo title="Owen Oertell – {publication.shortName || publication.title}" description={publication.title} />
 
 <section class="layout-md">
-  <a href="/publications" class="text-neutral-500 hover:text-neutral-700 text-sm mb-4 inline-block">
-    &larr; back to publications
+  <a href="/#publications" class="text-neutral-500 hover:text-neutral-700 text-sm mb-4 inline-block">
+    &larr; back
   </a>
 
   <h1 class="text-2xl font-bold text-black dark:text-white mb-2">

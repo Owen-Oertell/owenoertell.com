@@ -3,23 +3,12 @@
 		"src/routes/+layout.ts",
 		"src/routes/+layout.ts"
 	],
-	"/publications": [
-		"src/routes/+layout.ts"
-	],
 	"/publications/[slug]": [
 		"src/routes/publications/[slug]/+page.ts",
 		"src/routes/publications/[slug]/+page.server.ts",
 		"src/routes/+layout.ts"
 	],
 	"/resume": [
-		"src/routes/+layout.ts"
-	],
-	"/writing": [
-		"src/routes/+layout.ts"
-	],
-	"/writing/[slug]": [
-		"src/routes/writing/[slug]/+page.ts",
-		"src/routes/writing/[slug]/+page.server.ts",
 		"src/routes/+layout.ts"
 	]
 }

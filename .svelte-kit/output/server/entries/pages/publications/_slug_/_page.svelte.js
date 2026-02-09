@@ -1,11 +1,15 @@
-import { ab as sanitize_props, ac as spread_props, a9 as slot, a2 as store_get, ae as stringify, a3 as escape_html, a5 as attr, a7 as unsubscribe_stores } from "../../../../chunks/index.js";
+import { ab as sanitize_props, ac as spread_props, a9 as slot, a2 as store_get, ad as stringify, a6 as escape_html, a4 as attr, a7 as unsubscribe_stores } from "../../../../chunks/index.js";
 import { p as page } from "../../../../chunks/stores.js";
 import { S as Seo } from "../../../../chunks/Seo.js";
 import { error } from "@sveltejs/kit";
 import { d as data } from "../../../../chunks/pub_list.js";
 import MarkdownIt from "markdown-it";
 import { I as Icon } from "../../../../chunks/Icon.js";
-import { h as html } from "../../../../chunks/html.js";
+function html(value) {
+  var html2 = String(value ?? "");
+  var open = "<!---->";
+  return open + html2 + "<!---->";
+}
 function Arrow_up_right($$renderer, $$props) {
   const $$sanitized_props = sanitize_props($$props);
   /**
@@ -115,7 +119,7 @@ function _page($$renderer, $$props) {
       title: `Owen Oertell – ${stringify(publication.shortName || publication.title)}`,
       description: publication.title
     });
-    $$renderer2.push(`<!----> <section class="layout-md"><a href="/publications" class="text-neutral-500 hover:text-neutral-700 text-sm mb-4 inline-block">← back to publications</a> <h1 class="text-2xl font-bold text-black dark:text-white mb-2">${escape_html(publication.title)}</h1> <p class="text-neutral-600 dark:text-neutral-400 mb-4">${escape_html(publication.authors)}</p> <div class="flex flex-wrap gap-3 items-center mb-8"><span class="venue-tag svelte-13q5ovy">${escape_html(publication.venue)}</span> `);
+    $$renderer2.push(`<!----> <section class="layout-md"><a href="/#publications" class="text-neutral-500 hover:text-neutral-700 text-sm mb-4 inline-block">← back</a> <h1 class="text-2xl font-bold text-black dark:text-white mb-2">${escape_html(publication.title)}</h1> <p class="text-neutral-600 dark:text-neutral-400 mb-4">${escape_html(publication.authors)}</p> <div class="flex flex-wrap gap-3 items-center mb-8"><span class="venue-tag svelte-13q5ovy">${escape_html(publication.venue)}</span> `);
     if (publication.link) {
       $$renderer2.push("<!--[-->");
       $$renderer2.push(`<a${attr("href", publication.link)} target="_blank" rel="noreferrer" class="action-btn svelte-13q5ovy">Paper `);

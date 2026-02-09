@@ -1,4 +1,4 @@
-import { ab as sanitize_props, ac as spread_props, a9 as slot, a3 as escape_html, a2 as store_get, a7 as unsubscribe_stores } from "../../chunks/index.js";
+import { ab as sanitize_props, ac as spread_props, a9 as slot, a6 as escape_html, a2 as store_get, a7 as unsubscribe_stores } from "../../chunks/index.js";
 import { p as page } from "../../chunks/stores.js";
 import { I as Icon } from "../../chunks/Icon.js";
 function Bug($$renderer, $$props) {

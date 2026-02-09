@@ -1,6 +1,6 @@
 import "clsx";
 import { S as Seo } from "../../../chunks/Seo.js";
-import { ag as fallback, a6 as attr_class, a3 as escape_html, a5 as attr, a9 as slot, aa as bind_props } from "../../../chunks/index.js";
+import { af as fallback, a5 as attr_class, a6 as escape_html, a4 as attr, a9 as slot, aa as bind_props } from "../../../chunks/index.js";
 function Workplace($$renderer, $$props) {
   let title = $$props["title"];
   let company = $$props["company"];
