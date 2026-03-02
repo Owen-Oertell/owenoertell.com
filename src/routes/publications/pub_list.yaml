@@ -7,6 +7,8 @@ papers2025:
       Owen Oertell*, Wenhao Zhan*, Gokul Swamy, Zhiwei Steven Wu, Kiante Brantley, Jason Lee, Wen Sun
     venue: NYRL 2024
     firstAuthor: true
+    selected: true
+    image: "assets/images/pub_heuristics.png"
     abstract: "Recent work has shown that for particular combinations of base model and training algorithm, *reinforcement learning with random rewards* (RLRR) improves the performance of LLMs on certain math reasoning benchmarks. This result is surprising as the (expected) policy gradient is *exactly* zero for RLRR, as all policies look the same under a random reward function. In response, we use RLRR as a *diagnostic task* for evaluating how well different classes of RL algorithms follow this true policy gradient. First, we demonstrate that algorithms that follow the (natural) policy gradient (e.g. RLoo (Kool et al., 2019) or REBEL (Gao et al., 2024)) produce the expected behavior of performance staying flat with random rewards, only increasing when provided with ground-truth rewards.  Second, we show that rather than holding steady, *heuristic* policy gradients like PPO (Schulman et al., 2017) and GRPO (Shao et al., 2024) can either increase or decrease the reasoning performance of the model considerably. Third, we demonstrate than on a didactic bandit problem — a problem that has nothing to do with LLMs or reasoning —  GRPO exhibits a bias towards choices that were more likely under the base policy, while the vanilla REINFORCE policy gradient (Williams, 1992) has no such tendencies. Taken together, our results underscore the importance of the choice of RL algorithm when making claims about LLM reasoning and beyond."
     bibtex: |
       @misc{oertell2025heuristicsconsideredharmful,
@@ -25,6 +27,8 @@ papers2025:
       Owen Oertell*, Shikun Sun*, Yiding Chen*, Jin Peng Zhou, Zhiyong Wang, and Wen Sun
     venue: ArXiv
     firstAuthor: true
+    selected: true
+    image: "assets/images/pub_slcd.png"
     abstract: "The controllable generation of diffusion models aims to steer the model to generate samples that optimize some given objective functions. It is desirable for a variety of applications including image generation, molecule generation, and DNA/sequence generation. Reinforcement Learning (RL) based fine-tuning of the base model is a popular approach but it can overfit the reward function while requiring significant resources. We frame controllable generation as a problem of finding a distribution that optimizes a KL-regularized objective function. We present SLCD -- Supervised Learning based Controllable Diffusion, which iteratively generates online data and trains a small classifier to guide the generation of the diffusion model. Similar to the standard classifier-guided diffusion, SLCD's key computation primitive is classification and does not involve any complex concepts from RL or control. Via a reduction to no-regret online learning analysis, we show that under KL divergence, the output from SLCD provably converges to the optimal solution of the KL-regularized objective. Further, we empirically demonstrate that SLCD can generate high quality samples with nearly the same inference time as the base model in both image generation with continuous diffusion and biological sequence generation with discrete diffusion. Our code is available [here](https://github.com/Owen-Oertell/slcd)."
     bibtex: |
       @misc{oertell2025efficientcontrollablediffusionoptimal,
@@ -111,6 +115,8 @@ papers2024:
     authors: >
       Zhaolin Gao, Jonathan D. Chang, Wenhao Zhan, Owen Oertell, Gokul Swamy, Kianté Brantley, Thorsten Joachims, J. Andrew Bagnell, Jason D. Lee, Wen Sun
     venue: NeurIPS 2024
+    selected: true
+    image: "assets/images/pub_rebel.png"
     abstract: "While originally developed for continuous control problems, Proximal Policy Optimization (PPO) has emerged as the work-horse of a variety of reinforcement learning (RL) applications, including the fine-tuning of generative models. Unfortunately, PPO requires multiple heuristics to enable stable convergence (e.g. value networks, clipping), and is notorious for its sensitivity to the precise implementation of these components. In response, we take a step back and ask what a minimalist RL algorithm for the era of generative models would look like. We propose REBEL, an algorithm that cleanly reduces the problem of policy optimization to regressing the relative reward between two completions to a prompt in terms of the policy, enabling strikingly lightweight implementation. In theory, we prove that fundamental RL algorithms like Natural Policy Gradient can be seen as variants of REBEL, which allows us to match the strongest known theoretical guarantees in terms of convergence and sample complexity in the RL literature. REBEL can also cleanly incorporate offline data and be extended to handle the intransitive preferences we frequently see in practice. Empirically, we find that REBEL provides a unified approach to language modeling and image generation with stronger or similar performance as PPO and DPO, all while being simpler to implement and more computationally efficient than PPO. When fine-tuning Llama-3-8B-Instruct, REBEL achieves strong performance in AlpacaEval 2.0, MT-Bench, and Open LLM Leaderboard."
     bibtex: |
       @inproceedings{
@@ -131,6 +137,8 @@ papers2024:
       Owen Oertell, Jonathan Daniel Chang, Yiyi Zhang, Kianté Brantley, and Wen Sun
     venue: RLC 2024
     firstAuthor: true
+    selected: true
+    image: "assets/images/pub_rlcm.png"
     abstract: "Reinforcement learning (RL) has improved guided image generation with diffusion models by directly optimizing rewards that capture image quality, aesthetics, and instruction following capabilities. However, the resulting generative policies inherit the same iterative sampling process of diffusion models that causes slow generation. To overcome this limitation, consistency models proposed learning a new class of generative models that directly map noise to data, resulting in a model that can generate an image in as few as one sampling iteration. In this work, to optimize text-to-image generative models for task specific rewards and enable fast training and inference, we propose a framework for fine-tuning consistency models via RL. Our framework, called Reinforcement Learning for Consistency Model (RLCM), frames the iterative inference process of a consistency model as an RL procedure. Comparing to RL finetuned diffusion models, RLCM trains significantly faster, improves the quality of the generation measured under the reward objectives, and speeds up the inference procedure by generating high quality images with as few as two inference steps. Experimentally, we show that RLCM can adapt text-to-image consistency models to objectives that are challenging to express with prompting, such as image compressibility, and those derived from human feedback, such as aesthetic quality. Our code is available [here](https://rlcm.owenoertell.com)."
     bibtex: |
       @article{oertell2024rlcm,

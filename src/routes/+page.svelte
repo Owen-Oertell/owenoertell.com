@@ -38,7 +38,10 @@
       .filter(Boolean) as Paper[],
   }));
 
+  const selectedPapers = allPapers.filter((p: Paper) => (p as any).selected);
+
   let openCategories: Record<string, boolean> = {};
+  let activeTab: 'selected' | 'all' = 'selected';
 
   function toggle(name: string) {
     openCategories[name] = !openCategories[name];
@@ -78,45 +81,98 @@
     See my <a href="https://scholar.google.com/citations?user=y0B6gawAAAAJ&hl=en" class="link">Google Scholar</a> for the most up-to-date list.
   </p>
 
-  <div class="space-y-6">
-    {#each categories as category}
-      <div>
-        <button
-          class="category-toggle"
-          on:click={() => toggle(category.name)}
-        >
-          <span class="chevron" class:open={openCategories[category.name]}>
-            <ChevronRight size={16} />
-          </span>
-          <span class="category-name">{category.name}</span>
-          <span class="category-count">{category.papers.length}</span>
-        </button>
-
-        {#if openCategories[category.name]}
-          <ul class="pub-list" transition:slide|local={{ duration: 200 }}>
-            {#each category.papers as paper}
-              <li class="pub-entry">
-                <div class="pub-title">{paper.title}.</div>
-                <div class="pub-authors">{paper.authors}</div>
-                <div class="pub-meta">
-                  <span class="pub-venue">{paper.venue}.</span>
-                  {#if paper.link}
-                    <a href={paper.link} class="pub-link" target="_blank" rel="noreferrer">[paper]</a>
-                  {/if}
-                  <a href={`/publications/${paper.slug}`} class="pub-link">[abstract]</a>
-                </div>
-              </li>
-            {/each}
-          </ul>
-        {/if}
-      </div>
-    {/each}
+  <!-- Tabs -->
+  <div class="tab-bar">
+    <button
+      class="tab-btn"
+      class:active={activeTab === 'selected'}
+      on:click={() => (activeTab = 'selected')}
+    >Selected</button>
+    <button
+      class="tab-btn"
+      class:active={activeTab === 'all'}
+      on:click={() => (activeTab = 'all')}
+    >All</button>
   </div>
+
+  {#if activeTab === 'selected'}
+    <div class="selected-list" transition:slide={{ duration: 200 }}>
+      {#each selectedPapers as paper}
+        <div class="selected-card">
+          <div class="selected-img-wrap">
+            {#if (paper as any).image}
+              <img
+                src={(paper as any).image}
+                alt={paper.title}
+                class="selected-img"
+                on:error={(e) => {
+                  const el = e.currentTarget as HTMLImageElement;
+                  el.style.display = 'none';
+                  (el.nextElementSibling as HTMLElement).style.display = 'block';
+                }}
+              />
+              <div class="selected-img-placeholder" style="display:none"></div>
+            {:else}
+              <div class="selected-img-placeholder"></div>
+            {/if}
+          </div>
+          <div class="selected-content">
+            <a href={`/publications/${paper.slug}`} class="selected-title">{paper.title}</a>
+            <div class="pub-authors">{paper.authors}</div>
+            <div class="pub-meta">
+              <span class="pub-venue">{paper.venue}.</span>
+              {#if paper.link}
+                <a href={paper.link} class="pub-link" target="_blank" rel="noreferrer">[paper]</a>
+              {/if}
+              <a href={`/publications/${paper.slug}`} class="pub-link">[abstract]</a>
+            </div>
+            {#if paper.abstract}
+              <p class="selected-abstract">{paper.abstract.slice(0, 220)}…</p>
+            {/if}
+          </div>
+        </div>
+      {/each}
+    </div>
+  {:else}
+    <div class="space-y-6" transition:slide={{ duration: 200 }}>
+      {#each categories as category}
+        <div>
+          <button
+            class="category-toggle"
+            on:click={() => toggle(category.name)}
+          >
+            <span class="chevron" class:open={openCategories[category.name]}>
+              <ChevronRight size={16} />
+            </span>
+            <span class="category-name">{category.name}</span>
+            <span class="category-count">{category.papers.length}</span>
+          </button>
+
+          {#if openCategories[category.name]}
+            <ul class="pub-list" transition:slide|local={{ duration: 200 }}>
+              {#each category.papers as paper}
+                <li class="pub-entry">
+                  <div class="pub-title">{paper.title}.</div>
+                  <div class="pub-authors">{paper.authors}</div>
+                  <div class="pub-meta">
+                    <span class="pub-venue">{paper.venue}.</span>
+                    {#if paper.link}
+                      <a href={paper.link} class="pub-link" target="_blank" rel="noreferrer">[paper]</a>
+                    {/if}
+                    <a href={`/publications/${paper.slug}`} class="pub-link">[abstract]</a>
+                  </div>
+                </li>
+              {/each}
+            </ul>
+          {/if}
+        </div>
+      {/each}
+    </div>
+  {/if}
 </section>
 
 <!-- Contact -->
 <section id="contact" class="layout-md scroll-mt-24">
-  <h2 class="heading2">Contact</h2>
   <div class="contact-rows flex flex-col">
     <div class="row">
       <span>email</span>
@@ -137,6 +193,96 @@
 </section>
 
 <style lang="postcss">
+  /* Tabs */
+  .tab-bar {
+    @apply flex gap-1 mb-5;
+  }
+
+  .tab-btn {
+    @apply px-3 py-1 text-sm rounded text-neutral-500 cursor-pointer transition-colors;
+  }
+
+  .tab-btn.active {
+    @apply bg-neutral-100 text-black font-medium;
+  }
+
+  :global(.dark) .tab-btn.active {
+    background-color: rgb(38, 38, 38);
+    color: rgb(245, 245, 245);
+  }
+
+  /* Selected cards */
+  .selected-list {
+    @apply flex flex-col gap-6;
+  }
+
+  .selected-card {
+    @apply flex gap-5 items-start;
+  }
+
+  .selected-img-wrap {
+    flex-shrink: 0;
+    width: 140px;
+  }
+
+  .selected-img {
+    width: 140px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid rgb(229, 231, 235);
+  }
+
+  :global(.dark) .selected-img {
+    border-color: rgb(55, 55, 55);
+  }
+
+  .selected-img-placeholder {
+    width: 140px;
+    height: 100px;
+    border-radius: 6px;
+    background-color: rgb(243, 244, 246);
+    border: 1px solid rgb(229, 231, 235);
+  }
+
+  :global(.dark) .selected-img-placeholder {
+    background-color: rgb(38, 38, 38);
+    border-color: rgb(55, 55, 55);
+  }
+
+  .selected-content {
+    @apply flex flex-col gap-0.5 min-w-0;
+  }
+
+  .selected-title {
+    @apply text-black font-medium text-base leading-snug hover:underline;
+    text-decoration: none;
+  }
+
+  :global(.dark) .selected-title {
+    color: rgb(245, 245, 245);
+  }
+
+  .selected-abstract {
+    @apply text-neutral-500 text-sm mt-1 leading-relaxed;
+  }
+
+  @media (max-width: 560px) {
+    .selected-card {
+      flex-direction: column;
+    }
+
+    .selected-img-wrap {
+      width: 100%;
+    }
+
+    .selected-img,
+    .selected-img-placeholder {
+      width: 100%;
+      height: 140px;
+    }
+  }
+
   .category-toggle {
     @apply flex items-center gap-2 w-full text-left py-1 cursor-pointer;
   }

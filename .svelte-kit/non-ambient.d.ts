@@ -27,17 +27,20 @@ export {};
 
 declare module "$app/types" {
 	export interface AppTypes {
-		RouteId(): "/" | "/publications" | "/publications/[slug]" | "/resume";
+		RouteId(): "/" | "/blog" | "/blog/[slug]" | "/publications" | "/publications/[slug]" | "/resume";
 		RouteParams(): {
+			"/blog/[slug]": { slug: string };
 			"/publications/[slug]": { slug: string }
 		};
 		LayoutParams(): {
 			"/": { slug?: string };
+			"/blog": { slug?: string };
+			"/blog/[slug]": { slug: string };
 			"/publications": { slug?: string };
 			"/publications/[slug]": { slug: string };
 			"/resume": Record<string, never>
 		};
-		Pathname(): "/" | "/publications" | "/publications/" | `/publications/${string}` & {} | `/publications/${string}/` & {} | "/resume" | "/resume/";
+		Pathname(): "/" | "/blog" | "/blog/" | `/blog/${string}` & {} | `/blog/${string}/` & {} | "/publications" | "/publications/" | `/publications/${string}` & {} | `/publications/${string}/` & {} | "/resume" | "/resume/";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
 		Asset(): "/.DS_Store" | "/CNAME" | "/_redirects" | "/assets/.DS_Store" | "/assets/images/ai_research.jpeg" | "/assets/images/image_round_1.png" | "/assets/images/image_round_2.png" | "/assets/images/mathcalO.svg" | "/assets/images/mountain_climber.webp" | "/assets/images/owen_oertell.png" | "/favicon.ico" | string & {};
 	}

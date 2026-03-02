@@ -2,11 +2,20 @@
   import { page } from "$app/stores";
 
   const links = [
+    { name: "blog", href: "/blog" },
     { name: "resume", href: "/resume" },
     { name: "contact", href: "mailto:ojo2@cornell.edu" },
   ];
 
-  $: isResumePage = $page.url.pathname === "/resume";
+  $: pathname = $page.url.pathname;
+  $: isResumePage = pathname === "/resume";
+  $: isBlogPage = pathname.startsWith("/blog");
+
+  const pageTitles: Record<string, string> = {
+    "/resume": "Resume",
+    "/blog": "Blog",
+  };
+  $: pageTitle = pageTitles[pathname] ?? (isBlogPage ? "Blog" : null);
 </script>
 
 <header
@@ -16,10 +25,10 @@
 >
   <h1 class="font-bold text-black text-2xl mb-6">
     <a href="/">Owen Oertell</a>
-    {#if isResumePage}
+    {#if pageTitle}
       <span class="page-title">
         <span class="text-neutral-400">—</span>
-        Resume
+        {pageTitle}
       </span>
     {/if}
   </h1>
@@ -28,7 +37,7 @@
       <a
         href={link.href}
         class="hover:text-black transition-colors"
-        class:text-black={isResumePage && link.href === "/resume"}
+        class:text-black={(isResumePage && link.href === "/resume") || (isBlogPage && link.href === "/blog")}
       >
         {link.name}
       </a>
