@@ -9,6 +9,17 @@
       "_environment.js"
     ]
   },
+  "_Footer.DEe1diib.css": {
+    "file": "_app/immutable/assets/Footer.DEe1diib.css",
+    "src": "_Footer.DEe1diib.css"
+  },
+  "_Footer.js": {
+    "file": "chunks/Footer.js",
+    "name": "Footer",
+    "css": [
+      "_app/immutable/assets/Footer.DEe1diib.css"
+    ]
+  },
   "_Icon.js": {
     "file": "chunks/Icon.js",
     "name": "Icon",
@@ -35,6 +46,10 @@
     "file": "chunks/false.js",
     "name": "false"
   },
+  "_html.js": {
+    "file": "chunks/html.js",
+    "name": "html"
+  },
   "_index.js": {
     "file": "chunks/index.js",
     "name": "index",
@@ -49,6 +64,10 @@
       "_index.js",
       "_environment.js"
     ]
+  },
+  "_posts.js": {
+    "file": "chunks/posts.js",
+    "name": "posts"
   },
   "_pub_list.js": {
     "file": "chunks/pub_list.js",
@@ -137,7 +156,7 @@
       "_stores.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.BL-tmMuE.css"
+      "_app/immutable/assets/_layout.Q8RVN_uF.css"
     ],
     "assets": [
       "_app/immutable/assets/newsreader-vietnamese-400-italic.5jH_nNPT.woff2",
@@ -163,7 +182,48 @@
       "_pub_list.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.oTaip4WM.css"
+      "_app/immutable/assets/_page.CSYFi20K.css"
+    ]
+  },
+  "src/routes/blog/+page.svelte": {
+    "file": "entries/pages/blog/_page.svelte.js",
+    "name": "entries/pages/blog/_page.svelte",
+    "src": "src/routes/blog/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_Seo.js",
+      "_Footer.js",
+      "_posts.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.BFERBL3q.css"
+    ]
+  },
+  "src/routes/blog/[slug]/+page.svelte": {
+    "file": "entries/pages/blog/_slug_/_page.svelte.js",
+    "name": "entries/pages/blog/_slug_/_page.svelte",
+    "src": "src/routes/blog/[slug]/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_stores.js",
+      "_Seo.js",
+      "_html.js",
+      "_Footer.js",
+      "_posts.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page._YEh0Tf_.css"
+    ]
+  },
+  "src/routes/blog/[slug]/+page.ts": {
+    "file": "entries/pages/blog/_slug_/_page.ts.js",
+    "name": "entries/pages/blog/_slug_/_page.ts",
+    "src": "src/routes/blog/[slug]/+page.ts",
+    "isEntry": true,
+    "imports": [
+      "_posts.js"
     ]
   },
   "src/routes/publications/[slug]/+page.server.ts": {
@@ -185,7 +245,8 @@
       "_stores.js",
       "_Seo.js",
       "_pub_list.js",
-      "_Icon.js"
+      "_Icon.js",
+      "_html.js"
     ],
     "css": [
       "_app/immutable/assets/_page.IoD07seF.css"
@@ -207,7 +268,7 @@
       "_index.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.dPuMo6H2.css"
+      "_app/immutable/assets/_page.DZB0wXwV.css"
     ]
   }
 }

@@ -1,15 +1,11 @@
-import { ab as sanitize_props, ac as spread_props, a9 as slot, a2 as store_get, ad as stringify, a6 as escape_html, a4 as attr, a7 as unsubscribe_stores } from "../../../../chunks/index.js";
+import { ab as sanitize_props, ac as spread_props, a9 as slot, a2 as store_get, ad as stringify, a3 as escape_html, a5 as attr, a7 as unsubscribe_stores } from "../../../../chunks/index.js";
 import { p as page } from "../../../../chunks/stores.js";
 import { S as Seo } from "../../../../chunks/Seo.js";
 import { error } from "@sveltejs/kit";
 import { d as data } from "../../../../chunks/pub_list.js";
 import MarkdownIt from "markdown-it";
 import { I as Icon } from "../../../../chunks/Icon.js";
-function html(value) {
-  var html2 = String(value ?? "");
-  var open = "<!---->";
-  return open + html2 + "<!---->";
-}
+import { h as html } from "../../../../chunks/html.js";
 function Arrow_up_right($$renderer, $$props) {
   const $$sanitized_props = sanitize_props($$props);
   /**
@@ -105,6 +101,7 @@ function _page($$renderer, $$props) {
     let abstractHtml;
     let slug = store_get($$store_subs ??= {}, "$page", page).params.slug;
     const allPapers = [
+      ...data.papers2026,
       ...data.papers2025,
       ...data.papers2024,
       ...data.papers2023

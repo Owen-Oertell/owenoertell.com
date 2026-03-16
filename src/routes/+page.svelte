@@ -1,10 +1,12 @@
 <script lang="ts">
   import Seo from "$lib/components/Seo.svelte";
+  import GardenArt from "$lib/components/GardenArt.svelte";
   import { slide } from "svelte/transition";
   import { ChevronRight } from "lucide-svelte";
   import publications from "./publications/pub_list.yaml";
 
   const allPapers = [
+    ...publications.papers2026,
     ...publications.papers2025,
     ...publications.papers2024,
     ...publications.papers2023
@@ -15,6 +17,9 @@
       "heuristics-considered-harmful",
       "rebel",
       "drpo",
+      "karl",
+      "officeqa-pro",
+      "llms-reason-off-policy",
     ],
     "Diffusion & Generative Models": [
       "slcd",
@@ -33,9 +38,10 @@
 
   const categories = Object.entries(categoryMap).map(([name, slugs]) => ({
     name,
-    papers: slugs
+    papers: (slugs
       .map(slug => allPapers.find((p: Paper) => p.slug === slug))
-      .filter(Boolean) as Paper[],
+      .filter(Boolean) as Paper[])
+      .sort((a, b) => new Date((b as any).date).getTime() - new Date((a as any).date).getTime()),
   }));
 
   const selectedPapers = allPapers.filter((p: Paper) => (p as any).selected);
@@ -44,7 +50,17 @@
   let activeTab: 'selected' | 'all' = 'selected';
 
   function toggle(name: string) {
-    openCategories[name] = !openCategories[name];
+    openCategories = { ...openCategories, [name]: !openCategories[name] };
+  }
+
+  function truncateAuthors(authors: string, max = 7): { short: string; full: string; truncated: boolean } {
+    const list = authors.split(',').map(a => a.trim());
+    if (list.length <= max) return { short: authors.trim(), full: authors.trim(), truncated: false };
+    return {
+      short: list.slice(0, max).join(', ') + ', et al.',
+      full: authors.trim(),
+      truncated: true,
+    };
   }
 </script>
 
@@ -73,6 +89,8 @@
     >.
   </p>
 </section>
+
+<GardenArt />
 
 <!-- Publications -->
 <section id="publications" class="layout-md mb-14 scroll-mt-24">
@@ -118,7 +136,14 @@
           </div>
           <div class="selected-content">
             <a href={`/publications/${paper.slug}`} class="selected-title">{paper.title}</a>
-            <div class="pub-authors">{paper.authors}</div>
+{#if truncateAuthors(paper.authors).truncated}
+              <div class="pub-authors authors-truncated">
+                <span class="authors-short">{truncateAuthors(paper.authors).short}</span>
+                <span class="authors-full">{truncateAuthors(paper.authors).full}</span>
+              </div>
+            {:else}
+              <div class="pub-authors">{paper.authors}</div>
+            {/if}
             <div class="pub-meta">
               <span class="pub-venue">{paper.venue}.</span>
               {#if paper.link}
@@ -171,6 +196,7 @@
   {/if}
 </section>
 
+
 <!-- Contact -->
 <section id="contact" class="layout-md scroll-mt-24">
   <div class="contact-rows flex flex-col">
@@ -191,6 +217,7 @@
     </div>
   </div>
 </section>
+
 
 <style lang="postcss">
   /* Tabs */
@@ -227,8 +254,8 @@
 
   .selected-img {
     width: 140px;
-    height: 100px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     border-radius: 6px;
     border: 1px solid rgb(229, 231, 235);
   }
@@ -239,7 +266,8 @@
 
   .selected-img-placeholder {
     width: 140px;
-    height: 100px;
+    height: auto;
+    min-height: 80px;
     border-radius: 6px;
     background-color: rgb(243, 244, 246);
     border: 1px solid rgb(229, 231, 235);
@@ -279,6 +307,7 @@
     .selected-img,
     .selected-img-placeholder {
       width: 100%;
+      height: auto;
       height: 140px;
     }
   }
@@ -317,6 +346,22 @@
 
   .pub-authors {
     @apply text-neutral-500 text-sm mt-0.5;
+  }
+
+  .authors-truncated .authors-full {
+    display: none;
+  }
+
+  .authors-truncated .authors-short {
+    display: inline;
+  }
+
+  .authors-truncated:hover .authors-full {
+    display: inline;
+  }
+
+  .authors-truncated:hover .authors-short {
+    display: none;
   }
 
   .pub-meta {

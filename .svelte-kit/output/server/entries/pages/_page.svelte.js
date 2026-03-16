@@ -1,38 +1,111 @@
-import { a3 as ensure_array_like, a6 as escape_html, a4 as attr } from "../../chunks/index.js";
+import { a6 as attr_class, a4 as ensure_array_like, a5 as attr, a3 as escape_html } from "../../chunks/index.js";
 import { S as Seo } from "../../chunks/Seo.js";
+import "clsx";
 import { d as data } from "../../chunks/pub_list.js";
+function GardenArt($$renderer, $$props) {
+  $$renderer.component(($$renderer2) => {
+    $$renderer2.push(`<div class="garden-art svelte-19rh402"><canvas aria-hidden="true" class="svelte-19rh402"></canvas> <p class="caption svelte-19rh402">ascii image of the humble administrator's garden. suzhou, china</p></div>`);
+  });
+}
 function _page($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
-    let allPapers;
-    allPapers = [
+    const allPapers = [
+      ...data.papers2026,
       ...data.papers2025,
       ...data.papers2024,
       ...data.papers2023
-    ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    ];
+    const categoryMap = {
+      "LLM Alignment": [
+        "heuristics-considered-harmful",
+        "rebel",
+        "drpo",
+        "karl",
+        "officeqa-pro",
+        "llms-reason-off-policy"
+      ],
+      "Diffusion & Generative Models": [
+        "slcd",
+        "consistency-model-convergence",
+        "turbohopp",
+        "rlcm",
+        "sorl"
+      ],
+      "Bandits & RL Theory": ["delay-dependent-bandits", "distrl"]
+    };
+    Object.entries(categoryMap).map(([name, slugs]) => ({
+      name,
+      papers: slugs.map((slug) => allPapers.find((p) => p.slug === slug)).filter(Boolean).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    }));
+    const selectedPapers = allPapers.filter((p) => p.selected);
+    let activeTab = "selected";
+    function truncateAuthors(authors, max = 7) {
+      const list = authors.split(",").map((a) => a.trim());
+      if (list.length <= max) return {
+        short: authors.trim(),
+        full: authors.trim(),
+        truncated: false
+      };
+      return {
+        short: list.slice(0, max).join(", ") + ", et al.",
+        full: authors.trim(),
+        truncated: true
+      };
+    }
     Seo($$renderer2, {
       title: "Owen Oertell",
       description: "machine learning researcher at Cornell University."
     });
-    $$renderer2.push(`<!----> <section class="layout-md text-lg space-y-5 mb-24"><p>I study computer science at Cornell University. My research
+    $$renderer2.push(`<!----> <section class="layout-md text-lg space-y-5 mb-14"><p>I study computer science at Cornell University. My research
     interests are in decision-making (reinforcement learning, bandits) and
     generative modeling (diffusion models, LLMs). I am fortunate to work with
     professors <a class="link" href="https://wensun.github.io">Wen Sun</a>, <a class="link" href="https://www.cs.cornell.edu/~rdk/">Robert Kleinberg</a>,
     and <a class="link" href="https://xkianteb.github.io">Kianté Brantley</a>.</p> <p>Currently, I am a research scientist intern at <a class="link" href="https://www.databricks.com/">Databricks</a> working on deep research. Previously, I
     was a research intern at <a class="link" href="https://www.nvidia.com/">NVIDIA</a> and a software engineering intern at <a class="link" href="https://www.drw.com/">DRW</a>.</p> <p>Outside of research, I enjoy mathematics, <a class="link" href="https://artsandculture.google.com/entity/edward-hopper/m0hc3t">art</a>, music, literature, and
-    drone photography. A picture of me can be found <a class="link" href="assets/images/owen_oertell.png">here</a>.</p></section> <section id="publications" class="layout-md mb-24 scroll-mt-24"><h2 class="heading2">Publications</h2> <p class="text-neutral-500 mb-6">See my <a href="https://scholar.google.com/citations?user=y0B6gawAAAAJ&amp;hl=en" class="link">Google Scholar</a> for the most up-to-date list.</p> <ol class="pub-list svelte-1uha8ag"><!--[-->`);
-    const each_array = ensure_array_like(allPapers);
-    for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
-      let paper = each_array[$$index];
-      $$renderer2.push(`<li class="pub-entry svelte-1uha8ag"><span class="pub-title svelte-1uha8ag">${escape_html(paper.title)}.</span> <span class="pub-authors svelte-1uha8ag">${escape_html(paper.authors)}</span> <span class="pub-venue svelte-1uha8ag">${escape_html(paper.venue)}.</span> `);
-      if (paper.link) {
-        $$renderer2.push("<!--[-->");
-        $$renderer2.push(`<a${attr("href", paper.link)} class="pub-link svelte-1uha8ag" target="_blank" rel="noreferrer">[paper]</a>`);
-      } else {
-        $$renderer2.push("<!--[!-->");
+    drone photography. A picture of me can be found <a class="link" href="assets/images/owen_oertell.png">here</a>.</p></section> `);
+    GardenArt($$renderer2);
+    $$renderer2.push(`<!----> <section id="publications" class="layout-md mb-14 scroll-mt-24"><h2 class="heading2">Publications</h2> <p class="text-neutral-500 mb-4">See my <a href="https://scholar.google.com/citations?user=y0B6gawAAAAJ&amp;hl=en" class="link">Google Scholar</a> for the most up-to-date list.</p> <div class="tab-bar svelte-1uha8ag"><button${attr_class("tab-btn svelte-1uha8ag", void 0, { "active": activeTab === "selected" })}>Selected</button> <button${attr_class("tab-btn svelte-1uha8ag", void 0, { "active": activeTab === "all" })}>All</button></div> `);
+    {
+      $$renderer2.push("<!--[-->");
+      $$renderer2.push(`<div class="selected-list svelte-1uha8ag"><!--[-->`);
+      const each_array = ensure_array_like(selectedPapers);
+      for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
+        let paper = each_array[$$index];
+        $$renderer2.push(`<div class="selected-card svelte-1uha8ag"><div class="selected-img-wrap svelte-1uha8ag">`);
+        if (paper.image) {
+          $$renderer2.push("<!--[-->");
+          $$renderer2.push(`<img${attr("src", paper.image)}${attr("alt", paper.title)} class="selected-img svelte-1uha8ag"/> <div class="selected-img-placeholder svelte-1uha8ag" style="display:none"></div>`);
+        } else {
+          $$renderer2.push("<!--[!-->");
+          $$renderer2.push(`<div class="selected-img-placeholder svelte-1uha8ag"></div>`);
+        }
+        $$renderer2.push(`<!--]--></div> <div class="selected-content svelte-1uha8ag"><a${attr("href", `/publications/${paper.slug}`)} class="selected-title svelte-1uha8ag">${escape_html(paper.title)}</a> `);
+        if (truncateAuthors(paper.authors).truncated) {
+          $$renderer2.push("<!--[-->");
+          $$renderer2.push(`<div class="pub-authors authors-truncated svelte-1uha8ag"><span class="authors-short svelte-1uha8ag">${escape_html(truncateAuthors(paper.authors).short)}</span> <span class="authors-full svelte-1uha8ag">${escape_html(truncateAuthors(paper.authors).full)}</span></div>`);
+        } else {
+          $$renderer2.push("<!--[!-->");
+          $$renderer2.push(`<div class="pub-authors svelte-1uha8ag">${escape_html(paper.authors)}</div>`);
+        }
+        $$renderer2.push(`<!--]--> <div class="pub-meta svelte-1uha8ag"><span class="pub-venue svelte-1uha8ag">${escape_html(paper.venue)}.</span> `);
+        if (paper.link) {
+          $$renderer2.push("<!--[-->");
+          $$renderer2.push(`<a${attr("href", paper.link)} class="pub-link svelte-1uha8ag" target="_blank" rel="noreferrer">[paper]</a>`);
+        } else {
+          $$renderer2.push("<!--[!-->");
+        }
+        $$renderer2.push(`<!--]--> <a${attr("href", `/publications/${paper.slug}`)} class="pub-link svelte-1uha8ag">[abstract]</a></div> `);
+        if (paper.abstract) {
+          $$renderer2.push("<!--[-->");
+          $$renderer2.push(`<p class="selected-abstract svelte-1uha8ag">${escape_html(paper.abstract.slice(0, 220))}…</p>`);
+        } else {
+          $$renderer2.push("<!--[!-->");
+        }
+        $$renderer2.push(`<!--]--></div></div>`);
       }
-      $$renderer2.push(`<!--]--> <a${attr("href", `/publications/${paper.slug}`)} class="pub-link svelte-1uha8ag">[abstract]</a></li>`);
+      $$renderer2.push(`<!--]--></div>`);
     }
-    $$renderer2.push(`<!--]--></ol></section> <section id="contact" class="layout-md scroll-mt-24"><h2 class="heading2">Contact</h2> <div class="contact-rows flex flex-col"><div class="row svelte-1uha8ag"><span class="svelte-1uha8ag">email</span> <hr class="svelte-1uha8ag"/> <a class="link svelte-1uha8ag" href="mailto:ojo2@cornell.edu">ojo2@cornell.edu</a></div> <div class="row svelte-1uha8ag"><span class="svelte-1uha8ag">github</span> <hr class="svelte-1uha8ag"/> <a class="link svelte-1uha8ag" href="https://github.com/owen-oertell">@owen-oertell</a></div> <div class="row svelte-1uha8ag"><span class="svelte-1uha8ag">scholar</span> <hr class="svelte-1uha8ag"/> <a class="link svelte-1uha8ag" href="https://scholar.google.com/citations?user=y0B6gawAAAAJ&amp;hl=en">owen-oertell</a></div></div></section>`);
+    $$renderer2.push(`<!--]--></section> <section id="contact" class="layout-md scroll-mt-24"><div class="contact-rows flex flex-col"><div class="row svelte-1uha8ag"><span class="svelte-1uha8ag">email</span> <hr class="svelte-1uha8ag"/> <a class="link svelte-1uha8ag" href="mailto:ojo2@cornell.edu">ojo2@cornell.edu</a></div> <div class="row svelte-1uha8ag"><span class="svelte-1uha8ag">github</span> <hr class="svelte-1uha8ag"/> <a class="link svelte-1uha8ag" href="https://github.com/owen-oertell">@owen-oertell</a></div> <div class="row svelte-1uha8ag"><span class="svelte-1uha8ag">scholar</span> <hr class="svelte-1uha8ag"/> <a class="link svelte-1uha8ag" href="https://scholar.google.com/citations?user=y0B6gawAAAAJ&amp;hl=en">owen-oertell</a></div></div></section>`);
   });
 }
 export {
