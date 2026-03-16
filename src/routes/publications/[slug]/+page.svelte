@@ -12,6 +12,7 @@
 
   // Combine all papers and find by slug
   const allPapers = [
+    ...publications.papers2026,
     ...publications.papers2025,
     ...publications.papers2024,
     ...publications.papers2023

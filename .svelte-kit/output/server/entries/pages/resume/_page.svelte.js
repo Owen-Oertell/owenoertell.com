@@ -1,37 +1,28 @@
 import "clsx";
 import { S as Seo } from "../../../chunks/Seo.js";
-import { af as fallback, a5 as attr_class, a6 as escape_html, a4 as attr, a9 as slot, aa as bind_props } from "../../../chunks/index.js";
+import { a5 as attr, a3 as escape_html, a9 as slot, aa as bind_props } from "../../../chunks/index.js";
 function Workplace($$renderer, $$props) {
   let title = $$props["title"];
   let company = $$props["company"];
   let url = $$props["url"];
   let dates = $$props["dates"];
   let location = $$props["location"];
-  let defaultHidden = fallback($$props["defaultHidden"], false);
-  let hidden = defaultHidden;
-  $$renderer.push(`<div${attr_class("mb-8", void 0, { "cursor-pointer": hidden })}><h3 class="text-black text-lg leading-tight mb-1">${escape_html(title)} at <a class="link"${attr("href", url)}>${escape_html(company)}</a></h3> <p class="font-light mb-2"><span class="whitespace-nowrap">${escape_html(dates)}</span> <span class="px-0.5 text-gray-500">•</span> <span class="whitespace-nowrap">${escape_html(location)}</span></p> `);
-  if (!hidden) {
-    $$renderer.push("<!--[-->");
-    $$renderer.push(`<ul class="list-disc pl-7 marker:text-neutral-400"><!--[-->`);
-    slot($$renderer, $$props, "default", {});
-    $$renderer.push(`<!--]--></ul>`);
-  } else {
-    $$renderer.push("<!--[!-->");
-  }
-  $$renderer.push(`<!--]--></div>`);
-  bind_props($$props, { title, company, url, dates, location, defaultHidden });
+  $$renderer.push(`<div class="entry svelte-w6jacu"><div class="entry-header svelte-w6jacu"><div class="entry-left svelte-w6jacu"><a class="company-name svelte-w6jacu"${attr("href", url)} target="_blank" rel="noreferrer">${escape_html(company)}</a> <span class="role-title svelte-w6jacu">${escape_html(title)}</span></div> <div class="entry-right svelte-w6jacu"><span class="entry-dates svelte-w6jacu">${escape_html(dates)}</span> <span class="entry-location svelte-w6jacu">${escape_html(location)}</span></div></div> <ul class="entry-bullets svelte-w6jacu"><!--[-->`);
+  slot($$renderer, $$props, "default", {});
+  $$renderer.push(`<!--]--></ul></div>`);
+  bind_props($$props, { title, company, url, dates, location });
 }
 function _page($$renderer) {
   Seo($$renderer, {
     title: "Owen Oertell – Resume",
     description: "Researcher, software engineer."
   });
-  $$renderer.push(`<!----> <section class="layout-md py-12"><h2 class="heading2">Education</h2> <div class="mb-4"><div class="flex justify-between items-end"><h3 class="text-black text-lg">Cornell University</h3> <div class="text-neutral-500 mb-0.5">2022 — Current</div></div> <p class="byline svelte-1mijfb4">B.S. in Computer Science; Minor in Mathematics</p></div> <h4 class="font-medium mt-4 mb-1">Teaching:</h4> <ul class="svelte-1mijfb4"><li class="svelte-1mijfb4">TA for CS 4789 (Introduction to Reinforcement Learning). Sp24, Sp25 (Head TA)</li> <li class="svelte-1mijfb4">TA for CS 4820 (Introduction to Analysis of Algorithms). Fa23, Sp23</li></ul> <h4 class="font-medium mt-4 mb-1">Community Service:</h4> <ul class="svelte-1mijfb4"><li class="svelte-1mijfb4">ICLR 2025, 2026 Reviewer (2025 Notable Reviewer)</li> <li class="svelte-1mijfb4">NeurIPS 2025 Reviewer</li> <li class="svelte-1mijfb4">RLC 2025 Reviewer</li> <li class="svelte-1mijfb4">COLM 2025 Reviewer</li> <li class="svelte-1mijfb4">ACL ARR 2025 Reviewer</li></ul></section> <section class="layout-md py-5"><h2 class="heading2">Professional Experience</h2> `);
+  $$renderer.push(`<!----> <div class="layout-md py-8 space-y-12"><section><h2 class="section-heading svelte-1mijfb4">Education</h2> <div class="entry py-4 border-b border-neutral-100"><div class="flex justify-between items-start gap-4 flex-wrap"><div><div class="text-black font-semibold text-base">Cornell University</div> <div class="text-neutral-500 text-sm mt-0.5">B.S. in Computer Science — Minor in Mathematics</div></div> <div class="text-neutral-500 text-sm whitespace-nowrap">2022 — Present</div></div></div> <div class="sub-section svelte-1mijfb4"><h3 class="sub-heading svelte-1mijfb4">Teaching</h3> <ul class="item-list svelte-1mijfb4"><li class="svelte-1mijfb4"><span class="item-label svelte-1mijfb4">CS 4789</span> Introduction to Reinforcement Learning <span class="item-tags svelte-1mijfb4"><span class="tag svelte-1mijfb4">Sp24</span> <span class="tag svelte-1mijfb4">Sp25 Head TA</span></span></li> <li class="svelte-1mijfb4"><span class="item-label svelte-1mijfb4">CS 4820</span> Introduction to Analysis of Algorithms <span class="item-tags svelte-1mijfb4"><span class="tag svelte-1mijfb4">Fa23</span> <span class="tag svelte-1mijfb4">Sp23</span></span></li></ul></div> <div class="sub-section svelte-1mijfb4"><h3 class="sub-heading svelte-1mijfb4">Service</h3> <ul class="item-list svelte-1mijfb4"><li class="svelte-1mijfb4"><span class="item-label svelte-1mijfb4">ICLR</span> Reviewer 2025, 2026 <span class="item-tags svelte-1mijfb4"><span class="tag svelte-1mijfb4">Notable Reviewer 2025</span></span></li> <li class="svelte-1mijfb4"><span class="item-label svelte-1mijfb4">NeurIPS</span> Reviewer 2025</li> <li class="svelte-1mijfb4"><span class="item-label svelte-1mijfb4">RLC</span> Reviewer 2025</li> <li class="svelte-1mijfb4"><span class="item-label svelte-1mijfb4">COLM</span> Reviewer 2025</li> <li class="svelte-1mijfb4"><span class="item-label svelte-1mijfb4">ACL ARR</span> Reviewer 2025</li></ul></div></section> <section><h2 class="section-heading svelte-1mijfb4">Experience</h2> `);
   Workplace($$renderer, {
     title: "Research Scientist Intern",
     company: "Databricks",
     url: "https://databricks.com",
-    dates: "August 2025 – Present",
+    dates: "Aug 2025 – Present",
     location: "New York, NY",
     children: ($$renderer2) => {
       $$renderer2.push(`<li>Deep Research Agents</li>`);
@@ -43,7 +34,7 @@ function _page($$renderer) {
     title: "Research Intern",
     company: "NVIDIA",
     url: "https://nvidia.com",
-    dates: "June 2025 – August 2025",
+    dates: "Jun 2025 – Aug 2025",
     location: "Santa Clara, CA",
     children: ($$renderer2) => {
       $$renderer2.push(`<li>RL + Compilers</li>`);
@@ -55,7 +46,7 @@ function _page($$renderer) {
     title: "Research Intern",
     company: "NVIDIA",
     url: "https://nvidia.com",
-    dates: "August 2024 – December 2024",
+    dates: "Aug 2024 – Dec 2024",
     location: "Santa Clara, CA",
     children: ($$renderer2) => {
       $$renderer2.push(`<li>ML + Compilers</li>`);
@@ -67,7 +58,7 @@ function _page($$renderer) {
     title: "Software Engineering Intern",
     company: "DRW Holdings",
     url: "https://drw.com",
-    dates: "June 2024 – August 2024",
+    dates: "Jun 2024 – Aug 2024",
     location: "Chicago, IL",
     children: ($$renderer2) => {
       $$renderer2.push(`<li>Commodities desk</li>`);
@@ -79,14 +70,14 @@ function _page($$renderer) {
     title: "Researcher",
     company: "Sun Lab, Cornell University",
     url: "https://wensun.github.io",
-    dates: "September 2022 – Current",
+    dates: "Sep 2022 – Present",
     location: "Ithaca, NY",
     children: ($$renderer2) => {
       $$renderer2.push(`<li>Reinforcement learning</li>`);
     },
     $$slots: { default: true }
   });
-  $$renderer.push(`<!----></section>`);
+  $$renderer.push(`<!----></section> <section><div class="contact-rows flex flex-col"><div class="row svelte-1mijfb4"><span class="svelte-1mijfb4">email</span> <hr class="svelte-1mijfb4"/> <a class="link svelte-1mijfb4" href="mailto:ojo2@cornell.edu">ojo2@cornell.edu</a></div> <div class="row svelte-1mijfb4"><span class="svelte-1mijfb4">github</span> <hr class="svelte-1mijfb4"/> <a class="link svelte-1mijfb4" href="https://github.com/owen-oertell">@owen-oertell</a></div> <div class="row svelte-1mijfb4"><span class="svelte-1mijfb4">scholar</span> <hr class="svelte-1mijfb4"/> <a class="link svelte-1mijfb4" href="https://scholar.google.com/citations?user=y0B6gawAAAAJ&amp;hl=en">owen-oertell</a></div></div></section></div>`);
 }
 export {
   _page as default

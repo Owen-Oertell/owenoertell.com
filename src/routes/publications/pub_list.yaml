@@ -1,12 +1,82 @@
+papers2026:
+  - title: "OfficeQA Pro: An Enterprise Benchmark for End-to-End Grounded Reasoning"
+    slug: "officeqa-pro"
+    date: 2026-03-09
+    link: "https://arxiv.org/pdf/2603.08655"
+    authors: >
+      Krista Opsahl-Ong, Arnav Singhvi, Jasmine Collins, Ivan Zhou, Cindy Wang, Ashutosh Baheti, Owen Oertell, Jacob Portes, Sam Havens, Erich Elsen, Michael Bendersky, Matei Zaharia, and Xing Chen
+    venue: Tech Report
+    firstAuthor: false
+    selected: false
+    abstract: "We introduce OfficeQA Pro, a benchmark for evaluating AI agents on grounded, multi-document reasoning over a large and heterogeneous document corpus. The corpus consists of U.S. Treasury Bulletins spanning nearly 100 years, comprising 89,000 pages and over 26 million numerical values. OfficeQA Pro consists of 133 questions that require precise document parsing, retrieval, and analytical reasoning across both unstructured text and tabular data. Frontier LLMs including Claude Opus 4.6, GPT-5.4, and Gemini 3.1 Pro Preview achieve less than 5% accuracy on OfficeQA Pro when relying on parametric knowledge, and less than 12% with additional access to the web. When provided directly with the document corpus, frontier agents still struggle on over half of questions, scoring 34.1% on average. We find that providing agents with a structured document representation produced by Databricks' ai_parse_document yields a 16.1% average relative performance gain across agents. We conduct additional ablations to study the effects of model selection, table representation, retrieval strategy, and test-time scaling on performance. Despite these improvements, significant headroom remains before agents can be considered reliable at enterprise-grade grounded reasoning."
+    bibtex: |
+      @misc{opsahlong2026officeqaproenterprisebenchmark,
+        title={OfficeQA Pro: An Enterprise Benchmark for End-to-End Grounded Reasoning}, 
+        author={Krista Opsahl-Ong and Arnav Singhvi and Jasmine Collins and Ivan Zhou and Cindy Wang and Ashutosh Baheti and Owen Oertell and Jacob Portes and Sam Havens and Erich Elsen and Michael Bendersky and Matei Zaharia and Xing Chen},
+        year={2026},
+        eprint={2603.08655},
+        archivePrefix={arXiv},
+        primaryClass={cs.AI},
+        url={https://arxiv.org/abs/2603.08655}, 
+      }
+    shortName: "OfficeQA Pro"
+
+  - title: "KARL: Knowledge Agents via Reinforcement Learning"
+    slug: "karl"
+    date: 2026-03-05
+    link: "https://arxiv.org/pdf/2603.05218"
+    authors: >
+      Jonathan D. Chang, Andrew Drozdov, Shubham Toshniwal, Owen Oertell, Alexander Trott, Jacob Portes, Abhay Gupta, Pallavi Koppol, Ashutosh Baheti, Sean Kulinski, Ivan Zhou, Irene Dea, Krista Opsahl-Ong, Simon Favreau-Lessard, Sean Owen, Jose Javier Gonzalez Ortiz, Arnav Singhvi, Xabi Andrade, Cindy Wang, Kartik Sreenivasan, Sam Havens, Jialu Liu, Peyton DeNiro, Wen Sun, Michael Bendersky, and Jonathan Frankle
+    venue: Tech Report
+    firstAuthor: false
+    selected: true
+    image: "assets/images/pub_karl.png"
+    abstract: "We present a system for training enterprise search agents via reinforcement learning that achieves state-of-the-art performance across a diverse suite of hard-to-verify agentic search tasks. Our work makes four core contributions. First, we introduce KARLBench, a multi-capability evaluation suite spanning six distinct search regimes, including constraint-driven entity search, cross-document report synthesis, tabular numerical reasoning, exhaustive entity retrieval, procedural reasoning over technical documentation, and fact aggregation over internal enterprise notes. Second, we show that models trained across heterogeneous search behaviors generalize substantially better than those optimized for any single benchmark. Third, we develop an agentic synthesis pipeline that employs long-horizon reasoning and tool use to generate diverse, grounded, and high-quality training data, with iterative bootstrapping from increasingly capable models. Fourth, we propose a new post-training paradigm based on iterative large-batch off-policy RL that is sample efficient, robust to train-inference engine discrepancies, and naturally extends to multi-task training with out-of-distribution generalization. Compared to Claude 4.6 and GPT 5.2, KARL is Pareto-optimal on KARLBench across cost-quality and latency-quality trade-offs, including tasks that were out-of-distribution during training. With sufficient test-time compute, it surpasses the strongest closed models. These results show that tailored synthetic data in combination with multi-task reinforcement learning enables cost-efficient and high-performing knowledge agents for grounded reasoning."
+    bibtex: |
+      @misc{chang2026karlknowledgeagentsreinforcement,
+        title={KARL: Knowledge Agents via Reinforcement Learning}, 
+        author={Jonathan D. Chang and Andrew Drozdov and Shubham Toshniwal and Owen Oertell and Alexander Trott and Jacob Portes and Abhay Gupta and Pallavi Koppol and Ashutosh Baheti and Sean Kulinski and Ivan Zhou and Irene Dea and Krista Opsahl-Ong and Simon Favreau-Lessard and Sean Owen and Jose Javier Gonzalez Ortiz and Arnav Singhvi and Xabi Andrade and Cindy Wang and Kartik Sreenivasan and Sam Havens and Jialu Liu and Peyton DeNiro and Wen Sun and Michael Bendersky and Jonathan Frankle},
+        year={2026},
+        eprint={2603.05218},
+        archivePrefix={arXiv},
+        primaryClass={cs.AI},
+        url={https://arxiv.org/abs/2603.05218}, 
+      }
+    shortName: "KARL"
+
+  - title: LLMs Can Learn to Reason Via Off-Policy RL
+    slug: "llms-reason-off-policy"
+    date: 2026-02-22
+    link: "https://arxiv.org/pdf/2602.19362"
+    authors: >
+      Daniel Ritter, Owen Oertell, Bradley Guo, Jonathan D. Chang, Kianté Brantley, and Wen Sun
+    venue: ArXiv
+    firstAuthor: false
+    selected: false
+    abstract: "Reinforcement learning (RL) approaches for Large Language Models (LLMs) frequently use on-policy algorithms, such as PPO or GRPO. However, policy lag from distributed training architectures and differences between the training and inference policies break this assumption, making the data off-policy by design. To rectify this, prior work has focused on making this off-policy data appear more on-policy, either via importance sampling (IS), or by more closely aligning the training and inference policies by explicitly modifying the inference engine. In this work, we embrace off-policyness and propose a novel off-policy RL algorithm that does not require these modifications: Optimal Advantage-based Policy Optimization with Lagged Inference policy (OAPL). We show that OAPL outperforms GRPO with importance sampling on competition math benchmarks, and can match the performance of a publicly available coding model, DeepCoder, on LiveCodeBench, while using 3x fewer generations during training. We further empirically demonstrate that models trained via OAPL have improved test time scaling under the Pass@k metric. OAPL allows for efficient, effective post-training even with lags of more than 400 gradient steps between the training and inference policies, 100x more off-policy than prior approaches."
+    bibtex: |
+      @misc{ritter2026llmslearnreasonoffpolicy,
+        title={LLMs Can Learn to Reason Via Off-Policy RL}, 
+        author={Daniel Ritter and Owen Oertell and Bradley Guo and Jonathan Chang and Kianté Brantley and Wen Sun},
+        year={2026},
+        eprint={2602.19362},
+        archivePrefix={arXiv},
+        primaryClass={cs.LG},
+        url={https://arxiv.org/abs/2602.19362}, 
+      }
+    shortName: "OAPL"
+
 papers2025:
   - title: "Heuristics Considered Harmful: RL With Random Rewards Should Not Make LLMs Reason"
     slug: "heuristics-considered-harmful"
     date: 2025-08-17
     link: "https://fuchsia-arch-d8e.notion.site/Heuristics-Considered-Harmful-RL-With-Random-Rewards-Should-Not-Make-LLMs-Reason-21ba29497c4180ca86ffce303f01923d"
     authors: >
-      Owen Oertell*, Wenhao Zhan*, Gokul Swamy, Zhiwei Steven Wu, Kiante Brantley, Jason Lee, Wen Sun
+      Owen Oertell*, Wenhao Zhan*, Gokul Swamy, Zhiwei Steven Wu, Kiante Brantley, Jason Lee, and Wen Sun
     venue: NYRL 2024
     firstAuthor: true
+    selected: true
+    image: "assets/images/pub_heuristics.png"
     abstract: "Recent work has shown that for particular combinations of base model and training algorithm, *reinforcement learning with random rewards* (RLRR) improves the performance of LLMs on certain math reasoning benchmarks. This result is surprising as the (expected) policy gradient is *exactly* zero for RLRR, as all policies look the same under a random reward function. In response, we use RLRR as a *diagnostic task* for evaluating how well different classes of RL algorithms follow this true policy gradient. First, we demonstrate that algorithms that follow the (natural) policy gradient (e.g. RLoo (Kool et al., 2019) or REBEL (Gao et al., 2024)) produce the expected behavior of performance staying flat with random rewards, only increasing when provided with ground-truth rewards.  Second, we show that rather than holding steady, *heuristic* policy gradients like PPO (Schulman et al., 2017) and GRPO (Shao et al., 2024) can either increase or decrease the reasoning performance of the model considerably. Third, we demonstrate than on a didactic bandit problem — a problem that has nothing to do with LLMs or reasoning —  GRPO exhibits a bias towards choices that were more likely under the base policy, while the vanilla REINFORCE policy gradient (Williams, 1992) has no such tendencies. Taken together, our results underscore the importance of the choice of RL algorithm when making claims about LLM reasoning and beyond."
     bibtex: |
       @misc{oertell2025heuristicsconsideredharmful,
@@ -25,6 +95,8 @@ papers2025:
       Owen Oertell*, Shikun Sun*, Yiding Chen*, Jin Peng Zhou, Zhiyong Wang, and Wen Sun
     venue: ArXiv
     firstAuthor: true
+    selected: true
+    image: "assets/images/pub_slcd.png"
     abstract: "The controllable generation of diffusion models aims to steer the model to generate samples that optimize some given objective functions. It is desirable for a variety of applications including image generation, molecule generation, and DNA/sequence generation. Reinforcement Learning (RL) based fine-tuning of the base model is a popular approach but it can overfit the reward function while requiring significant resources. We frame controllable generation as a problem of finding a distribution that optimizes a KL-regularized objective function. We present SLCD -- Supervised Learning based Controllable Diffusion, which iteratively generates online data and trains a small classifier to guide the generation of the diffusion model. Similar to the standard classifier-guided diffusion, SLCD's key computation primitive is classification and does not involve any complex concepts from RL or control. Via a reduction to no-regret online learning analysis, we show that under KL divergence, the output from SLCD provably converges to the optimal solution of the KL-regularized objective. Further, we empirically demonstrate that SLCD can generate high quality samples with nearly the same inference time as the base model in both image generation with continuous diffusion and biological sequence generation with discrete diffusion. Our code is available [here](https://github.com/Owen-Oertell/slcd)."
     bibtex: |
       @misc{oertell2025efficientcontrollablediffusionoptimal,
@@ -90,7 +162,7 @@ papers2024:
     date: 2024-10-28
     link: "https://arxiv.org/pdf/2410.20660"
     authors: >
-      Kiwoong Yoo, Owen Oertell, Junhyun Lee, Sanghoon Lee, Jaewoo Kang
+      Kiwoong Yoo, Owen Oertell, Junhyun Lee, Sanghoon Lee, and Jaewoo Kang
     venue: NeurIPS 2024
     abstract: "Navigating the vast chemical space of druggable compounds is a formidable challenge in drug discovery, where generative models are increasingly employed to identify viable candidates. Conditional 3D structure-based drug design (3D-SBDD) models, which take into account complex three-dimensional interactions and molecular geometries, are particularly promising. Scaffold hopping is an efficient strategy that facilitates the identification of similar active compounds by strategically modifying the core structure of molecules, effectively narrowing the wide chemical space and enhancing the discovery of drug-like products. However, the practical application of 3D-SBDD generative models is hampered by their slow processing speeds. To address this bottleneck, we introduce TurboHopp, an accelerated pocket-conditioned 3D scaffold hopping model that merges the strategic effectiveness of traditional scaffold hopping with rapid generation capabilities of consistency models. This synergy not only enhances efficiency but also significantly boosts generation speeds, achieving up to 30 times faster inference speed as well as superior generation quality compared to existing diffusion-based models, establishing TurboHopp as a powerful tool in drug discovery. Supported by faster inference speed, we further optimize our model, using [Reinforcement Learning for Consistency Models (RLCM)](/publications/rlcm), to output desirable molecules. We demonstrate the broad applicability of TurboHopp across multiple drug discovery scenarios, underscoring its potential in diverse molecular settings. The code is provided [here](https://github.com/orgw/TurboHopp)."
     bibtex: |
@@ -109,8 +181,10 @@ papers2024:
     date: 2024-04-25
     link: "https://arxiv.org/pdf/2404.16767"
     authors: >
-      Zhaolin Gao, Jonathan D. Chang, Wenhao Zhan, Owen Oertell, Gokul Swamy, Kianté Brantley, Thorsten Joachims, J. Andrew Bagnell, Jason D. Lee, Wen Sun
+      Zhaolin Gao, Jonathan D. Chang, Wenhao Zhan, Owen Oertell, Gokul Swamy, Kianté Brantley, Thorsten Joachims, J. Andrew Bagnell, Jason D. Lee, and Wen Sun
     venue: NeurIPS 2024
+    selected: true
+    image: "assets/images/pub_rebel.png"
     abstract: "While originally developed for continuous control problems, Proximal Policy Optimization (PPO) has emerged as the work-horse of a variety of reinforcement learning (RL) applications, including the fine-tuning of generative models. Unfortunately, PPO requires multiple heuristics to enable stable convergence (e.g. value networks, clipping), and is notorious for its sensitivity to the precise implementation of these components. In response, we take a step back and ask what a minimalist RL algorithm for the era of generative models would look like. We propose REBEL, an algorithm that cleanly reduces the problem of policy optimization to regressing the relative reward between two completions to a prompt in terms of the policy, enabling strikingly lightweight implementation. In theory, we prove that fundamental RL algorithms like Natural Policy Gradient can be seen as variants of REBEL, which allows us to match the strongest known theoretical guarantees in terms of convergence and sample complexity in the RL literature. REBEL can also cleanly incorporate offline data and be extended to handle the intransitive preferences we frequently see in practice. Empirically, we find that REBEL provides a unified approach to language modeling and image generation with stronger or similar performance as PPO and DPO, all while being simpler to implement and more computationally efficient than PPO. When fine-tuning Llama-3-8B-Instruct, REBEL achieves strong performance in AlpacaEval 2.0, MT-Bench, and Open LLM Leaderboard."
     bibtex: |
       @inproceedings{
@@ -131,6 +205,8 @@ papers2024:
       Owen Oertell, Jonathan Daniel Chang, Yiyi Zhang, Kianté Brantley, and Wen Sun
     venue: RLC 2024
     firstAuthor: true
+    selected: false
+    image: "assets/images/pub_rlcm.png"
     abstract: "Reinforcement learning (RL) has improved guided image generation with diffusion models by directly optimizing rewards that capture image quality, aesthetics, and instruction following capabilities. However, the resulting generative policies inherit the same iterative sampling process of diffusion models that causes slow generation. To overcome this limitation, consistency models proposed learning a new class of generative models that directly map noise to data, resulting in a model that can generate an image in as few as one sampling iteration. In this work, to optimize text-to-image generative models for task specific rewards and enable fast training and inference, we propose a framework for fine-tuning consistency models via RL. Our framework, called Reinforcement Learning for Consistency Model (RLCM), frames the iterative inference process of a consistency model as an RL procedure. Comparing to RL finetuned diffusion models, RLCM trains significantly faster, improves the quality of the generation measured under the reward objectives, and speeds up the inference procedure by generating high quality images with as few as two inference steps. Experimentally, we show that RLCM can adapt text-to-image consistency models to objectives that are challenging to express with prompting, such as image compressibility, and those derived from human feedback, such as aesthetic quality. Our code is available [here](https://rlcm.owenoertell.com)."
     bibtex: |
       @article{oertell2024rlcm,
