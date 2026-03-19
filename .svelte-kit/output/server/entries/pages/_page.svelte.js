@@ -4,7 +4,7 @@ import "clsx";
 import { d as data } from "../../chunks/pub_list.js";
 function GardenArt($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
-    $$renderer2.push(`<div class="garden-art svelte-19rh402"><canvas aria-hidden="true" class="svelte-19rh402"></canvas> <p class="caption svelte-19rh402">ascii image of the humble administrator's garden. suzhou, china</p></div>`);
+    $$renderer2.push(`<div class="garden-art svelte-19rh402"><canvas aria-hidden="true" class="svelte-19rh402"></canvas> <p class="caption svelte-19rh402">dithering image of the humble administrator's garden. suzhou, china</p></div>`);
   });
 }
 function _page($$renderer, $$props) {
