@@ -43,7 +43,7 @@
 
 <div class="garden-art">
   <canvas bind:this={canvas} aria-hidden="true"></canvas>
-  <p class="caption">dithering image of the humble administrator's garden. suzhou, china</p>
+  <p class="caption">dithered image of the humble administrator's garden. suzhou, china</p>
 </div>
 
 <style lang="postcss">
