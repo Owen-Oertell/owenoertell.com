@@ -62,9 +62,7 @@ function _page($$renderer, $$props) {
     professors <a class="link" href="https://wensun.github.io">Wen Sun</a>, <a class="link" href="https://www.cs.cornell.edu/~rdk/">Robert Kleinberg</a>,
     and <a class="link" href="https://xkianteb.github.io">Kianté Brantley</a>.</p> <p>Currently, I am a research scientist intern at <a class="link" href="https://www.databricks.com/">Databricks</a> working on deep research. Previously, I
     was a research intern at <a class="link" href="https://www.nvidia.com/">NVIDIA</a> and a software engineering intern at <a class="link" href="https://www.drw.com/">DRW</a>.</p> <p>Outside of research, I enjoy mathematics, <a class="link" href="https://artsandculture.google.com/entity/edward-hopper/m0hc3t">art</a>, music, literature, and
-    drone photography. A picture of me can be found <a class="link" href="assets/images/owen_oertell.png">here</a>.</p></section> `);
-    GardenArt($$renderer2);
-    $$renderer2.push(`<!----> <section id="publications" class="layout-md mb-14 scroll-mt-24"><h2 class="heading2">Publications</h2> <p class="text-neutral-500 mb-4">See my <a href="https://scholar.google.com/citations?user=y0B6gawAAAAJ&amp;hl=en" class="link">Google Scholar</a> for the most up-to-date list.</p> <div class="tab-bar svelte-1uha8ag"><button${attr_class("tab-btn svelte-1uha8ag", void 0, { "active": activeTab === "selected" })}>Selected</button> <button${attr_class("tab-btn svelte-1uha8ag", void 0, { "active": activeTab === "all" })}>All</button></div> `);
+    drone photography. A picture of me can be found <a class="link" href="assets/images/owen_oertell.png">here</a>.</p></section> <section id="publications" class="layout-md mb-14 scroll-mt-24"><h2 class="heading2">Publications</h2> <p class="text-neutral-500 mb-4">See my <a href="https://scholar.google.com/citations?user=y0B6gawAAAAJ&amp;hl=en" class="link">Google Scholar</a> for the most up-to-date list.</p> <div class="tab-bar svelte-1uha8ag"><button${attr_class("tab-btn svelte-1uha8ag", void 0, { "active": activeTab === "selected" })}>Selected</button> <button${attr_class("tab-btn svelte-1uha8ag", void 0, { "active": activeTab === "all" })}>All</button></div> `);
     {
       $$renderer2.push("<!--[-->");
       $$renderer2.push(`<div class="selected-list svelte-1uha8ag"><!--[-->`);
@@ -105,7 +103,9 @@ function _page($$renderer, $$props) {
       }
       $$renderer2.push(`<!--]--></div>`);
     }
-    $$renderer2.push(`<!--]--></section> <section id="contact" class="layout-md scroll-mt-24"><div class="contact-rows flex flex-col"><div class="row svelte-1uha8ag"><span class="svelte-1uha8ag">email</span> <hr class="svelte-1uha8ag"/> <a class="link svelte-1uha8ag" href="mailto:ojo2@cornell.edu">ojo2@cornell.edu</a></div> <div class="row svelte-1uha8ag"><span class="svelte-1uha8ag">github</span> <hr class="svelte-1uha8ag"/> <a class="link svelte-1uha8ag" href="https://github.com/owen-oertell">@owen-oertell</a></div> <div class="row svelte-1uha8ag"><span class="svelte-1uha8ag">scholar</span> <hr class="svelte-1uha8ag"/> <a class="link svelte-1uha8ag" href="https://scholar.google.com/citations?user=y0B6gawAAAAJ&amp;hl=en">owen-oertell</a></div></div></section>`);
+    $$renderer2.push(`<!--]--></section> <section id="contact" class="layout-md scroll-mt-24"><div class="contact-rows flex flex-col"><div class="row svelte-1uha8ag"><span class="svelte-1uha8ag">email</span> <hr class="svelte-1uha8ag"/> <a class="link svelte-1uha8ag" href="mailto:ojo2@cornell.edu">ojo2@cornell.edu</a></div> <div class="row svelte-1uha8ag"><span class="svelte-1uha8ag">github</span> <hr class="svelte-1uha8ag"/> <a class="link svelte-1uha8ag" href="https://github.com/owen-oertell">@owen-oertell</a></div> <div class="row svelte-1uha8ag"><span class="svelte-1uha8ag">scholar</span> <hr class="svelte-1uha8ag"/> <a class="link svelte-1uha8ag" href="https://scholar.google.com/citations?user=y0B6gawAAAAJ&amp;hl=en">owen-oertell</a></div></div></section> `);
+    GardenArt($$renderer2);
+    $$renderer2.push(`<!---->`);
   });
 }
 export {
