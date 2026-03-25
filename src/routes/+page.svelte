@@ -90,8 +90,6 @@
   </p>
 </section>
 
-<GardenArt />
-
 <!-- Publications -->
 <section id="publications" class="layout-md mb-14 scroll-mt-24">
   <h2 class="heading2">Publications</h2>
@@ -217,6 +215,8 @@
     </div>
   </div>
 </section>
+
+<GardenArt />
 
 
 <style lang="postcss">
