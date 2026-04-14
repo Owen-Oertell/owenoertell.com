@@ -57,7 +57,7 @@ function _page($$renderer, $$props) {
       description: "machine learning researcher at Cornell University."
     });
     $$renderer2.push(`<!----> <section class="layout-md text-lg space-y-5 mb-14"><p>I study computer science at Cornell University. My research
-    interests are in decision-making (reinforcement learning, bandits) and
+    interests lie in decision-making (reinforcement learning, bandits) and
     generative modeling (diffusion models, LLMs). I am fortunate to work with
     professors <a class="link" href="https://wensun.github.io">Wen Sun</a>, <a class="link" href="https://www.cs.cornell.edu/~rdk/">Robert Kleinberg</a>,
     and <a class="link" href="https://xkianteb.github.io">Kianté Brantley</a>.</p> <p>Currently, I am a research scientist intern at <a class="link" href="https://www.databricks.com/">Databricks</a> working on deep research. Previously, I
