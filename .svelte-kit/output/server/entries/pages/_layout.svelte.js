@@ -4,10 +4,7 @@ function Header($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     var $$store_subs;
     let pathname, isResumePage, isBlogPage, pageTitle;
-    const links = [
-      { name: "resume", href: "/resume" },
-      { name: "contact", href: "mailto:ojo2@cornell.edu" }
-    ];
+    const links = [{ name: "resume", href: "/resume" }];
     const pageTitles = { "/resume": "Resume", "/blog": "Blog" };
     pathname = store_get($$store_subs ??= {}, "$page", page).url.pathname;
     isResumePage = pathname === "/resume";
@@ -28,7 +25,12 @@ function Header($$renderer, $$props) {
         "text-black": isResumePage && link.href === "/resume" || isBlogPage && link.href === "/blog"
       })}>${escape_html(link.name)}</a>`);
     }
-    $$renderer2.push(`<!--]--></nav></header>`);
+    $$renderer2.push(`<!--]--> <button type="button" class="contact-btn hover:text-black transition-colors svelte-1elxaub" aria-label="Copy email address to clipboard"><span class="text-wrapper svelte-1elxaub" aria-live="polite"><span class="ghost svelte-1elxaub" aria-hidden="true">email</span> `);
+    {
+      $$renderer2.push("<!--[!-->");
+      $$renderer2.push(`<span class="text svelte-1elxaub">email</span>`);
+    }
+    $$renderer2.push(`<!--]--></span></button></nav></header>`);
     if ($$store_subs) unsubscribe_stores($$store_subs);
   });
 }
