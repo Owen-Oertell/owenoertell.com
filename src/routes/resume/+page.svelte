@@ -8,7 +8,7 @@
   description="Researcher, software engineer."
 />
 
-<div class="layout-md py-8 space-y-12 font-serif">
+<div class="layout-md py-8 space-y-12">
 
   <!-- Education -->
   <section>
