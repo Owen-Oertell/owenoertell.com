@@ -8,7 +8,7 @@
   description="Researcher, software engineer."
 />
 
-<div class="layout-md py-8 space-y-12">
+<div class="layout-md py-8 space-y-12 font-serif">
 
   <!-- Education -->
   <section>
@@ -18,7 +18,7 @@
       <div class="flex justify-between items-start gap-4 flex-wrap">
         <div>
           <div class="text-black font-semibold text-base">Cornell University</div>
-          <div class="text-neutral-500 text-sm mt-0.5">B.S. in Computer Science &mdash; Minor in Mathematics</div>
+          <div class="text-neutral-500 text-sm mt-0.5">B.S. in Computer Science. Summa Cum Laude</div>
         </div>
         <div class="text-neutral-500 text-sm whitespace-nowrap">2022 &mdash; Present</div>
       </div>
