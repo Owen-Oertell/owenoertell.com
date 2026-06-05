@@ -26,7 +26,6 @@
  * ```
  */
 declare module '$env/static/private' {
-	export const CAML_LD_LIBRARY_PATH: string;
 	export const AUTOJUMP_ERROR_PATH: string;
 	export const TERM_PROGRAM: string;
 	export const NODE: string;
@@ -34,19 +33,14 @@ declare module '$env/static/private' {
 	export const AUTOJUMP_SOURCED: string;
 	export const TERM: string;
 	export const SHELL: string;
-	export const HOMEBREW_REPOSITORY: string;
 	export const TMPDIR: string;
 	export const npm_config_global_prefix: string;
-	export const CONDA_SHLVL: string;
 	export const TERM_PROGRAM_VERSION: string;
 	export const COLOR: string;
-	export const OPAM_SWITCH_PREFIX: string;
 	export const TERM_SESSION_ID: string;
 	export const npm_config_noproxy: string;
 	export const npm_config_local_prefix: string;
-	export const PNPM_HOME: string;
 	export const ZSH: string;
-	export const OCAML_TOPLEVEL_PATH: string;
 	export const USER: string;
 	export const LS_COLORS: string;
 	export const COMMAND_MODE: string;
@@ -55,24 +49,22 @@ declare module '$env/static/private' {
 	export const __CF_USER_TEXT_ENCODING: string;
 	export const npm_execpath: string;
 	export const TERM_FEATURES: string;
-	export const MAMBA_EXE: string;
 	export const PAGER: string;
 	export const LSCOLORS: string;
 	export const TERMINFO_DIRS: string;
 	export const PATH: string;
 	export const npm_package_json: string;
 	export const _: string;
+	export const LaunchInstanceID: string;
 	export const npm_config_userconfig: string;
 	export const npm_config_init_module: string;
 	export const __CFBundleIdentifier: string;
 	export const npm_command: string;
 	export const PWD: string;
-	export const MAMBA_ROOT_PREFIX: string;
 	export const npm_lifecycle_event: string;
 	export const EDITOR: string;
 	export const npm_package_name: string;
 	export const LANG: string;
-	export const SASL_PATH: string;
 	export const ITERM_PROFILE: string;
 	export const npm_config_npm_version: string;
 	export const XPC_FLAGS: string;
@@ -82,17 +74,16 @@ declare module '$env/static/private' {
 	export const HOME: string;
 	export const COLORFGBG: string;
 	export const LC_TERMINAL_VERSION: string;
-	export const HOMEBREW_PREFIX: string;
 	export const ITERM_SESSION_ID: string;
 	export const npm_config_cache: string;
 	export const LESS: string;
 	export const LOGNAME: string;
 	export const npm_lifecycle_script: string;
 	export const npm_config_user_agent: string;
-	export const INFOPATH: string;
-	export const HOMEBREW_CELLAR: string;
 	export const LC_TERMINAL: string;
 	export const OSLogRateLimit: string;
+	export const SECURITYSESSIONID: string;
+	export const SQLITE_EXEMPT_PATH_FROM_VNODE_GUARDS: string;
 	export const npm_node_execpath: string;
 	export const npm_config_prefix: string;
 	export const COLORTERM: string;
@@ -126,7 +117,6 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
-		CAML_LD_LIBRARY_PATH: string;
 		AUTOJUMP_ERROR_PATH: string;
 		TERM_PROGRAM: string;
 		NODE: string;
@@ -134,19 +124,14 @@ declare module '$env/dynamic/private' {
 		AUTOJUMP_SOURCED: string;
 		TERM: string;
 		SHELL: string;
-		HOMEBREW_REPOSITORY: string;
 		TMPDIR: string;
 		npm_config_global_prefix: string;
-		CONDA_SHLVL: string;
 		TERM_PROGRAM_VERSION: string;
 		COLOR: string;
-		OPAM_SWITCH_PREFIX: string;
 		TERM_SESSION_ID: string;
 		npm_config_noproxy: string;
 		npm_config_local_prefix: string;
-		PNPM_HOME: string;
 		ZSH: string;
-		OCAML_TOPLEVEL_PATH: string;
 		USER: string;
 		LS_COLORS: string;
 		COMMAND_MODE: string;
@@ -155,24 +140,22 @@ declare module '$env/dynamic/private' {
 		__CF_USER_TEXT_ENCODING: string;
 		npm_execpath: string;
 		TERM_FEATURES: string;
-		MAMBA_EXE: string;
 		PAGER: string;
 		LSCOLORS: string;
 		TERMINFO_DIRS: string;
 		PATH: string;
 		npm_package_json: string;
 		_: string;
+		LaunchInstanceID: string;
 		npm_config_userconfig: string;
 		npm_config_init_module: string;
 		__CFBundleIdentifier: string;
 		npm_command: string;
 		PWD: string;
-		MAMBA_ROOT_PREFIX: string;
 		npm_lifecycle_event: string;
 		EDITOR: string;
 		npm_package_name: string;
 		LANG: string;
-		SASL_PATH: string;
 		ITERM_PROFILE: string;
 		npm_config_npm_version: string;
 		XPC_FLAGS: string;
@@ -182,17 +165,16 @@ declare module '$env/dynamic/private' {
 		HOME: string;
 		COLORFGBG: string;
 		LC_TERMINAL_VERSION: string;
-		HOMEBREW_PREFIX: string;
 		ITERM_SESSION_ID: string;
 		npm_config_cache: string;
 		LESS: string;
 		LOGNAME: string;
 		npm_lifecycle_script: string;
 		npm_config_user_agent: string;
-		INFOPATH: string;
-		HOMEBREW_CELLAR: string;
 		LC_TERMINAL: string;
 		OSLogRateLimit: string;
+		SECURITYSESSIONID: string;
+		SQLITE_EXEMPT_PATH_FROM_VNODE_GUARDS: string;
 		npm_node_execpath: string;
 		npm_config_prefix: string;
 		COLORTERM: string;

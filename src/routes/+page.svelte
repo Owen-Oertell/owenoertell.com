@@ -69,17 +69,14 @@
 <!-- About -->
 <section class="layout-md text-lg space-y-5 mb-14">
   <p>
-    I study computer science at Cornell University. My research
-    interests lie in decision-making (reinforcement learning, bandits) and
-    generative modeling (diffusion models, LLMs). I am fortunate to work with
-    professors <a class="link" href="https://wensun.github.io">Wen Sun</a>,
-    <a class="link" href="https://www.cs.cornell.edu/~rdk/">Robert Kleinberg</a>,
-    and
-    <a class="link" href="https://xkianteb.github.io">Kianté Brantley</a>.
+    I am a research scientist at <a class="link" href="https://www.databricks.com/">Databricks Mosaic Research</a> working on agents, reinforcement learning, and retrieval.
   </p>
   <p>
-    Currently, I am a research scientist intern at <a class="link" href="https://www.databricks.com/">Databricks</a> working on deep research. Previously, I
-    was a research intern at <a class="link" href="https://www.nvidia.com/">NVIDIA</a> and a software engineering intern at <a class="link" href="https://www.drw.com/">DRW</a>.
+    I graduated summa cum laude from Cornell University with a B.S. in Computer Science where I was fortunate to work with professors <a class="link" href="https://wensun.github.io">Wen Sun</a>, <a class="link" href="https://www.cs.cornell.edu/~rdk/">Robert Kleinberg</a>, and <a class="link" href="https://xkianteb.github.io">Kianté Brantley</a>.
+  </p>
+
+  <p>
+    I was also previously a research intern at <a class="link" href="https://www.databricks.com/">Databricks Mosaic Research</a>, <a class="link" href="https://www.nvidia.com/">NVIDIA</a>, and a software engineering intern at <a class="link" href="https://www.drw.com/">DRW</a>.
   </p>
   <p>
     Outside of research, I enjoy mathematics, <a class="link" href="https://artsandculture.google.com/entity/edward-hopper/m0hc3t">art</a>, music, literature, and
@@ -87,6 +84,10 @@
       class="link"
       href="assets/images/owen_oertell.png">here</a
     >.
+  </p>
+
+  <p>
+    <em>News:</em> I received the <a class="link" href="https://bowers.cornell.edu/news-stories/you-are-holding-pen-1300-bowers-graduates-honored-recognition-ceremonies">Cornell Bowers 2026 Computer Science Prize for Academic Excellence</a>, and the <a class="link" href="https://www.nsfgrfp.org/">NSF Graduate Research Fellowship</a>!
   </p>
 </section>
 

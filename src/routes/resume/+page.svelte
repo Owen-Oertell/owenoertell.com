@@ -67,13 +67,13 @@
     <h2 class="section-heading">Experience</h2>
 
     <Workplace
-      title="Research Scientist Intern"
+      title="Research Scientist, Research Scientist Intern"
       company="Databricks"
       url="https://databricks.com"
       dates="Aug 2025 – Present"
       location="New York, NY"
     >
-      <li>Deep Research Agents</li>
+      <li>Agents, reinforcement learning, and retrieval</li>
     </Workplace>
 
     <Workplace
