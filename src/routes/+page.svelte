@@ -9,7 +9,7 @@
     ...publications.papers2026,
     ...publications.papers2025,
     ...publications.papers2024,
-    ...publications.papers2023
+    ...publications.papers2023,
   ];
 
   const categoryMap: Record<string, string[]> = {
@@ -28,66 +28,98 @@
       "rlcm",
       "sorl",
     ],
-    "Bandits & RL Theory": [
-      "delay-dependent-bandits",
-      "distrl",
-    ],
+    "Bandits & RL Theory": ["delay-dependent-bandits", "distrl"],
   };
 
-  type Paper = typeof allPapers[0];
+  type Paper = (typeof allPapers)[0];
 
   const categories = Object.entries(categoryMap).map(([name, slugs]) => ({
     name,
-    papers: (slugs
-      .map(slug => allPapers.find((p: Paper) => p.slug === slug))
-      .filter(Boolean) as Paper[])
-      .sort((a, b) => new Date((b as any).date).getTime() - new Date((a as any).date).getTime()),
+    papers: (
+      slugs
+        .map((slug) => allPapers.find((p: Paper) => p.slug === slug))
+        .filter(Boolean) as Paper[]
+    ).sort(
+      (a, b) =>
+        new Date((b as any).date).getTime() -
+        new Date((a as any).date).getTime(),
+    ),
   }));
 
   const selectedPapers = allPapers.filter((p: Paper) => (p as any).selected);
 
   let openCategories: Record<string, boolean> = {};
-  let activeTab: 'selected' | 'all' = 'selected';
+  let activeTab: "selected" | "all" = "selected";
 
   function toggle(name: string) {
     openCategories = { ...openCategories, [name]: !openCategories[name] };
   }
 
-  function truncateAuthors(authors: string, max = 7): { short: string; full: string; truncated: boolean } {
-    const list = authors.split(',').map(a => a.trim());
-    if (list.length <= max) return { short: authors.trim(), full: authors.trim(), truncated: false };
+  function truncateAuthors(
+    authors: string,
+    max = 7,
+  ): { short: string; full: string; truncated: boolean } {
+    const list = authors.split(",").map((a) => a.trim());
+    if (list.length <= max)
+      return { short: authors.trim(), full: authors.trim(), truncated: false };
     return {
-      short: list.slice(0, max).join(', ') + ', et al.',
+      short: list.slice(0, max).join(", ") + ", et al.",
       full: authors.trim(),
       truncated: true,
     };
   }
 </script>
 
-<Seo title="Owen Oertell" description="machine learning researcher at Cornell University." />
+<Seo
+  title="Owen Oertell"
+  description="machine learning researcher at Cornell University."
+/>
 
 <!-- About -->
 <section class="layout-md text-lg space-y-5 mb-14">
   <p>
-    I am a research scientist at <a class="link" href="https://www.databricks.com/">Databricks Mosaic Research</a> working on agents, reinforcement learning, and retrieval.
-  </p>
-  <p>
-    I graduated summa cum laude from Cornell University with a B.S. in Computer Science where I was fortunate to work with professors <a class="link" href="https://wensun.github.io">Wen Sun</a>, <a class="link" href="https://www.cs.cornell.edu/~rdk/">Robert Kleinberg</a>, and <a class="link" href="https://xkianteb.github.io">Kianté Brantley</a>.
-  </p>
-
-  <p>
-    I was also previously a research intern at <a class="link" href="https://www.databricks.com/">Databricks Mosaic Research</a>, <a class="link" href="https://www.nvidia.com/">NVIDIA</a>, and a software engineering intern at <a class="link" href="https://www.drw.com/">DRW</a>.
-  </p>
-  <p>
-    Outside of research, I enjoy mathematics, <a class="link" href="https://artsandculture.google.com/entity/edward-hopper/m0hc3t">art</a>, music, literature, and
-    drone photography. A picture of me can be found <a
+    I am a research scientist at <a
       class="link"
-      href="assets/images/owen_oertell.png">here</a
-    >.
+      href="https://www.databricks.com/">Databricks Mosaic Research</a
+    > working on agents, reinforcement learning, and retrieval.
+  </p>
+  <p>
+    I graduated summa cum laude from Cornell University with a B.S. in Computer
+    Science where I was fortunate to work with professors <a
+      class="link"
+      href="https://wensun.github.io">Wen Sun</a
+    >,
+    <a class="link" href="https://www.cs.cornell.edu/~rdk/">Robert Kleinberg</a
+    >, and
+    <a class="link" href="https://xkianteb.github.io">Kianté Brantley</a>.
   </p>
 
   <p>
-    <em>News:</em> I received the <a class="link" href="https://bowers.cornell.edu/news-stories/you-are-holding-pen-1300-bowers-graduates-honored-recognition-ceremonies">Cornell Bowers 2026 Computer Science Prize for Academic Excellence</a>, and the <a class="link" href="https://www.nsfgrfp.org/">NSF Graduate Research Fellowship</a>!
+    I was also previously a research intern at <a
+      class="link"
+      href="https://www.databricks.com/">Databricks Mosaic Research</a
+    >, <a class="link" href="https://www.nvidia.com/">NVIDIA</a>, and a software
+    engineering intern at <a class="link" href="https://www.drw.com/">DRW</a>.
+  </p>
+  <p>
+    Outside of research, I enjoy mathematics, <a
+      class="link"
+      href="https://artsandculture.google.com/entity/edward-hopper/m0hc3t"
+      >art</a
+    >, music, literature, and drone photography. A picture of me can be found
+    <a class="link" href="assets/images/owen_oertell.png">here</a>.
+  </p>
+
+  <p>
+    <em>News:</em> I received the
+    <a
+      class="link"
+      href="https://bowers.cornell.edu/news-stories/you-are-holding-pen-1300-bowers-graduates-honored-recognition-ceremonies"
+      >Cornell Bowers 2026 Computer Science Prize for Academic Excellence</a
+    >! I was also awarded (but declined) the
+    <a class="link" href="https://www.nsfgrfp.org/"
+      >NSF Graduate Research Fellowship</a
+    >.
   </p>
 </section>
 
@@ -95,24 +127,27 @@
 <section id="publications" class="layout-md mb-14 scroll-mt-24">
   <h2 class="heading2">Publications</h2>
   <p class="text-neutral-500 mb-4">
-    See my <a href="https://scholar.google.com/citations?user=y0B6gawAAAAJ&hl=en" class="link">Google Scholar</a> for the most up-to-date list.
+    See my <a
+      href="https://scholar.google.com/citations?user=y0B6gawAAAAJ&hl=en"
+      class="link">Google Scholar</a
+    > for the most up-to-date list.
   </p>
 
   <!-- Tabs -->
   <div class="tab-bar">
     <button
       class="tab-btn"
-      class:active={activeTab === 'selected'}
-      on:click={() => (activeTab = 'selected')}
-    >Selected</button>
+      class:active={activeTab === "selected"}
+      on:click={() => (activeTab = "selected")}>Selected</button
+    >
     <button
       class="tab-btn"
-      class:active={activeTab === 'all'}
-      on:click={() => (activeTab = 'all')}
-    >All</button>
+      class:active={activeTab === "all"}
+      on:click={() => (activeTab = "all")}>All</button
+    >
   </div>
 
-  {#if activeTab === 'selected'}
+  {#if activeTab === "selected"}
     <div class="selected-list" transition:slide={{ duration: 200 }}>
       {#each selectedPapers as paper}
         <div class="selected-card">
@@ -124,8 +159,9 @@
                 class="selected-img"
                 on:error={(e) => {
                   const el = e.currentTarget as HTMLImageElement;
-                  el.style.display = 'none';
-                  (el.nextElementSibling as HTMLElement).style.display = 'block';
+                  el.style.display = "none";
+                  (el.nextElementSibling as HTMLElement).style.display =
+                    "block";
                 }}
               />
               <div class="selected-img-placeholder" style="display:none"></div>
@@ -134,11 +170,17 @@
             {/if}
           </div>
           <div class="selected-content">
-            <a href={`/publications/${paper.slug}`} class="selected-title">{paper.title}</a>
-{#if truncateAuthors(paper.authors).truncated}
+            <a href={`/publications/${paper.slug}`} class="selected-title"
+              >{paper.title}</a
+            >
+            {#if truncateAuthors(paper.authors).truncated}
               <div class="pub-authors authors-truncated">
-                <span class="authors-short">{truncateAuthors(paper.authors).short}</span>
-                <span class="authors-full">{truncateAuthors(paper.authors).full}</span>
+                <span class="authors-short"
+                  >{truncateAuthors(paper.authors).short}</span
+                >
+                <span class="authors-full"
+                  >{truncateAuthors(paper.authors).full}</span
+                >
               </div>
             {:else}
               <div class="pub-authors">{paper.authors}</div>
@@ -146,9 +188,16 @@
             <div class="pub-meta">
               <span class="pub-venue">{paper.venue}.</span>
               {#if paper.link}
-                <a href={paper.link} class="pub-link" target="_blank" rel="noreferrer">[paper]</a>
+                <a
+                  href={paper.link}
+                  class="pub-link"
+                  target="_blank"
+                  rel="noreferrer">[paper]</a
+                >
               {/if}
-              <a href={`/publications/${paper.slug}`} class="pub-link">[abstract]</a>
+              <a href={`/publications/${paper.slug}`} class="pub-link"
+                >[abstract]</a
+              >
             </div>
             {#if paper.abstract}
               <p class="selected-abstract">{paper.abstract.slice(0, 220)}…</p>
@@ -181,9 +230,16 @@
                   <div class="pub-meta">
                     <span class="pub-venue">{paper.venue}.</span>
                     {#if paper.link}
-                      <a href={paper.link} class="pub-link" target="_blank" rel="noreferrer">[paper]</a>
+                      <a
+                        href={paper.link}
+                        class="pub-link"
+                        target="_blank"
+                        rel="noreferrer">[paper]</a
+                      >
                     {/if}
-                    <a href={`/publications/${paper.slug}`} class="pub-link">[abstract]</a>
+                    <a href={`/publications/${paper.slug}`} class="pub-link"
+                      >[abstract]</a
+                    >
                   </div>
                 </li>
               {/each}
@@ -194,7 +250,6 @@
     </div>
   {/if}
 </section>
-
 
 <!-- Contact -->
 <section id="contact" class="layout-md scroll-mt-24">
@@ -212,13 +267,16 @@
     <div class="row">
       <span>scholar</span>
       <hr />
-      <a class="link" href="https://scholar.google.com/citations?user=y0B6gawAAAAJ&hl=en">owen-oertell</a>
+      <a
+        class="link"
+        href="https://scholar.google.com/citations?user=y0B6gawAAAAJ&hl=en"
+        >owen-oertell</a
+      >
     </div>
   </div>
 </section>
 
 <GardenArt />
-
 
 <style lang="postcss">
   /* Tabs */
